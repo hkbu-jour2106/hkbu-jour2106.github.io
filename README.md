@@ -19,7 +19,7 @@
 * Student 14
 * Student 15
 * Student 16
-* Student 17
+Julianna Wu: http://juliannawqy.github.io/
 * Student 18
 * Student 19
 * Student 20
