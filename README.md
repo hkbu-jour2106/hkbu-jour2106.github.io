@@ -7,7 +7,7 @@
 * Student 2
 * Student 3
 * Student 4
-* Poon Tsz Fung
+* Poon Tsz Fung: http://johnpoon.github.io
 * Student 6
 * Student 7
 * Student 8
