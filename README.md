@@ -29,7 +29,7 @@
 * Student 24
 * Student 25
 * Student 26
-* Student 27
+* Daniel Ma
 * Student 28
 * Student 29
 * Student 30
