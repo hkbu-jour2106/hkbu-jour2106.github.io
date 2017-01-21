@@ -5,7 +5,7 @@
 * Pili Hu: http://hupilidemo.github.io/
 * Student 1
 * Pili Hu: http://hupilidemo.github.io/
-* Student 3 https://github.com/hocb
+* Student 3 
 * Student 4
 * Student 5
 * Student 6
