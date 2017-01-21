@@ -5,31 +5,31 @@
 * Pili Hu: http://hupilidemo.github.io/
 * Student 1
 * Pili Hu: http://hupilidemo.github.io/
-* Student 3
-* Student 4
-* Student 5
+* Jessie Pang: http://jessiepyt.github.io
+* King Hei: http://kingheiwong.github.io
+* Poon Tsz Fung: http://johnpoon.github.io
 * Student 6
-* Student 7
+* Carmen Chan https://chlorella.github.io/
 * Student 8
 * Student 9
 * Student 10
 * Student 11
-* Student 12
+* Roy Tang: http://Roytangrb.github.io/
 * Student 13
 * Student 14
 * Morris Chan: http://morrischanfm.github.io
-* Student 16
+* Eva LIU Yue: evalau1996.github.io  
 * Student 17
 * Student 18
 * Student 19
 * Student 20
 * Student 21
-* Student 22
+* ian mak: https://ianmaksh.github.io/
 * Student 23
 * Student 24
 * Student 25
 * Student 26
-* Student 27
+* Daniel Ma: http://danielma518.github.io/
 * Student 28
 * Student 29
 * Student 30
