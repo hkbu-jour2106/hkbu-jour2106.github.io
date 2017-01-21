@@ -7,7 +7,7 @@
 * Pili Hu: http://hupilidemo.github.io/
 * Jessie Pang: http://jessiepyt.github.io
 * Student 4
-* Student 5
+* Poon Tsz Fung: http://johnpoon.github.io
 * Student 6
 * Student 7
 * Student 8
