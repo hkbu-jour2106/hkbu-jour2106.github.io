@@ -13,7 +13,7 @@
 * Student 8
 * Student 9
 * Student 10
-* Student 11
+* Chung Yin: http://chungyin.github.io/
 * Roy Tang: http://Roytangrb.github.io/
 * Student 13
 * Student 14
