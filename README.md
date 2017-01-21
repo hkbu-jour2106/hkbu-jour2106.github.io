@@ -3,6 +3,7 @@
 ## List of students
 
 * Pili Hu: http://hupilidemo.github.io/
+* Chao Tianyi: http://chaotianyi.github.io/
 * Student 1
 * Student 2
 * Student 3
