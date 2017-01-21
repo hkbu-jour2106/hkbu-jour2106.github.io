@@ -9,7 +9,7 @@
 * Student 4
 * Student 5
 * Student 6
-* Student 7
+* Carmen Chan https://chlorella.github.io/
 * Student 8
 * Student 9
 * Student 10
