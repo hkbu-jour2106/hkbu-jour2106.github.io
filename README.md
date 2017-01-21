@@ -6,7 +6,6 @@
 * Student 1
 * Student 2
 * Student 3
-* Student 4 
 King Hei: http://kingheiwong.github.io
 * Student 5
 * Student 6
