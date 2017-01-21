@@ -8,8 +8,8 @@
 * Student 3
 * Student 4
 * Student 5
-* Student 6
 * CAI Shanni: http://caishanni1019.github.io/
+* Student 7
 * Student 8
 * Student 9
 * Student 10
