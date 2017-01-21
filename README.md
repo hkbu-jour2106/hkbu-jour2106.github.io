@@ -17,7 +17,7 @@
 * Roy Tang: http://Roytangrb.github.io/
 * Student 13
 * Student 14
-* Student 15
+* Morris Chan: http://morrischanfm.github.io
 * Eva LIU Yue: evalau1996.github.io  
 * Student 17
 * Student 18
