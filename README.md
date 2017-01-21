@@ -6,7 +6,7 @@
 * Student 1
 * Pili Hu: http://hupilidemo.github.io/
 * Jessie Pang: http://jessiepyt.github.io
-* Student 4
+* King Hei: http://kingheiwong.github.io
 * Poon Tsz Fung: http://johnpoon.github.io
 * Student 6
 * Carmen Chan https://chlorella.github.io/
