@@ -27,7 +27,7 @@
 * Student 22
 * Student 23
 * Student 24
-* Wong Kam Ki: kimwong1018
+* Wong Kam Ki: https://github.com/kimwong1018
 * Student 26
 * Student 27
 * Student 28
