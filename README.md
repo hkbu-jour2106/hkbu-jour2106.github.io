@@ -23,13 +23,13 @@
 * Student 18
 * Student 19
 * Student 20
-* Student 21
+* Yang Yu: http://yangyuiris.github.io/
 * Student 22
 * Student 23
 * Student 24
 * Student 25
 * Student 26
-* Daniel Ma: http://danielma518.github.io/
+* Student 27
 * Student 28
 * Student 29
 * Student 30
