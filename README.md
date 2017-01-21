@@ -3,6 +3,7 @@
 ## List of students
 
 * Pili Hu: http://hupilidemo.github.io/
+* Chao Tianyi: http://chaotianyi.github.io/
 * Student 1
 * Pili Hu: http://hupilidemo.github.io/
 * Jessie Pang: http://jessiepyt.github.io
@@ -32,4 +33,4 @@
 * Daniel Ma: http://danielma518.github.io/
 * Student 28
 * Student 29
-* Student 30
+
