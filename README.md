@@ -16,7 +16,7 @@
 * Student 11
 * Student 12
 * Student 13
-* Student 14
+* Xinyue Lv: http://adaZhiyan.github.io/
 * Student 15
 * Student 16
 * Student 17
