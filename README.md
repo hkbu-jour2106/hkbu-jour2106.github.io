@@ -29,7 +29,7 @@
 * Student 24
 * Student 25
 * Student 26
-* Daniel Ma
+* Daniel Ma: http://danielma518.github.io/
 * Student 28
 * Student 29
 * Student 30
