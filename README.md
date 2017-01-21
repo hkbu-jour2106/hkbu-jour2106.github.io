@@ -24,7 +24,7 @@
 * Student 19
 * Student 20
 * Student 21
-* Student 22
+ian mak: https://ianmaksh.github.io/
 * Student 23
 * Student 24
 * Student 25
