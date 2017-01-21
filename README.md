@@ -18,7 +18,7 @@
 * Student 13
 * Student 14
 * Student 15
-* Eva LIU Yue: evalau1996.github.io  
+* Student 16
 * Student 17
 * Student 18
 * Student 19
@@ -26,7 +26,7 @@
 * Student 21
 * ian mak: https://ianmaksh.github.io/
 * Student 23
-* Student 24
+* Danielle Wang: https://github.com/danielle621
 * Student 25
 * Student 26
 * Daniel Ma: http://danielma518.github.io/
