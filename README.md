@@ -5,7 +5,7 @@
 * Pili Hu: http://hupilidemo.github.io/
 * Student 1
 * Student 2
-* Student 3
+* Jessie Pang: http://jessiepyt.github.io
 * Student 4
 * Student 5
 * Student 6
