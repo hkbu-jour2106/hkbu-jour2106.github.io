@@ -21,7 +21,7 @@
 * Student 16
 * Student 17
 * Student 18
-* Student 19
+* Amanda Leung: http://amandawtl.github.io/
 * Student 20
 * Student 21
 * Student 22
