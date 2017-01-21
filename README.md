@@ -7,9 +7,9 @@
 * Pili Hu: http://hupilidemo.github.io/
 * Jessie Pang: http://jessiepyt.github.io
 * Student 4
-* Poon Tsz Fung: http://johnpoon.github.io
+* Student 5
 * Student 6
-* Carmen Chan https://chlorella.github.io/
+* Student 7
 * Student 8
 * Student 9
 * Student 10
@@ -30,6 +30,6 @@
 * Student 25
 * Student 26
 * Daniel Ma: http://danielma518.github.io/
-* Student 28
+* Wang Ruqing: http:annie0424/hkbu-jour2106.github.io
 * Student 29
 * Student 30
