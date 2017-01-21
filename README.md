@@ -13,12 +13,12 @@
 * Student 8
 * Student 9
 * Student 10
-* Student 11
+* Huang Jingxi: http://jamiexixi.github.io/
 * Student 12
 * Student 13
 * Student 14
 * Student 15
-* Eva LIU Yue: evalau1996.github.io  
+* Student 16
 * Student 17
 * Student 18
 * Student 19
@@ -29,7 +29,7 @@
 * Student 24
 * Student 25
 * Student 26
-* Daniel Ma: http://danielma518.github.io/
+* Student 27
 * Student 28
 * Student 29
 * Student 30
