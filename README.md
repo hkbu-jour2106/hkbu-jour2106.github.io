@@ -11,7 +11,6 @@
 * Student 6
 * Student 7
 * Student 8
-*Jade LI https://github.com/jadeimaginist 
 * Student 9
 * Student 10
 * Student 11
