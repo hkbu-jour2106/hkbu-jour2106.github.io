@@ -19,7 +19,7 @@
 * Student 14
 * Morris Chan: http://morrischanfm.github.io
 * Eva LIU Yue: evalau1996.github.io  
-* Student 17
+* Julianna Wu: http://juliannawqy.github.io/
 * Student 18
 * Student 19
 * Student 20
