@@ -29,7 +29,7 @@
 * Student 24
 * Student 25
 * Student 26
-* Emily Cheung: EmilyCheunghy.github.io
+* Emily Cheung: http://EmilyCheunghy.github.io
 * Student 28
 * Student 29
 * Student 30
