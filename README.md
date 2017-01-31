@@ -22,7 +22,7 @@
 * Student 17
 * Student 18
 * Student 19
-* Luo Huiwen: http://roselol/hkbu-jour2106.github.io/
+* Luo Huiwen: http://roselol.github.io/
 * Student 21
 * Student 22
 * Student 23
