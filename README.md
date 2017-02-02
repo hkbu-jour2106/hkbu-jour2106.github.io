@@ -8,7 +8,7 @@
 * Jessie Pang: http://jessiepyt.github.io
 * King Hei: http://kingheiwong.github.io
 * Poon Tsz Fung: http://johnpoon.github.io
-* Student 6
+* CAI Shanni: http://caishanni1019.github.io/
 * Carmen Chan https://chlorella.github.io/
 * Student 8
 * Student 9
