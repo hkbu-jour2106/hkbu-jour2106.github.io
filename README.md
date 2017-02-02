@@ -12,9 +12,9 @@
 * Carmen Chan https://chlorella.github.io/
 * Student 8
 * Student 9
-* Student 10
+* Ko Yuk Wai http://melissa0816k.github.io/
 * Student 11
-* Roy Tang: http://Roytangrb.github.io/
+* Student 12
 * Student 13
 * Student 14
 * Morris Chan: http://morrischanfm.github.io
