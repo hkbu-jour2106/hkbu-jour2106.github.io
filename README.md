@@ -21,7 +21,7 @@
 * Eva LIU Yue: evalau1996.github.io  
 * Julianna Wu: http://juliannawqy.github.io/
 * Student 18
-* Student 19
+* Amanda Leung: http://amandawtl.github.io/
 * Luo Huiwen: http://roselol.github.io/
 * Student 21
 * ian mak: https://ianmaksh.github.io/
