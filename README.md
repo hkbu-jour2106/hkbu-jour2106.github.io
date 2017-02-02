@@ -16,7 +16,7 @@
 * Chung Yin: http://chungyin.github.io/
 * Roy Tang: http://Roytangrb.github.io/
 * Student 13
-* Student 14
+* Xinyue Lv: http://adaZhiyan.github.io/
 * Morris Chan: http://morrischanfm.github.io
 * Eva LIU Yue: evalau1996.github.io  
 * Julianna Wu: http://juliannawqy.github.io/
