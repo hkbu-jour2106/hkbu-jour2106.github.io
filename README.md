@@ -27,7 +27,7 @@
 * ian mak: https://ianmaksh.github.io/
 * Student 23
 * Student 24
-* Student 25
+* Li Pui Ying: https://alisonlipy.github.io
 * Student 26
 * Daniel Ma: http://danielma518.github.io/
 * Student 28
