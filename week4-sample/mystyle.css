@@ -2,14 +2,23 @@ h1 {
     text-align: center
 }
 
-p {
-    font-size: 24px
+.first-p {
+    background-color: red;
+}
+
+.other-p {
+    background-color: blue;
+}
+
+.common-p {
+    font-size: 24px;
 }
 
 ul {
     list-style-type: square
 }
 
-ul #first-item {
-    font-size: 24px
+#first-item {
+    font-size: 24px;
+    background-color: green;
 }
