@@ -8,6 +8,17 @@
             text-align: right;
             margin-top: 5px;
             margin-bottom: 5px;
+            width: 30px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .circle {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
         }
         
         .bar-label {
@@ -17,6 +28,12 @@
 
         .bar-block-1{
             width: 100px;
+        }
+
+        .myfigure {
+            position: relative;
+            width: 200px;
+            height: 200px;
         }
     </style>
 
@@ -28,12 +45,12 @@
         <section>
             <h2> A chart by plain HTML/CSS </h2>
             <div class="myfigure">
-                <div class="bar-block bar-block-1"> 100 </div>
-                <div class="bar-block" style="width: 80px;"> 80 </div>
-                <div class="bar-block" style="width: 60px;"> 60 </div>
-                <div class="bar-block" style="width: 90px;"> 90 </div>
-                <div class="bar-block" style="width: 110px;"> 110 </div>
-                <div class="bar-block" style="width: 20px;"> 20 </div>
+                <div class="circle">circle</div>
+                <div class="bar-block" style="height: 80px; left:0"> 80 </div>
+                <div class="bar-block" style="height: 60px; left:40px"> 60 </div>
+                <div class="bar-block" style="height: 90px; left:80px"> 90 </div>
+                <div class="bar-block" style="height: 110px; left:120px"> 110 </div>
+                <div class="bar-block" style="height: 20px; left:160px"> 20 </div>
             </div>
         </section>
     </article>
