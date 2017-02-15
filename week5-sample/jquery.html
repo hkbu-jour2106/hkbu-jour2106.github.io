@@ -19,6 +19,8 @@
         <div class="row">
             <div class="col-md-4">
                 <h1>Demo of jQuery for Interaction</h1>
+
+                <h2> Calculator </h2>
                 <div class="form-group">
                     <label for="amount">Amount of books</label>
                     <input class="form-control" type="text" id="amount" value="3">
@@ -30,19 +32,60 @@
                     <label for="total">Total cost:</label>
                     <input class="form-control" type="text" id="total">
                 </div>
+                <script>
+                    $(function() { // Routine format; put all your jQuery initialisation inside
+                        $('#calculate').click(function() { // Set the mouse click event hander for element "#calculate"
+                            // Normal Javascript here
+                            // Do whatever you want
+                            var amount = $('#amount').val();
+                            var unit = $('#unit').val();
+                            var total = amount * unit;
+                            $('#total').val(total);
+                        });
+                    }); // Routine format; put all your jQuery initialisation inside
+                </script>
+
+                <h2> Batch execution </h2>
+                <style>
+                    correction {
+                        background-color: darkcyan;
+                        color: white;
+                    }
+                    
+                    .corrected {
+                        text-decoration: line-through;
+                        background-color: burlywood;
+                    }
+                </style>
+                <p>When you
+                    <original> writ</original>
+                    <correction>write</correction>
+                    <original> and</original>
+                    <correction>an</correction> article, it is easy to
+                    <original> made</original>
+                    <correction>make</correction> typos or grammar
+                    <original> mistake</original>
+                    <correction>mistakes</correction>.</p>
+                <button id="toggle" class="btn btn-primary">Toggle answer</button>
+                <script>
+                    $(function() {
+                        var showCorrection = false;
+                        $('#toggle').click(function() {
+                            if (showCorrection) {
+                                $('correction').hide();
+                                $('original').removeClass('corrected');
+                                showCorrection = false;
+                            } else {
+                                $('correction').show();
+                                $('original').addClass('corrected');
+                                showCorrection = true;
+                            }
+                        });
+                        $('correction').hide();
+                    })
+                </script>
             </div>
         </div>
     </div>
-    <script>
-        $(function() { // Routine format; put all your jQuery initialisation inside
-            $('#calculate').click(function() { // Set the mouse click event hander for element "#calculate"
-                // Normal Javascript here
-                // Do whatever you want
-                var amount = $('#amount').val();
-                var unit = $('#unit').val();
-                var total = amount * unit;
-                $('#total').val(total);
-            });
-        }); // Routine format; put all your jQuery initialisation inside
-    </script>
+
 </body>
