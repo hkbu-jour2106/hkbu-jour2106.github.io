@@ -29,6 +29,16 @@
         document.getElementById('greeting').innerHTML = 'Hi master, ' + greetingString;
     </script>
 
+    <h2> The demo of loop </h2>
+    <p id="number-series">Here are all the numbers smaller than 20:</p>
+    <script>
+        for (var i = 0; i < 20; i++) {
+            var ns = document.getElementById('number-series');
+            ns.innerHTML = ns.innerHTML + ' ' + i + ',';
+        }
+    </script>
+    <p>Quiz: The last comma does not look good. How to handle it?</p>
+
 
 </body>
 
