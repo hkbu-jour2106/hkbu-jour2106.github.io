@@ -21,16 +21,28 @@
                 <h1>Demo of jQuery for Interaction</h1>
 
                 <h2> Calculator </h2>
-                <div class="form-group">
-                    <label for="amount">Amount of books</label>
-                    <input class="form-control" type="text" id="amount" value="3">
-                    <label for="unit">Unit price</label>
-                    <input class="form-control" type="text" id="unit" value="100">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="amount">Amount of books</label>
+                            <input class="form-control" type="text" id="amount" value="3">
+                            <label for="unit">Unit price</label>
+                            <input class="form-control" type="text" id="unit" value="100">
+                        </div>
+                    </div>
                 </div>
-                <button class="btn btn-primary" id="calculate">Calculate</button>
-                <div class="form-group">
-                    <label for="total">Total cost:</label>
-                    <input class="form-control" type="text" id="total">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" id="calculate">Calculate</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="total">Total cost:</label>
+                            <input class="form-control" type="text" id="total">
+                        </div>
+                    </div>
                 </div>
                 <script>
                     $(function() { // Routine format; put all your jQuery initialisation inside
@@ -57,16 +69,24 @@
                         background-color: burlywood;
                     }
                 </style>
-                <p>When you
-                    <original> writ</original>
-                    <correction>write</correction>
-                    <original> and</original>
-                    <correction>an</correction> article, it is easy to
-                    <original> made</original>
-                    <correction>make</correction> typos or grammar
-                    <original> mistake</original>
-                    <correction>mistakes</correction>.</p>
-                <button id="toggle" class="btn btn-primary">Toggle answer</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>When you
+                            <original> writ</original>
+                            <correction>write</correction>
+                            <original> and</original>
+                            <correction>an</correction> article, it is easy to
+                            <original> made</original>
+                            <correction>make</correction> typos or grammar
+                            <original> mistake</original>
+                            <correction>mistakes</correction>.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="toggle" class="btn btn-primary">Toggle answer</button>
+                    </div>
+                </div>
                 <script>
                     $(function() {
                         var showCorrection = false;
@@ -83,6 +103,60 @@
                         });
                         $('correction').hide();
                     })
+                </script>
+
+                <h2>Move the bar chart in a batch</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="myfigure" class="chart">
+                            <div class="bar-block" style="height: 80px; left:5"> 80 </div>
+                            <div class="bar-block" style="height: 60px; left:45px"> 60 </div>
+                            <div class="bar-block" style="height: 90px; left:85px"> 90 </div>
+                            <div class="bar-block" style="height: 110px; left:125px"> 110 </div>
+                            <div class="bar-block" style="height: 20px; left:165px"> 20 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add" class="btn btn-primary "> Add Oil! </button>
+                    </div>
+                </div>
+                <style>
+                    .bar-block {
+                        background-color: #8286f4;
+                        color: white;
+                        text-align: right;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        position: absolute;
+                        width: 30px;
+                        bottom: 0;
+                    }
+                    
+                    .chart {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border: 1px solid;
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <script>
+                    $(function() {
+                        $('#add').click(function() {
+                            // Note 1: map() method lets you execute a function on all matched elements
+                            $('.bar-block').map(function() {
+                                // Note 2: $(this) refers to the current match element
+                                // Note 3: Deal with string/ number conversion
+                                $(this).text($(this).text() * 1 + 5);
+                                // Note 4: Deal with the "px" unit in CSS property value
+                                var height_px = $(this).css('height');
+                                var height = height_px.substr(0, height_px.length - 2);
+                                $(this).css('height', (height * 1 + 5) + 'px');
+                            });
+                        });
+                    });
                 </script>
             </div>
         </div>
