@@ -158,6 +158,25 @@
                         });
                     });
                 </script>
+
+                <h2>Move the bar chart with animation</h2>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add-animate" class="btn btn-primary "> Add Oil! </button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#add-animate').click(function() {
+                            $('.bar-block').map(function() {
+                                $(this).text($(this).text() * 1 + 20);
+                                $(this).animate({
+                                    height: '+=20',
+                                }, 500);
+                            });
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
