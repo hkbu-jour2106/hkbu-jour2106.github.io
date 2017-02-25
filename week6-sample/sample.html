@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    input 1:
+    <input id="number1" type="text" value="3">
+    <br> input 2:
+    <input id="number2" type="text" value="5">
+    <br>
+    <button id="go">my button</button>
+    <br> Result:
+    <input id="result" type="text">
+    <script>
+        $(function() {
+            // jquery
+            $('#go').click(function() {
+                // I want to do this when people click me
+                var n1 = $('#number1').val();
+                var n2 = $('#number2').val();
+                console.log(n1);
+                var r = n1 * n2;
+                console.log(r);
+                $('#result').val(r);
+            });
+        });
+    </script>
+    <h1>
+        heading 1
+    </h1>
+    <h1>
+        heading 2
+    </h1>
+</body>
+
+</html>
