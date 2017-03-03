@@ -1,0 +1,42 @@
+{
+    "title": {
+        "text": "Hong Kong Population by gender"
+    },
+    "legend": {
+        "data": ["Male", "Female"],
+        "align": "left",
+        "top": 20,
+        "left": 10
+    },
+    "xAxis": [{
+        "type": "category",
+        "data": [
+            1991,
+            1996,
+            2001
+        ],
+        "axisTick": {
+            "alignWithLabel": true
+        }
+    }],
+    "yAxis": [{
+        "type": "value"
+    }],
+    "series": [{
+        "name": "Male",
+        "type": "bar",
+        "data": [
+            2811991,
+            3108107,
+            3285344
+        ]
+    }, {
+        "name": "Female",
+        "type": "bar",
+        "data": [
+            2710290,
+            3109449,
+            3423045
+        ]
+    }]
+}
