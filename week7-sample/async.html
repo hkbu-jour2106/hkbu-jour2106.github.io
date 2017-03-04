@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- Use echarts.js -->
+    <script src="echarts.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Prepare the DOM element to be held by eCharts -->
+    <h1>Loading data asynchronously</h1>
+
+    <p>
+        In this example, we load the eCharts configuration data from an external file:
+        <a href="option.json">option.json</a>
+    </p>
+    <p>
+        We use the "getJSON" function in jQuery.
+    </p>
+    <div id="main1" style="width: 600px;height:400px;"></div>
+
+    <script type="text/javascript">
+        // jQuery conventional framework.
+        // This ensures the code block is executed after whole document is ready
+        $(function() {
+            // Argument 1: URL to the external JSON file
+            // Argument 2: The placeholder variable of the data loaded from external JSON file
+            $.getJSON('option.json', function(data) {
+                // When entering this part, variable "data" holds the Javascript object 
+                // corresponding to the external JSON file
+                var option = data;
+                var myChart1 = echarts.init(document.getElementById('main1'));
+                myChart1.setOption(option);
+            })
+        });
+    </script>
+</body>
+
+</html>
