@@ -30,7 +30,7 @@
 * Li Pui Ying: https://alisonlipy.github.io
 * Student 26
 * Daniel Ma: http://danielma518.github.io/
-* Student 28
+* Lee Yee Man: http://YeeManLee.github.io/
 * Student 29
 * Student 30
 * Ren Xinya: http://yahmsannga.github.io/
