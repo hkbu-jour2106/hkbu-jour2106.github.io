@@ -28,4 +28,6 @@
 *	Julianna	-	WU Qiyao	http://JuliannaWQY.github.io
 
 ## List of unenrolled students
+
 * Ren Xinya: http://yahmsannga.github.io/
+* Rose Luo: https://roselol.github.io/
