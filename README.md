@@ -1,36 +1,31 @@
 # hkbu-jour2106.github.io
 
-## List of students
+## List of enrolled students
 
-* Pili Hu: http://hupilidemo.github.io/
-* Student 1
-* Pili Hu: http://hupilidemo.github.io/
-* Jessie Pang: http://jessiepyt.github.io
-* King Hei: http://kingheiwong.github.io
-* Poon Tsz Fung: http://johnpoon.github.io
-* CAI Shanni: http://caishanni1019.github.io/
-* Carmen Chan https://chlorella.github.io/
-* Student 8
-* Student 9
-* Student 10
-* Chung Yin: http://chungyin.github.io/
-* Roy Tang: http://Roytangrb.github.io/
-* Student 13
-* Xinyue Lv: http://adaZhiyan.github.io/
-* Morris Chan: http://morrischanfm.github.io
-* Eva LIU Yue: evalau1996.github.io  
-* Julianna Wu: http://juliannawqy.github.io/
-* Student 18
-* Amanda Leung: http://amandawtl.github.io/
-* Luo Huiwen: http://roselol.github.io/
-* Student 21
-* ian mak: https://ianmaksh.github.io/
-* Student 23
-* Student 24
-* Li Pui Ying: https://alisonlipy.github.io
-* Student 26
-* Daniel Ma: http://danielma518.github.io/
-* Student 28
-* Student 29
-* Student 30
+*	Shanni	-	CAI Shanni	http://caishanni1019.github.io
+*	Morris	-	CHAN Ho Chiu Morris	http://morrischanfm.github.io
+*	Chlorella	-	CHAN Wing Sum	http://chlorella.github.io
+*	Emily	-	CHEUNG Ho Ying	http://EmilyCheunghy.github.io
+*	Chungyin	-	CHUNG Yin	http://chungyin.github.io
+*	Jamie	-	HUANG Jingxi	http://jamiexixi.github.io
+*	Melissa	-	KO Yuk Wai	http://melissa0816k.github.io
+*	Jam	-	LEE Yee Man	http://YeeManLee.github.io
+*	Amanda	-	LEUNG Wing Tuen Amanda	http://amandawtl.github.io
+*	Alison	-	LI Pui Ying	http://alisonlipy.github.io
+*	Jade	-	LI Yujie	http://jadeimaginist.github.io
+*	Eva	-	LIU Yue	http://evalau1996.github.io
+*	Ada	-	LYU Xinyue	http://adaZhiyan.github.io
+*	Daniel	-	MA Chun Wai	http://danielma518.github.io
+*	Mary	-	MA Zhuoer	http://597398819.github.io
+*	Ian	-	MAK Sin Hang	http://ianmaksh.github.io
+*	Jessy	-	PANG Yu Tung	http://jessiepyt.github.io
+*	John	-	POON Tsz Fung	http://johnpoon.github.io
+*	Gloria	-	SONG Ge	http://gloriasong.github.io
+*	Crystal	-	TAI Chung Yee	http://crystalclea.github.io
+*	Roy	-	TANG Ruibin	http://Roytangrb.github.io
+*	Kim Wong	-	WONG Kam Ki	http://kimwong1018.github.io
+*	King Hei	-	WONG King Hei	http://kingheiwong.github.io
+*	Julianna	-	WU Qiyao	http://JuliannaWQY.github.io
+
+## List of unenrolled students
 * Ren Xinya: http://yahmsannga.github.io/
