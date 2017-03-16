@@ -25,21 +25,27 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1> Complete Example </h1>
+            <h1> A Complete Example </h1>
 
             <h2> Camp Evolution </h2>
 
-            <p>
-                First checkout the "Number of Wining Candidates". You can see that pro-establishment always has more seats than pan-democracy. However, in year 2013's Hong Kong district council election, there is one switching point. In terms of abosolute number of votes
-                that support the winning candidates, pan-democracy is higher than pro-establishment. You can click "Absolute Number of Votes" to see the difference.
-            </p>
-
-            <form action="">
-                <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" >Number of Wining Candidates</label> &nbsp;&nbsp;&nbsp;
-                <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
-            </form>
-
-            <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <p>
+                        First checkout the "Number of Wining Candidates". You can see that pro-establishment always has more seats than pan-democracy. However, in year 2013's Hong Kong district council election, there is one switching point. In terms of abosolute number of votes
+                        that support the winning candidates, pan-democracy is higher than pro-establishment. You can click "Absolute Number of Votes" to see the difference.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <form action="">
+                        Choose the chart you want to see:
+                        <br>
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" >Number of Wining Candidates</label> &nbsp;&nbsp;&nbsp;
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
+                    </form>
+                    <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
 
             <script type="text/javascript">
                 // Initialse eCharts
