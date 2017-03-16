@@ -22,160 +22,173 @@
 
 <body>
 
-    <h1> Camp Evolution </h1>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
 
-    <form action="">
-        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" checked>Number of Wining Candidates</label> &nbsp;&nbsp;&nbsp;
-        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
-    </form>
+            <h1> Complete Example </h1>
 
-    <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+            <h2> Camp Evolution </h2>
 
-    <script type="text/javascript">
-        // Initialse eCharts
-        $(function() {
-            var series_vote = [{
-                "name": "其他",
-                "type": "line",
-                "data": [76517, 50843, 54401, 28503, 86162]
-            }, {
-                "name": "建",
-                "type": "line",
-                "data": [220392, 245240, 443656, 495469, 497628]
-            }, {
-                "name": "泛",
-                "type": "line",
-                "data": [183396, 336827, 200776, 198588, 262130]
-            }];
+            <p>
+                First checkout the "Number of Wining Candidates". You can see that pro-establishment always has more seats than pan-democracy. However, in year 2013's Hong Kong district council election, there is one switching point. In terms of abosolute number of votes
+                that support the winning candidates, pan-democracy is higher than pro-establishment. You can click "Absolute Number of Votes" to see the difference.
+            </p>
 
-            var series_win = [{
-                "name": "其他",
-                "type": "line",
-                "data": [66, 37, 36, 19, 41]
-            }, {
-                "name": "建",
-                "type": "line",
-                "data": [190, 189, 260, 303, 283]
-            }, {
-                "name": "泛",
-                "type": "line",
-                "data": [134, 174, 109, 90, 107]
-            }];
+            <form action="">
+                <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" >Number of Wining Candidates</label> &nbsp;&nbsp;&nbsp;
+                <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
+            </form>
 
-            var option = {
-                "title": {
-                    "text": "Camp Evolution",
-                },
-                "legend": {
-                    "data": ["建", "泛", "其他"],
-                    "align": "left",
-                    "top": 20,
-                    "left": 10
-                },
-                "xAxis": [{
-                    "type": "category",
-                    "data": [
-                        1999,
-                        2003,
-                        2007,
-                        2011,
-                        2015
-                    ],
-                    "axisTick": {
-                        "alignWithLabel": true
-                    }
-                }],
-                "yAxis": [{
-                    "type": "value"
-                }],
-                "series": []
-            };
-            $('input.camp-evolution-type-selector').click(function() {
-                // alert($(this).val());
-                if ($(this).val() == 'win') {
-                    console.log('win');
-                    option["series"] = series_win;
-                } else if ($(this).val() == 'vote') {
-                    console.log('vote');
-                    option["series"] = series_vote;
-                } else {
-                    console.log('Error');
+            <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+
+            <script type="text/javascript">
+                // Initialse eCharts
+                $(function() {
+                    var series_vote = [{
+                        "name": "其他",
+                        "type": "line",
+                        "data": [76517, 50843, 54401, 28503, 86162]
+                    }, {
+                        "name": "建",
+                        "type": "line",
+                        "data": [220392, 245240, 443656, 495469, 497628]
+                    }, {
+                        "name": "泛",
+                        "type": "line",
+                        "data": [183396, 336827, 200776, 198588, 262130]
+                    }];
+
+                    var series_win = [{
+                        "name": "其他",
+                        "type": "line",
+                        "data": [66, 37, 36, 19, 41]
+                    }, {
+                        "name": "建",
+                        "type": "line",
+                        "data": [190, 189, 260, 303, 283]
+                    }, {
+                        "name": "泛",
+                        "type": "line",
+                        "data": [134, 174, 109, 90, 107]
+                    }];
+
+                    var option = {
+                        "title": {
+                            "text": "Camp Evolution",
+                        },
+                        "legend": {
+                            "data": ["建", "泛", "其他"],
+                            "align": "left",
+                            "top": 20,
+                            "left": 10
+                        },
+                        "xAxis": [{
+                            "type": "category",
+                            "data": [
+                                1999,
+                                2003,
+                                2007,
+                                2011,
+                                2015
+                            ],
+                            "axisTick": {
+                                "alignWithLabel": true
+                            }
+                        }],
+                        "yAxis": [{
+                            "type": "value"
+                        }],
+                        "series": []
+                    };
+                    $('input.camp-evolution-type-selector').click(function() {
+                        // alert($(this).val());
+                        if ($(this).val() == 'win') {
+                            console.log('win');
+                            option["series"] = series_win;
+                            option["title"]["text"] = "Number of Wining Candidates";
+                        } else if ($(this).val() == 'vote') {
+                            console.log('vote');
+                            option["series"] = series_vote;
+                            option["title"]["text"] = "Absolute Number of Votes";
+                        } else {
+                            console.log('Error');
+                        }
+                        var myChart1 = echarts.init(document.getElementById('hkdce-camp-evolution'));
+                        myChart1.setOption(option);
+                    });
+                });
+            </script>
+
+
+            <div id="hkdce-map-2015" style="width: 600px;height:400px;"></div>
+
+            <script type="text/javascript">
+                // 基于准备好的dom，初始化echarts实例
+                var option = {
+                    "title": {
+                        "text": "POI in each region",
+                    },
+                    "tooltip": {},
+                    "legend": {
+                        "orient": "vertical",
+                        "right": 20,
+                        "bottom": 20,
+                        "data": [
+                            "POI"
+                        ]
+                    },
+                    "visualMap": {
+                        "min": 0,
+                        "max": 15000,
+                        "left": "left",
+                        "top": "bottom",
+                        "show": false,
+                        "text": [
+                            "High",
+                            "Low"
+                        ],
+                        "calculable": true
+                    },
+                    "geo": {
+                        "map": "GeoJSON",
+                        "roam": true,
+                        "center": [
+                            114.31,
+                            30.52
+                        ],
+                        "zoom": 1,
+                        "scaleLimit": {
+                            "min": 1,
+                            "max": 3
+                        }
+                    },
+                    "series": [{
+                        "name": "POI",
+                        "type": "map",
+                        "geoIndex": 0,
+                        "data": [{
+                            "name": "福建",
+                            "value": 500
+                        }, {
+                            "name": "广东",
+                            "value": 5000
+                        }, {
+                            "name": "重庆",
+                            "value": 15000
+                        }, {
+                            "name": "北京",
+                            "value": 15000
+                        }]
+                    }]
                 }
-                var myChart1 = echarts.init(document.getElementById('hkdce-camp-evolution'));
-                myChart1.setOption(option);
-            });
-        });
-    </script>
 
-
-    <div id="hkdce-map-2015" style="width: 600px;height:400px;"></div>
-
-    <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var option = {
-            "title": {
-                "text": "POI in each region",
-            },
-            "tooltip": {},
-            "legend": {
-                "orient": "vertical",
-                "right": 20,
-                "bottom": 20,
-                "data": [
-                    "POI"
-                ]
-            },
-            "visualMap": {
-                "min": 0,
-                "max": 15000,
-                "left": "left",
-                "top": "bottom",
-                "show": false,
-                "text": [
-                    "High",
-                    "Low"
-                ],
-                "calculable": true
-            },
-            "geo": {
-                "map": "GeoJSON",
-                "roam": true,
-                "center": [
-                    114.31,
-                    30.52
-                ],
-                "zoom": 1,
-                "scaleLimit": {
-                    "min": 1,
-                    "max": 3
-                }
-            },
-            "series": [{
-                "name": "POI",
-                "type": "map",
-                "geoIndex": 0,
-                "data": [{
-                    "name": "福建",
-                    "value": 500
-                }, {
-                    "name": "广东",
-                    "value": 5000
-                }, {
-                    "name": "重庆",
-                    "value": 15000
-                }, {
-                    "name": "北京",
-                    "value": 15000
-                }]
-            }]
-        }
-
-        // 使用刚指定的配置项和数据显示图表。
-        //echarts.registerMap('GeoJSON', geoJSON);
-        var myChart = echarts.init(document.getElementById('hkdce-map-2015'));
-        myChart.setOption(option);
-    </script>
-
+                // 使用刚指定的配置项和数据显示图表。
+                //echarts.registerMap('GeoJSON', geoJSON);
+                var myChart = echarts.init(document.getElementById('hkdce-map-2015'));
+                myChart.setOption(option);
+            </script>
+        </div>
+    </div>
 
 </body>
 
