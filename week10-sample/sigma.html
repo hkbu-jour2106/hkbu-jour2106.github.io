@@ -14,6 +14,7 @@
     <div id="container"></div>
     <script src="sigma.min.js"></script>
     <script src="sigma.parsers.json.min.js"></script>
+    <script src="sigma.layout.forceAtlas2.min.js"></script>
     <script>
         var mysigma = new sigma('container');
         sigma.parsers.json(
@@ -21,6 +22,10 @@
             mysigma,
             function() {
                 mysigma.refresh();
+                mysigma.startForceAtlas2();
+                window.setTimeout(function() {
+                    mysigma.stopForceAtlas2();
+                }, 2000);
             }
         );
         // sigma.parsers.json('data.json', {
@@ -29,7 +34,6 @@
         //         defaultNodeColor: '#ec5148'
         //     }
         // });
-        mysigma.startForceAtlas2();
     </script>
 </body>
 

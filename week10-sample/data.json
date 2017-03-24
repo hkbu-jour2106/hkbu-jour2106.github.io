@@ -19,6 +19,13 @@
             "x": 1,
             "y": 3,
             "size": 1
+        },
+        {
+            "id": "n3",
+            "label": "And a last one",
+            "x": 10,
+            "y": 3,
+            "size": 1
         }
     ],
     "edges": [{
@@ -35,6 +42,11 @@
             "id": "e2",
             "source": "n2",
             "target": "n0"
+        },
+        {
+            "id": "e3",
+            "source": "n3",
+            "target": "n1"
         }
     ]
 }
