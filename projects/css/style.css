@@ -67,7 +67,7 @@ a:hover, a:focus, a:active {
 }
 a:hover, a:focus, a:active {
   outline: none;
-  color: lightblue;
+  color: #6fadbc;
   text-decoration: none;
   border-bottom: 1px solid #90d7ea;
 }
@@ -204,7 +204,7 @@ textarea {
 }
 #fh5co-logo a {
   border-bottom: none !important;
-  color: #ffffff;
+  color: black;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -271,7 +271,7 @@ textarea {
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
 .sf-menu li.active a {
-  color: #ffffff;
+  color: lightsalmon;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.08);
 }
 
@@ -728,7 +728,7 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../images/hero6.jpg);
+  background-image: url('/img/group.jpg');
 }
 #fh5co-hero .fh5co-arrow {
   position: absolute;
