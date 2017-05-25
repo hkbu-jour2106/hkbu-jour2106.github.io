@@ -216,6 +216,7 @@ textarea {
     text-align: center;
     margin: 0px 0 0 0;
     float: none !important;
+    font-size: 10px;
   }
 }
 
