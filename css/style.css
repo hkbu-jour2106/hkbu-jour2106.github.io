@@ -216,6 +216,7 @@ textarea {
     text-align: center;
     margin: 0px 0 0 0;
     float: none !important;
+    font-size: 10px;
   }
 }
 
@@ -339,7 +340,8 @@ textarea {
 #fh5co-menu-wrap {
   float: right;
   position: relative;
-  margin-right: -20px;
+  margin-right: -80px;
+  margin-top: -53px;
 }
 #fh5co-menu-wrap .sf-menu a {
   padding: 2em;
