@@ -340,7 +340,8 @@ textarea {
 #fh5co-menu-wrap {
   float: right;
   position: relative;
-  margin-right: -20px;
+  margin-right: -80px;
+  margin-top: -53px;
 }
 #fh5co-menu-wrap .sf-menu a {
   padding: 2em;
