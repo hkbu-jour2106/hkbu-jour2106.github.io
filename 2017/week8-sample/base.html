@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- Use echarts.js -->
+    <script src="echarts.min.js"></script>
+    <script src="map.js"></script>
+</head>
+
+<body>
+    <!-- Prepare the DOM element to be held by eCharts -->
+    <div id="mybar" style="width: 600px;height:400px;"></div>
+    <div id="mymap" style="width: 600px;height:400px;"></div>
+
+    <script type="text/javascript">
+        // Initialse eCharts
+
+        option = {
+            "title": {
+                "text": "Hong Kong Population by gender",
+            },
+            "xAxis": [{
+                "type": "category",
+                "data": [
+                    1991,
+                    1996,
+                    2001
+                ],
+                "axisTick": {
+                    "alignWithLabel": true
+                }
+            }],
+            "yAxis": [{
+                "type": "value"
+            }],
+            "series": [{
+                "name": "Male",
+                "type": "bar",
+                "data": [
+                    2811991,
+                    3108107,
+                    3285344
+                ],
+            }, {
+                "name": "Female",
+                "type": "bar",
+                "data": [
+                    2710290,
+                    3109449,
+                    3423045
+                ],
+            }]
+        };
+
+        // Use the option to display chart
+        var myChart1 = echarts.init(document.getElementById('mybar'));
+        myChart1.setOption(option);
+    </script>
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('mymap'));
+
+        option = {
+            "title": {
+                "text": "POI in each region",
+            },
+            "tooltip": {},
+            "legend": {
+                "orient": "vertical",
+                "right": 20,
+                "bottom": 20,
+                "data": [
+                    "POI"
+                ]
+            },
+            "visualMap": {
+                "min": 0,
+                "max": 15000,
+                "left": "left",
+                "top": "bottom",
+                "show": false,
+                "text": [
+                    "High",
+                    "Low"
+                ],
+                "calculable": true
+            },
+            "geo": {
+                "map": "GeoJSON",
+                "roam": true,
+                "center": [
+                    114.31,
+                    30.52
+                ],
+                "zoom": 1,
+                "scaleLimit": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            "series": [{
+                "name": "POI",
+                "type": "map",
+                "geoIndex": 0,
+                "data": [{
+                    "name": "福建",
+                    "value": 500
+                }, {
+                    "name": "广东",
+                    "value": 5000
+                }, {
+                    "name": "湖北",
+                    "value": 15000
+                }]
+            }]
+        }
+
+        // 使用刚指定的配置项和数据显示图表。
+        //echarts.registerMap('GeoJSON', geoJSON);
+        myChart.setOption(option);
+    </script>
+
+
+</body>
+
+</html>

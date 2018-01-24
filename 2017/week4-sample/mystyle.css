@@ -1,0 +1,24 @@
+h1 {
+    text-align: center
+}
+
+.first-p {
+    background-color: red;
+}
+
+.other-p {
+    background-color: blue;
+}
+
+.common-p {
+    font-size: 24px;
+}
+
+ul {
+    list-style-type: square
+}
+
+#first-item {
+    font-size: 24px;
+    background-color: green;
+}

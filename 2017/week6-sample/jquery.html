@@ -1,0 +1,185 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>JOUR2106 Data Visualization for News</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Demo of jQuery for Interaction</h1>
+
+                <h2> Calculator </h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="amount">Amount of books</label>
+                            <input class="form-control" type="text" id="amount" value="3">
+                            <label for="unit">Unit price</label>
+                            <input class="form-control" type="text" id="unit" value="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" id="calculate">Calculate</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="total">Total cost:</label>
+                            <input class="form-control" type="text" id="total">
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(function() { // Routine format; put all your jQuery initialisation inside
+                        $('#calculate').click(function() { // Set the mouse click event hander for element "#calculate"
+                            // Normal Javascript here
+                            // Do whatever you want
+                            var amount = $('#amount').val();
+                            var unit = $('#unit').val();
+                            var total = amount * unit;
+                            $('#total').val(total);
+                        });
+                    }); // Routine format; put all your jQuery initialisation inside
+                </script>
+
+                <h2> Batch execution </h2>
+                <style>
+                    correction {
+                        background-color: darkcyan;
+                        color: white;
+                    }
+                    
+                    .corrected {
+                        text-decoration: line-through;
+                        background-color: burlywood;
+                    }
+                </style>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>When you
+                            <original> writ</original>
+                            <correction>write</correction>
+                            <original> and</original>
+                            <correction>an</correction> article, it is easy to
+                            <original> made</original>
+                            <correction>make</correction> typos or grammar
+                            <original> mistake</original>
+                            <correction>mistakes</correction>.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="toggle" class="btn btn-primary">Toggle answer</button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        var showCorrection = false;
+                        $('#toggle').click(function() {
+                            if (showCorrection) {
+                                $('correction').hide();
+                                $('original').removeClass('corrected');
+                                showCorrection = false;
+                            } else {
+                                $('correction').show();
+                                $('original').addClass('corrected');
+                                showCorrection = true;
+                            }
+                        });
+                        $('correction').hide();
+                    })
+                </script>
+
+                <h2>Move the bar chart in a batch</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="myfigure" class="chart">
+                            <div class="bar-block" style="height: 80px; left:5"> 80 </div>
+                            <div class="bar-block" style="height: 60px; left:45px"> 60 </div>
+                            <div class="bar-block" style="height: 90px; left:85px"> 90 </div>
+                            <div class="bar-block" style="height: 110px; left:125px"> 110 </div>
+                            <div class="bar-block" style="height: 20px; left:165px"> 20 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add" class="btn btn-primary "> Add Oil! </button>
+                    </div>
+                </div>
+                <style>
+                    .bar-block {
+                        background-color: #8286f4;
+                        color: white;
+                        text-align: right;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        position: absolute;
+                        width: 30px;
+                        bottom: 0;
+                    }
+                    
+                    .chart {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border: 1px solid;
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <script>
+                    $(function() {
+                        $('#add').click(function() {
+                            // Note 1: map() method lets you execute a function on all matched elements
+                            $('.bar-block').map(function() {
+                                // Note 2: $(this) refers to the current match element
+                                // Note 3: Deal with string/ number conversion
+                                $(this).text($(this).text() * 1 + 5);
+                                // Note 4: Deal with the "px" unit in CSS property value
+                                var height_px = $(this).css('height');
+                                var height = height_px.substr(0, height_px.length - 2);
+                                $(this).css('height', (height * 1 + 5) + 'px');
+                            });
+                        });
+                    });
+                </script>
+
+                <h2>Move the bar chart with animation</h2>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button id="add-animate" class="btn btn-primary "> Add Oil! </button>
+                    </div>
+                </div>
+                <script>
+                    $(function() {
+                        $('#add-animate').click(function() {
+                            $('.bar-block').map(function() {
+                                $(this).text($(this).text() * 1 + 20);
+                                $(this).animate({
+                                    color: '#000',
+                                    height: '+=20',
+                                }, 500);
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+</body>

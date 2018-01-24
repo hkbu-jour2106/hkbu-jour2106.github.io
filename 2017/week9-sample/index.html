@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Put it all together</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <h1> A Complete Example </h1>
+
+            We show a complete example to from raw data set to web-based visualisations. The data set can be found in this
+            <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=54821065">Google Spreadsheet</a>.
+
+            <h2> Camp Evolution </h2>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <p>
+                        First checkout the "Number of Wining Candidates". You can see that pro-establishment always has more seats than pan-democracy. However, in year 2013's Hong Kong district council election, there is one switching point. In terms of abosolute number of votes
+                        that support the winning candidates, pan-democracy is higher than pro-establishment. You can click "Absolute Number of Votes" to see the difference.
+                    </p>
+                    <p>
+                        How?
+                        <ul>
+                            <li>
+                                Pivot table for winning candidates:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=2031400800">pt Camp wining number</a>
+                            </li>
+                            <li>
+                                Pivot table for absolute number of votes:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1696651477">pt Camp abs vote</a>
+                            </li>
+                            <li>
+                                Generate code from pivot table result:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1718597788">st Camp to code</a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <form action="">
+                        Choose the chart you want to see:
+                        <br>
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" name="camp" value="win" >Number of Wining Candidates</label> &nbsp;&nbsp;&nbsp;
+                        <label class="radio-inline"><input class="camp-evolution-type-selector" type="radio" value="vote" name="camp">Absolute Number of Votes</label>
+                    </form>
+                    <div id="hkdce-camp-evolution" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                // Initialse eCharts
+                $(function() {
+                    var series_vote = [{
+                        "name": "其他",
+                        "type": "line",
+                        "data": [76517, 50843, 54401, 28503, 86162]
+                    }, {
+                        "name": "建",
+                        "type": "line",
+                        "data": [220392, 245240, 443656, 495469, 497628]
+                    }, {
+                        "name": "泛",
+                        "type": "line",
+                        "data": [183396, 336827, 200776, 198588, 262130]
+                    }];
+
+                    var series_win = [{
+                        "name": "其他",
+                        "type": "line",
+                        "data": [66, 37, 36, 19, 41]
+                    }, {
+                        "name": "建",
+                        "type": "line",
+                        "data": [190, 189, 260, 303, 283]
+                    }, {
+                        "name": "泛",
+                        "type": "line",
+                        "data": [134, 174, 109, 90, 107]
+                    }];
+
+                    var option = {
+                        "title": {
+                            "text": "Camp Evolution",
+                        },
+                        "legend": {
+                            "data": ["建", "泛", "其他"],
+                            "align": "left",
+                            "top": 20,
+                            "left": 10
+                        },
+                        "xAxis": [{
+                            "type": "category",
+                            "data": [
+                                1999,
+                                2003,
+                                2007,
+                                2011,
+                                2015
+                            ],
+                            "axisTick": {
+                                "alignWithLabel": true
+                            }
+                        }],
+                        "yAxis": [{
+                            "type": "value"
+                        }],
+                        "series": []
+                    };
+                    $('input.camp-evolution-type-selector').click(function() {
+                        // alert($(this).val());
+                        if ($(this).val() == 'win') {
+                            console.log('win');
+                            option["series"] = series_win;
+                            option["title"]["text"] = "Number of Wining Candidates";
+                        } else if ($(this).val() == 'vote') {
+                            console.log('vote');
+                            option["series"] = series_vote;
+                            option["title"]["text"] = "Absolute Number of Votes";
+                        } else {
+                            console.log('Error');
+                        }
+                        var myChart1 = echarts.init(document.getElementById('hkdce-camp-evolution'));
+                        myChart1.setOption(option);
+                    });
+                });
+            </script>
+
+
+            <h2>Mapping the parties</h2>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p>
+                        You can search online for GeoJSON files organised by the open data community. We use
+                        <a href="https://github.com/2blam/HK-geojson">2blam/HK-geojson</a> in this case. Right side is the map to show votes winned by "Other" camp (non pro-establishment and non pan-democracy) in the year 2015.
+                    </p>
+                    <p>
+                        Problems and future directions?
+                        <ul>
+                            <li>
+                                Try a Map with proper coastal lines so that the visual is better.
+                            </li>
+                            <li>
+                                Show other camps on the map?
+                            </li>
+                            <li>
+                                Calculate a custom metric and present on the map? e.g. "Political diversity"
+                            </li>
+                            <li>
+                                Animate by years?
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        How?
+                        <ul>
+                            <li>
+                                Pivot table by area:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1042164122">pt Area</a>
+                            </li>
+                            <li>
+                                Code generation by spreadsheet:
+                                <a href="https://docs.google.com/spreadsheets/d/1qHt3SGT9uEWoUgCLPSFXeTxffyKR2JzTd_S_gc6diY8/edit#gid=1616952630">st Area to code</a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div id="hkdce-map-2015" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                $(function() {
+                    $.getJSON('hongkong.json', function(data) {
+                        for (var i in data.features) {
+                            data.features[i].properties["name"] = data.features[i].properties["CNAME"]
+                        }
+                        echarts.registerMap('Hong-Kong', data);
+                        // 基于准备好的dom，初始化echarts实例
+                        var option = {
+                            "title": {
+                                "text": "Votes in each area",
+                            },
+                            "tooltip": {},
+                            "legend": {
+                                "orient": "vertical",
+                                "right": 20,
+                                "bottom": 20,
+                                "data": [
+                                    "POI"
+                                ]
+                            },
+                            "visualMap": {
+                                "min": 0,
+                                "max": 5000,
+                                "left": "left",
+                                "top": "bottom",
+                                "show": false,
+                                "text": [
+                                    "High",
+                                    "Low"
+                                ],
+                                "calculable": true
+                            },
+                            "geo": {
+                                "map": "Hong-Kong",
+                                "roam": true,
+                            },
+                            "series": [{
+                                "name": "Votes",
+                                "type": "map",
+                                "geoIndex": 0,
+                                "data": [{
+                                    "name": "三聖",
+                                    "value": 0
+                                }, {
+                                    "name": "上大窩口",
+                                    "value": 0
+                                }, {
+                                    "name": "上水鄉郊",
+                                    "value": 0
+                                }, {
+                                    "name": "上環",
+                                    "value": 0
+                                }, {
+                                    "name": "上耀東",
+                                    "value": 0
+                                }, {
+                                    "name": "下城門",
+                                    "value": 987
+                                }, {
+                                    "name": "下大窩口",
+                                    "value": 0
+                                }, {
+                                    "name": "下白田",
+                                    "value": 0
+                                }, {
+                                    "name": "下耀東",
+                                    "value": 977
+                                }, {
+                                    "name": "中環",
+                                    "value": 0
+                                }, {
+                                    "name": "丹拿",
+                                    "value": 0
+                                }, {
+                                    "name": "乙明",
+                                    "value": 0
+                                }, {
+                                    "name": "九龍塘",
+                                    "value": 0
+                                }, {
+                                    "name": "九龍灣",
+                                    "value": 0
+                                }, {
+                                    "name": "佐敦北",
+                                    "value": 0
+                                }, {
+                                    "name": "佐敦南",
+                                    "value": 524
+                                }, {
+                                    "name": "佐敦西",
+                                    "value": 0
+                                }, {
+                                    "name": "佐敦谷",
+                                    "value": 0
+                                }, {
+                                    "name": "何文田",
+                                    "value": 0
+                                }, {
+                                    "name": "佳曉",
+                                    "value": 0
+                                }, {
+                                    "name": "修頓",
+                                    "value": 0
+                                }, {
+                                    "name": "偉盈",
+                                    "value": 0
+                                }, {
+                                    "name": "健康村",
+                                    "value": 0
+                                }, {
+                                    "name": "健明",
+                                    "value": 0
+                                }, {
+                                    "name": "元州及蘇屋",
+                                    "value": 1160
+                                }, {
+                                    "name": "元朗中心",
+                                    "value": 0
+                                }, {
+                                    "name": "元龍",
+                                    "value": 0
+                                }, {
+                                    "name": "兆康",
+                                    "value": 80
+                                }, {
+                                    "name": "兆禧",
+                                    "value": 0
+                                }, {
+                                    "name": "兆置",
+                                    "value": 232
+                                }, {
+                                    "name": "兆翠",
+                                    "value": 192
+                                }, {
+                                    "name": "八鄉北",
+                                    "value": 0
+                                }, {
+                                    "name": "八鄉南",
+                                    "value": 0
+                                }, {
+                                    "name": "利安",
+                                    "value": 33
+                                }, {
+                                    "name": "利東一",
+                                    "value": 177
+                                }, {
+                                    "name": "利東二",
+                                    "value": 140
+                                }, {
+                                    "name": "北朗",
+                                    "value": 0
+                                }, {
+                                    "name": "十八鄉中",
+                                    "value": 0
+                                }, {
+                                    "name": "十八鄉東",
+                                    "value": 0
+                                }, {
+                                    "name": "十八鄉西",
+                                    "value": 0
+                                }, {
+                                    "name": "半山東",
+                                    "value": 0
+                                }, {
+                                    "name": "協康",
+                                    "value": 1541
+                                }, {
+                                    "name": "南丫及蒲台",
+                                    "value": 0
+                                }, {
+                                    "name": "南安",
+                                    "value": 3359
+                                }, {
+                                    "name": "南屏",
+                                    "value": 0
+                                }, {
+                                    "name": "南山、大坑東及大坑西",
+                                    "value": 54
+                                }, {
+                                    "name": "南昌中",
+                                    "value": 0
+                                }, {
+                                    "name": "南昌北",
+                                    "value": 0
+                                }, {
+                                    "name": "南昌南",
+                                    "value": 0
+                                }, {
+                                    "name": "南昌東",
+                                    "value": 0
+                                }, {
+                                    "name": "南昌西",
+                                    "value": 0
+                                }, {
+                                    "name": "南豐",
+                                    "value": 42
+                                }, {
+                                    "name": "博康",
+                                    "value": 0
+                                }, {
+                                    "name": "厚德",
+                                    "value": 0
+                                }, {
+                                    "name": "又一村",
+                                    "value": 0
+                                }, {
+                                    "name": "友愛北",
+                                    "value": 0
+                                }, {
+                                    "name": "友愛南",
+                                    "value": 0
+                                }, {
+                                    "name": "司徒拔道",
+                                    "value": 0
+                                }, {
+                                    "name": "和富",
+                                    "value": 0
+                                }, {
+                                    "name": "啓德北",
+                                    "value": 89
+                                }, {
+                                    "name": "啓德南",
+                                    "value": 0
+                                }, {
+                                    "name": "啓業",
+                                    "value": 0
+                                }, {
+                                    "name": "嘉湖北",
+                                    "value": 1747
+                                }, {
+                                    "name": "嘉湖南",
+                                    "value": 0
+                                }, {
+                                    "name": "嘉道理",
+                                    "value": 92
+                                }, {
+                                    "name": "土瓜灣北",
+                                    "value": 177
+                                }, {
+                                    "name": "土瓜灣南",
+                                    "value": 0
+                                }, {
+                                    "name": "坑口東",
+                                    "value": 0
+                                }, {
+                                    "name": "坑口西",
+                                    "value": 1027
+                                }, {
+                                    "name": "坪洲及喜靈洲",
+                                    "value": 0
+                                }, {
+                                    "name": "坪石",
+                                    "value": 0
+                                }, {
+                                    "name": "城市花園",
+                                    "value": 0
+                                }, {
+                                    "name": "堅摩",
+                                    "value": 0
+                                }, {
+                                    "name": "堡壘",
+                                    "value": 0
+                                }, {
+                                    "name": "大佛口",
+                                    "value": 0
+                                }, {
+                                    "name": "大元",
+                                    "value": 0
+                                }, {
+                                    "name": "大南",
+                                    "value": 0
+                                }, {
+                                    "name": "大圍",
+                                    "value": 0
+                                }, {
+                                    "name": "大坑",
+                                    "value": 0
+                                }, {
+                                    "name": "大埔中",
+                                    "value": 384
+                                }, {
+                                    "name": "大埔墟",
+                                    "value": 865
+                                }, {
+                                    "name": "大埔滘",
+                                    "value": 0
+                                }, {
+                                    "name": "大學",
+                                    "value": 0
+                                }, {
+                                    "name": "大嶼山",
+                                    "value": 1866
+                                }, {
+                                    "name": "大水坑",
+                                    "value": 2964
+                                }, {
+                                    "name": "大白田",
+                                    "value": 0
+                                }, {
+                                    "name": "大角咀北",
+                                    "value": 0
+                                }, {
+                                    "name": "大角咀南",
+                                    "value": 0
+                                }, {
+                                    "name": "天后",
+                                    "value": 0
+                                }, {
+                                    "name": "天平東",
+                                    "value": 603
+                                }, {
+                                    "name": "天平西",
+                                    "value": 797
+                                }, {
+                                    "name": "天強",
+                                    "value": 0
+                                }, {
+                                    "name": "天恒",
+                                    "value": 2163
+                                }, {
+                                    "name": "天盛",
+                                    "value": 0
+                                }, {
+                                    "name": "天耀",
+                                    "value": 1552
+                                }, {
+                                    "name": "太古城東",
+                                    "value": 2674
+                                }, {
+                                    "name": "太古城西",
+                                    "value": 0
+                                }, {
+                                    "name": "太和",
+                                    "value": 0
+                                }, {
+                                    "name": "太子",
+                                    "value": 0
+                                }, {
+                                    "name": "奧運",
+                                    "value": 0
+                                }, {
+                                    "name": "安利",
+                                    "value": 2220
+                                }, {
+                                    "name": "安定",
+                                    "value": 0
+                                }, {
+                                    "name": "安灝",
+                                    "value": 0
+                                }, {
+                                    "name": "安蔭",
+                                    "value": 0
+                                }, {
+                                    "name": "宋皇臺",
+                                    "value": 0
+                                }, {
+                                    "name": "宏福",
+                                    "value": 0
+                                }, {
+                                    "name": "宏逸",
+                                    "value": 0
+                                }, {
+                                    "name": "定安",
+                                    "value": 0
+                                }, {
+                                    "name": "家維",
+                                    "value": 0
+                                }, {
+                                    "name": "富亨",
+                                    "value": 0
+                                }, {
+                                    "name": "富君",
+                                    "value": 3801
+                                }, {
+                                    "name": "富恩",
+                                    "value": 0
+                                }, {
+                                    "name": "富新",
+                                    "value": 1271
+                                }, {
+                                    "name": "富昌",
+                                    "value": 0
+                                }, {
+                                    "name": "富明新",
+                                    "value": 0
+                                }, {
+                                    "name": "富柏",
+                                    "value": 0
+                                }, {
+                                    "name": "富榮",
+                                    "value": 0
+                                }, {
+                                    "name": "富泰",
+                                    "value": 0
+                                }, {
+                                    "name": "富藍",
+                                    "value": 0
+                                }, {
+                                    "name": "富龍",
+                                    "value": 0
+                                }, {
+                                    "name": "寶怡",
+                                    "value": 0
+                                }, {
+                                    "name": "寶林",
+                                    "value": 0
+                                }, {
+                                    "name": "寶樂",
+                                    "value": 0
+                                }, {
+                                    "name": "寶田",
+                                    "value": 0
+                                }, {
+                                    "name": "寶翠",
+                                    "value": 0
+                                }, {
+                                    "name": "寶達",
+                                    "value": 1042
+                                }, {
+                                    "name": "寶雅",
+                                    "value": 0
+                                }, {
+                                    "name": "寶馬山",
+                                    "value": 0
+                                }, {
+                                    "name": "寶麗",
+                                    "value": 0
+                                }, {
+                                    "name": "小西灣",
+                                    "value": 0
+                                }, {
+                                    "name": "尖東及京士柏",
+                                    "value": 0
+                                }, {
+                                    "name": "尖沙咀中",
+                                    "value": 0
+                                }, {
+                                    "name": "尖沙咀西",
+                                    "value": 0
+                                }, {
+                                    "name": "尚德",
+                                    "value": 0
+                                }, {
+                                    "name": "屏山中",
+                                    "value": 0
+                                }, {
+                                    "name": "屏山北",
+                                    "value": 1344
+                                }, {
+                                    "name": "屏山南",
+                                    "value": 0
+                                }, {
+                                    "name": "屯門市中心",
+                                    "value": 834
+                                }, {
+                                    "name": "屯門鄉郊",
+                                    "value": 0
+                                }, {
+                                    "name": "山景",
+                                    "value": 1853
+                                }, {
+                                    "name": "山頂",
+                                    "value": 0
+                                }, {
+                                    "name": "常樂",
+                                    "value": 209
+                                }, {
+                                    "name": "平田",
+                                    "value": 988
+                                }, {
+                                    "name": "幸福",
+                                    "value": 0
+                                }, {
+                                    "name": "康山",
+                                    "value": 0
+                                }, {
+                                    "name": "康怡",
+                                    "value": 29
+                                }, {
+                                    "name": "康景",
+                                    "value": 0
+                                }, {
+                                    "name": "康樂",
+                                    "value": 0
+                                }, {
+                                    "name": "康樂園",
+                                    "value": 0
+                                }, {
+                                    "name": "廈村",
+                                    "value": 376
+                                }, {
+                                    "name": "廣康",
+                                    "value": 0
+                                }, {
+                                    "name": "廣德",
+                                    "value": 0
+                                }, {
+                                    "name": "廣明",
+                                    "value": 777
+                                }, {
+                                    "name": "廣源",
+                                    "value": 0
+                                }, {
+                                    "name": "廣福及寶湖",
+                                    "value": 1142
+                                }, {
+                                    "name": "建生",
+                                    "value": 1283
+                                }, {
+                                    "name": "彩健",
+                                    "value": 0
+                                }, {
+                                    "name": "彩園",
+                                    "value": 1975
+                                }, {
+                                    "name": "彩虹",
+                                    "value": 1639
+                                }, {
+                                    "name": "彩雲南",
+                                    "value": 0
+                                }, {
+                                    "name": "彩雲東",
+                                    "value": 129
+                                }, {
+                                    "name": "彩雲西",
+                                    "value": 0
+                                }, {
+                                    "name": "徑口",
+                                    "value": 0
+                                }, {
+                                    "name": "御太",
+                                    "value": 0
+                                }, {
+                                    "name": "德明",
+                                    "value": 0
+                                }, {
+                                    "name": "德華",
+                                    "value": 0
+                                }, {
+                                    "name": "怡富",
+                                    "value": 0
+                                }, {
+                                    "name": "恆福",
+                                    "value": 793
+                                }, {
+                                    "name": "恒安",
+                                    "value": 0
+                                }, {
+                                    "name": "悅恩",
+                                    "value": 0
+                                }, {
+                                    "name": "悅湖",
+                                    "value": 0
+                                }, {
+                                    "name": "愉城",
+                                    "value": 0
+                                }, {
+                                    "name": "愉景",
+                                    "value": 0
+                                }, {
+                                    "name": "愉景灣",
+                                    "value": 113
+                                }, {
+                                    "name": "愉欣",
+                                    "value": 0
+                                }, {
+                                    "name": "愛俊",
+                                    "value": 0
+                                }, {
+                                    "name": "愛民",
+                                    "value": 0
+                                }, {
+                                    "name": "愛秩序灣",
+                                    "value": 0
+                                }, {
+                                    "name": "愛群",
+                                    "value": 0
+                                }, {
+                                    "name": "慈祐",
+                                    "value": 2438
+                                }, {
+                                    "name": "慈雲東",
+                                    "value": 0
+                                }, {
+                                    "name": "慈雲西",
+                                    "value": 362
+                                }, {
+                                    "name": "新墟",
+                                    "value": 0
+                                }, {
+                                    "name": "新富",
+                                    "value": 2576
+                                }, {
+                                    "name": "新景",
+                                    "value": 0
+                                }, {
+                                    "name": "新田",
+                                    "value": 2286
+                                }, {
+                                    "name": "新田圍",
+                                    "value": 0
+                                }, {
+                                    "name": "新蒲崗",
+                                    "value": 0
+                                }, {
+                                    "name": "旺角北",
+                                    "value": 0
+                                }, {
+                                    "name": "旺角南",
+                                    "value": 0
+                                }, {
+                                    "name": "旺角東",
+                                    "value": 112
+                                }, {
+                                    "name": "旺角西",
+                                    "value": 0
+                                }, {
+                                    "name": "景峰",
+                                    "value": 0
+                                }, {
+                                    "name": "景怡",
+                                    "value": 195
+                                }, {
+                                    "name": "景林",
+                                    "value": 0
+                                }, {
+                                    "name": "景田",
+                                    "value": 0
+                                }, {
+                                    "name": "景興",
+                                    "value": 0
+                                }, {
+                                    "name": "晴景",
+                                    "value": 632
+                                }, {
+                                    "name": "曉麗",
+                                    "value": 2284
+                                }, {
+                                    "name": "月華",
+                                    "value": 1098
+                                }, {
+                                    "name": "李鄭屋",
+                                    "value": 0
+                                }, {
+                                    "name": "杏花邨",
+                                    "value": 2635
+                                }, {
+                                    "name": "東涌北",
+                                    "value": 0
+                                }, {
+                                    "name": "東涌南",
+                                    "value": 0
+                                }, {
+                                    "name": "東美",
+                                    "value": 0
+                                }, {
+                                    "name": "東華",
+                                    "value": 0
+                                }, {
+                                    "name": "東頭",
+                                    "value": 1448
+                                }, {
+                                    "name": "松田",
+                                    "value": 0
+                                }, {
+                                    "name": "林村谷",
+                                    "value": 0
+                                }, {
+                                    "name": "柏架山",
+                                    "value": 0
+                                }, {
+                                    "name": "栢雅",
+                                    "value": 138
+                                }, {
+                                    "name": "梨木樹東",
+                                    "value": 0
+                                }, {
+                                    "name": "梨木樹西",
+                                    "value": 0
+                                }, {
+                                    "name": "楊屋道",
+                                    "value": 0
+                                }, {
+                                    "name": "樂富",
+                                    "value": 981
+                                }, {
+                                    "name": "樂康",
+                                    "value": 48
+                                }, {
+                                    "name": "樂民",
+                                    "value": 1561
+                                }, {
+                                    "name": "樂活",
+                                    "value": 0
+                                }, {
+                                    "name": "樂翠",
+                                    "value": 515
+                                }, {
+                                    "name": "樂華北",
+                                    "value": 0
+                                }, {
+                                    "name": "樂華南",
+                                    "value": 2245
+                                }, {
+                                    "name": "橫頭磡",
+                                    "value": 0
+                                }, {
+                                    "name": "櫻桃",
+                                    "value": 172
+                                }, {
+                                    "name": "欣盛",
+                                    "value": 0
+                                }, {
+                                    "name": "欣英",
+                                    "value": 0
+                                }, {
+                                    "name": "欣藍",
+                                    "value": 0
+                                }, {
+                                    "name": "正安",
+                                    "value": 0
+                                }, {
+                                    "name": "正愛",
+                                    "value": 0
+                                }, {
+                                    "name": "正街",
+                                    "value": 0
+                                }, {
+                                    "name": "水街",
+                                    "value": 0
+                                }, {
+                                    "name": "水邊",
+                                    "value": 0
+                                }, {
+                                    "name": "汀深",
+                                    "value": 454
+                                }, {
+                                    "name": "池彩",
+                                    "value": 0
+                                }, {
+                                    "name": "沙打",
+                                    "value": 111
+                                }, {
+                                    "name": "沙田市中心",
+                                    "value": 0
+                                }, {
+                                    "name": "沙角",
+                                    "value": 0
+                                }, {
+                                    "name": "油塘東",
+                                    "value": 0
+                                }, {
+                                    "name": "油塘西",
+                                    "value": 0
+                                }, {
+                                    "name": "油麗",
+                                    "value": 318
+                                }, {
+                                    "name": "油麻地北",
+                                    "value": 0
+                                }, {
+                                    "name": "油麻地南",
+                                    "value": 0
+                                }, {
+                                    "name": "海心",
+                                    "value": 654
+                                }, {
+                                    "name": "海怡東",
+                                    "value": 0
+                                }, {
+                                    "name": "海怡西",
+                                    "value": 0
+                                }, {
+                                    "name": "海濱",
+                                    "value": 0
+                                }, {
+                                    "name": "海灣",
+                                    "value": 474
+                                }, {
+                                    "name": "淘大",
+                                    "value": 0
+                                }, {
+                                    "name": "清河",
+                                    "value": 0
+                                }, {
+                                    "name": "渣甸山",
+                                    "value": 0
+                                }, {
+                                    "name": "湖景",
+                                    "value": 0
+                                }, {
+                                    "name": "漁灣",
+                                    "value": 0
+                                }, {
+                                    "name": "澳唐",
+                                    "value": 1314
+                                }, {
+                                    "name": "瀝源",
+                                    "value": 0
+                                }, {
+                                    "name": "火炭",
+                                    "value": 0
+                                }, {
+                                    "name": "炮台山",
+                                    "value": 0
+                                }, {
+                                    "name": "烏溪沙",
+                                    "value": 0
+                                }, {
+                                    "name": "牛頭角上邨",
+                                    "value": 0
+                                }, {
+                                    "name": "牛頭角下邨",
+                                    "value": 0
+                                }, {
+                                    "name": "王屋",
+                                    "value": 0
+                                }, {
+                                    "name": "瑞愛",
+                                    "value": 1434
+                                }, {
+                                    "name": "瑞華",
+                                    "value": 0
+                                }, {
+                                    "name": "環保北",
+                                    "value": 2667
+                                }, {
+                                    "name": "環保南",
+                                    "value": 2188
+                                }, {
+                                    "name": "環翠",
+                                    "value": 0
+                                }, {
+                                    "name": "瓊富",
+                                    "value": 0
+                                }, {
+                                    "name": "田心",
+                                    "value": 0
+                                }, {
+                                    "name": "田景",
+                                    "value": 1321
+                                }, {
+                                    "name": "田灣",
+                                    "value": 0
+                                }, {
+                                    "name": "白沙灣",
+                                    "value": 1109
+                                }, {
+                                    "name": "皇后山",
+                                    "value": 0
+                                }, {
+                                    "name": "盛康",
+                                    "value": 0
+                                }, {
+                                    "name": "盛福",
+                                    "value": 0
+                                }, {
+                                    "name": "石圍角",
+                                    "value": 0
+                                }, {
+                                    "name": "石塘咀",
+                                    "value": 0
+                                }, {
+                                    "name": "石湖墟",
+                                    "value": 90
+                                }, {
+                                    "name": "石漁",
+                                    "value": 0
+                                }, {
+                                    "name": "石硤尾",
+                                    "value": 0
+                                }, {
+                                    "name": "石籬北",
+                                    "value": 0
+                                }, {
+                                    "name": "石籬南",
+                                    "value": 0
+                                }, {
+                                    "name": "石蔭",
+                                    "value": 0
+                                }, {
+                                    "name": "碧湖",
+                                    "value": 0
+                                }, {
+                                    "name": "祈德尊",
+                                    "value": 0
+                                }, {
+                                    "name": "祖堯",
+                                    "value": 0
+                                }, {
+                                    "name": "祥華",
+                                    "value": 178
+                                }, {
+                                    "name": "福來",
+                                    "value": 0
+                                }, {
+                                    "name": "禾輋邨",
+                                    "value": 0
+                                }, {
+                                    "name": "秀茂坪中",
+                                    "value": 0
+                                }, {
+                                    "name": "秀茂坪北",
+                                    "value": 0
+                                }, {
+                                    "name": "秀茂坪南",
+                                    "value": 0
+                                }, {
+                                    "name": "秦豐",
+                                    "value": 0
+                                }, {
+                                    "name": "穗禾",
+                                    "value": 0
+                                }, {
+                                    "name": "竹園北",
+                                    "value": 2799
+                                }, {
+                                    "name": "竹園南",
+                                    "value": 0
+                                }, {
+                                    "name": "第一城",
+                                    "value": 0
+                                }, {
+                                    "name": "筲箕灣",
+                                    "value": 107
+                                }, {
+                                    "name": "粉嶺南",
+                                    "value": 2816
+                                }, {
+                                    "name": "粉嶺市",
+                                    "value": 2229
+                                }, {
+                                    "name": "紅磡",
+                                    "value": 0
+                                }, {
+                                    "name": "紅磡灣",
+                                    "value": 47
+                                }, {
+                                    "name": "綠楊",
+                                    "value": 0
+                                }, {
+                                    "name": "維園",
+                                    "value": 0
+                                }, {
+                                    "name": "維景",
+                                    "value": 3014
+                                }, {
+                                    "name": "置富",
+                                    "value": 0
+                                }, {
+                                    "name": "美孚中",
+                                    "value": 241
+                                }, {
+                                    "name": "美孚北",
+                                    "value": 2636
+                                }, {
+                                    "name": "美孚南",
+                                    "value": 0
+                                }, {
+                                    "name": "翠嘉",
+                                    "value": 0
+                                }, {
+                                    "name": "翠屏",
+                                    "value": 0
+                                }, {
+                                    "name": "翠德",
+                                    "value": 0
+                                }, {
+                                    "name": "翠怡",
+                                    "value": 0
+                                }, {
+                                    "name": "翠林",
+                                    "value": 1396
+                                }, {
+                                    "name": "翠灣",
+                                    "value": 2879
+                                }, {
+                                    "name": "翠田",
+                                    "value": 0
+                                }, {
+                                    "name": "翠竹及鵬程",
+                                    "value": 3782
+                                }, {
+                                    "name": "翠翔",
+                                    "value": 2918
+                                }, {
+                                    "name": "翠興",
+                                    "value": 0
+                                }, {
+                                    "name": "翡翠",
+                                    "value": 114
+                                }, {
+                                    "name": "耀安",
+                                    "value": 2071
+                                }, {
+                                    "name": "耀祐",
+                                    "value": 0
+                                }, {
+                                    "name": "聯和墟",
+                                    "value": 0
+                                }, {
+                                    "name": "興東",
+                                    "value": 0
+                                }, {
+                                    "name": "興民",
+                                    "value": 0
+                                }, {
+                                    "name": "興澤",
+                                    "value": 0
+                                }, {
+                                    "name": "興田",
+                                    "value": 0
+                                }, {
+                                    "name": "興芳",
+                                    "value": 0
+                                }, {
+                                    "name": "舊墟及太湖",
+                                    "value": 0
+                                }, {
+                                    "name": "船灣",
+                                    "value": 0
+                                }, {
+                                    "name": "良景",
+                                    "value": 0
+                                }, {
+                                    "name": "荃威",
+                                    "value": 0
+                                }, {
+                                    "name": "荃灣中心",
+                                    "value": 0
+                                }, {
+                                    "name": "荃灣西",
+                                    "value": 793
+                                }, {
+                                    "name": "荃灣郊區",
+                                    "value": 1984
+                                }, {
+                                    "name": "荔景",
+                                    "value": 0
+                                }, {
+                                    "name": "荔枝角中",
+                                    "value": 0
+                                }, {
+                                    "name": "荔枝角北",
+                                    "value": 0
+                                }, {
+                                    "name": "荔枝角南",
+                                    "value": 0
+                                }, {
+                                    "name": "荔華",
+                                    "value": 0
+                                }, {
+                                    "name": "華富北",
+                                    "value": 50
+                                }, {
+                                    "name": "華富南",
+                                    "value": 0
+                                }, {
+                                    "name": "華明",
+                                    "value": 0
+                                }, {
+                                    "name": "華貴",
+                                    "value": 94
+                                }, {
+                                    "name": "華都",
+                                    "value": 0
+                                }, {
+                                    "name": "華麗",
+                                    "value": 970
+                                }, {
+                                    "name": "葵涌邨北",
+                                    "value": 0
+                                }, {
+                                    "name": "葵涌邨南",
+                                    "value": 0
+                                }, {
+                                    "name": "葵盛東邨",
+                                    "value": 75
+                                }, {
+                                    "name": "葵盛西邨",
+                                    "value": 0
+                                }, {
+                                    "name": "葵興",
+                                    "value": 0
+                                }, {
+                                    "name": "葵芳",
+                                    "value": 0
+                                }, {
+                                    "name": "薄扶林",
+                                    "value": 1952
+                                }, {
+                                    "name": "藍田",
+                                    "value": 1285
+                                }, {
+                                    "name": "蝴蝶",
+                                    "value": 0
+                                }, {
+                                    "name": "衞城",
+                                    "value": 0
+                                }, {
+                                    "name": "西灣河",
+                                    "value": 0
+                                }, {
+                                    "name": "西營盤",
+                                    "value": 0
+                                }, {
+                                    "name": "西環",
+                                    "value": 0
+                                }, {
+                                    "name": "西貢北",
+                                    "value": 0
+                                }, {
+                                    "name": "西貢市中心",
+                                    "value": 843
+                                }, {
+                                    "name": "西貢離島",
+                                    "value": 0
+                                }, {
+                                    "name": "觀塘中心",
+                                    "value": 0
+                                }, {
+                                    "name": "觀龍",
+                                    "value": 0
+                                }, {
+                                    "name": "豐年",
+                                    "value": 0
+                                }, {
+                                    "name": "象石",
+                                    "value": 0
+                                }, {
+                                    "name": "赤柱及石澳",
+                                    "value": 0
+                                }, {
+                                    "name": "跑馬地",
+                                    "value": 0
+                                }, {
+                                    "name": "軍寶",
+                                    "value": 1604
+                                }, {
+                                    "name": "軒尼詩",
+                                    "value": 1590
+                                }, {
+                                    "name": "逸東邨北",
+                                    "value": 900
+                                }, {
+                                    "name": "逸東邨南",
+                                    "value": 0
+                                }, {
+                                    "name": "逸澤",
+                                    "value": 4252
+                                }, {
+                                    "name": "運亨",
+                                    "value": 2430
+                                }, {
+                                    "name": "運頭塘",
+                                    "value": 2123
+                                }, {
+                                    "name": "都善",
+                                    "value": 1216
+                                }, {
+                                    "name": "銅鑼灣",
+                                    "value": 0
+                                }, {
+                                    "name": "錦屏",
+                                    "value": 0
+                                }, {
+                                    "name": "錦濤",
+                                    "value": 2592
+                                }, {
+                                    "name": "錦田",
+                                    "value": 0
+                                }, {
+                                    "name": "錦綉花園",
+                                    "value": 1970
+                                }, {
+                                    "name": "錦英",
+                                    "value": 2064
+                                }, {
+                                    "name": "長亨",
+                                    "value": 333
+                                }, {
+                                    "name": "長安",
+                                    "value": 0
+                                }, {
+                                    "name": "長康",
+                                    "value": 0
+                                }, {
+                                    "name": "長沙灣",
+                                    "value": 246
+                                }, {
+                                    "name": "長洲北",
+                                    "value": 480
+                                }, {
+                                    "name": "長洲南",
+                                    "value": 838
+                                }, {
+                                    "name": "長青",
+                                    "value": 0
+                                }, {
+                                    "name": "阿公岩",
+                                    "value": 3506
+                                }, {
+                                    "name": "雙彩",
+                                    "value": 0
+                                }, {
+                                    "name": "雙順",
+                                    "value": 0
+                                }, {
+                                    "name": "雲城",
+                                    "value": 0
+                                }, {
+                                    "name": "青發",
+                                    "value": 2881
+                                }, {
+                                    "name": "青衣南",
+                                    "value": 0
+                                }, {
+                                    "name": "青衣邨",
+                                    "value": 2473
+                                }, {
+                                    "name": "鞍泰",
+                                    "value": 0
+                                }, {
+                                    "name": "順天",
+                                    "value": 0
+                                }, {
+                                    "name": "頌安",
+                                    "value": 0
+                                }, {
+                                    "name": "頌栢",
+                                    "value": 0
+                                }, {
+                                    "name": "頌汀",
+                                    "value": 0
+                                }, {
+                                    "name": "頌華",
+                                    "value": 0
+                                }, {
+                                    "name": "顯嘉",
+                                    "value": 0
+                                }, {
+                                    "name": "香港仔",
+                                    "value": 2783
+                                }, {
+                                    "name": "馬坑涌",
+                                    "value": 148
+                                }, {
+                                    "name": "馬灣",
+                                    "value": 722
+                                }, {
+                                    "name": "馬鞍山市中心",
+                                    "value": 2391
+                                }, {
+                                    "name": "馬頭圍",
+                                    "value": 0
+                                }, {
+                                    "name": "馬頭角",
+                                    "value": 768
+                                }, {
+                                    "name": "駿馬",
+                                    "value": 1806
+                                }, {
+                                    "name": "鯉景灣",
+                                    "value": 2219
+                                }, {
+                                    "name": "鰂魚涌",
+                                    "value": 0
+                                }, {
+                                    "name": "鳳凰",
+                                    "value": 1675
+                                }, {
+                                    "name": "鳳德",
+                                    "value": 2168
+                                }, {
+                                    "name": "鳳翔",
+                                    "value": 163
+                                }, {
+                                    "name": "鳳翠",
+                                    "value": 981
+                                }, {
+                                    "name": "鴨脷洲北",
+                                    "value": 1556
+                                }, {
+                                    "name": "鴨脷洲邨",
+                                    "value": 0
+                                }, {
+                                    "name": "鵝頸",
+                                    "value": 0
+                                }, {
+                                    "name": "鶴園海逸",
+                                    "value": 0
+                                }, {
+                                    "name": "麗晶",
+                                    "value": 0
+                                }, {
+                                    "name": "麗港城",
+                                    "value": 0
+                                }, {
+                                    "name": "麗濤",
+                                    "value": 0
+                                }, {
+                                    "name": "麗閣",
+                                    "value": 215
+                                }, {
+                                    "name": "黃埔東",
+                                    "value": 596
+                                }, {
+                                    "name": "黃埔西",
+                                    "value": 0
+                                }, {
+                                    "name": "黃竹坑",
+                                    "value": 0
+                                }, {
+                                    "name": "龍上",
+                                    "value": 0
+                                }, {
+                                    "name": "龍下",
+                                    "value": 2552
+                                }, {
+                                    "name": "龍坪及上白田",
+                                    "value": 161
+                                }, {
+                                    "name": "龍城",
+                                    "value": 395
+                                }, {
+                                    "name": "龍星",
+                                    "value": 408
+                                }, {
+                                    "name": "龍趣",
+                                    "value": 2906
+                                }, {
+                                    "name": "龍門",
+                                    "value": 0
+                                }]
+                            }]
+                        }
+
+                        var myChart = echarts.init(document.getElementById('hkdce-map-2015'));
+                        myChart.setOption(option);
+                    })
+                });
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>
