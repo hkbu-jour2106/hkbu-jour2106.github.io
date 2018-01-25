@@ -1,30 +1,32 @@
 # JOUR2106 S2018
 
-Ding Chang - https://harprr.github.io
+* Ding Chang - https://harprr.github.io
 
-Jenny Xinyi - https://JennyXinyi.github.io
+* Jenny Xinyi - https://JennyXinyi.github.io
 
-GU Lin - https://AlecPapa.github.io
+* GU Lin - https://AlecPapa.github.io
 
-Celia - https://yokotai304.github.io
+* Celia - https://yokotai304.github.io
 
-Wang Jingwen - https://jingwen1024.github.io
+* Wang Jingwen - https://jingwen1024.github.io
 
-Huangsonghan - https://HUANGSONGHAN.github.io
+* Huangsonghan - https://HUANGSONGHAN.github.io
 
-zhaoshuang - https://kellyzhao97.github.io
+* Zhao Shuang Kelly - https://kellyzhao97.github.io
 
-QIU Ziwei (Annie) - https://Annieqq.github.io
+* QIU Ziwei (Annie) - https://Annieqq.github.io
 
-Lee Yan Kiu - https://zinnialee23.github.io
+* Lee Yan Kiu - https://zinnialee23.github.io
 
-YU Bangning Bonnie - https://bonnie-yu.github.io
+* YU Bangning Bonnie - https://bonnie-yu.github.io
 
-Wasa Leung - https://leungwasa.github.io
+* Wasa Leung - https://leungwasa.github.io
 
-Li Yik Ming - https://AylaLi123.github.io
+* Li Yik Ming - https://AylaLi123.github.io
 
-Chow Hong Yung - https://hychow.github.io
+* Chow Hong Yung - https://hychow.github.io
 
-Nie Yuange - https://nieyuange.github.io
+* Nie Yuange - https://nieyuange.github.io
+
+* Wang Ziwei Ivy - https://ivywang958.github.io/
 
