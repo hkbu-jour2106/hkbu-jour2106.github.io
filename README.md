@@ -35,3 +35,10 @@
 * Zhu Fangyao Fannie - https://zhufangyao.github.io/
 
 * LIU Xiaohan (Lily) - https://lilyliu0607.github.io/
+
+* Wang Jiachen Lisa - https://lisawang997.github.io/
+
+* Erin Chan - https://erinerinchan.github.io/
+
+* Chan Sui Ping Janice - https://janicecsp.github.io/
+
