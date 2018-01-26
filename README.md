@@ -33,3 +33,16 @@
 * HUI Chuk Fei Millian - http://millianhui.github.io/
 
 * Zhu Fangyao Fannie - https://zhufangyao.github.io/
+
+* LIU Xiaohan (Lily) - https://lilyliu0607.github.io/
+
+* Wang Jiachen Lisa - https://lisawang997.github.io/
+
+* Erin Chan - https://erinerinchan.github.io/
+
+* Chan Sui Ping Janice - https://janicecsp.github.io/
+
+* Lee Sze Wing Winnie - https://lwsze24.github.io/
+
+* Deng Xiaohang Dion - https://dengxiaohang98.github.io/
+
