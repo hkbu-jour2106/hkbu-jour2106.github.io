@@ -46,3 +46,4 @@
 
 * Deng Xiaohang Dion - https://dengxiaohang98.github.io/
 
+* Chan Sui Ping Janice - https://janicecsp.github.io/
