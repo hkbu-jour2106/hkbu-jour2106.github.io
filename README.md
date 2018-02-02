@@ -46,6 +46,8 @@
 
 * Chan Sui Ping Janice - https://janicecsp.github.io/
 
+* Brittany Wang Yu Tong - https://brittanyyy.github.io/
+
 ## Audit students:
 
 * Huangsonghan - https://HUANGSONGHAN.github.io
