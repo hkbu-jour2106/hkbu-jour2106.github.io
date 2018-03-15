@@ -33,15 +33,31 @@
     var xAxis = d3.axisBottom().scale(x);
     var yAxis = d3.axisLeft().scale(y);
 
-    var svg = d3.select('svg');
+    // var svg = d3.select('svg');
+    var rawSvg = d3.select('svg');
+    svg = rawSvg.append('g');
+    //NOTE: this new "svg" is like your "mother group"
+    //      Try to adjust the scale and translation as a whole
+    svg
+        .attr('transform', 'scale(0.6) translate(10,10)')
 
     svg.append('g')
-        .attr('transform', 'translate(10, 180)')
+        .attr('transform', 'translate(0, 200)')
         .call(xAxis);
 
     svg.append('g')
-        .attr('transform', 'translate(20, 0)')
+        //NOTE: "10" below can be anything and the physical meaning of yAxis is not change
+        //      Just try to experiment and place at a good looking place.
+        .attr('transform', 'translate(10, 0)')
         .call(yAxis);
+
+    //NOTE: use this rectangle to measure if your axis is correct or not
+    svg
+        .append('rect')
+        .attr('width', 10)
+        .attr('height', 10)
+        .attr('x', x(20))
+        .attr('y', y(10));
 
     // svg.remove();
     var data = [{
