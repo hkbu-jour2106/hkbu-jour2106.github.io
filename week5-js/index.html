@@ -1,0 +1,37 @@
+<p id="content">
+    hello world
+    <a href="www.google.com">some link</a>
+</p>
+
+<script>
+    experiences = [{
+        'title': 'School of communication, PhD',
+        'date': '2020',
+        'location': 'Hong Kong'
+    }, {
+        'title': 'School of communication',
+        'date': '2018',
+        'location': 'Hong Kong'
+    }, {
+        'title': 'middle School',
+        'date': '2014',
+        'location': 'Shenzhen'
+    }]
+    var o = document.getElementById('content');
+    // o.innerHTML = '<ul><li>Item 1</li><li>Item 2</li></ul>'
+
+    allItemString = '';
+    for (i = 0; i < experiences.length; i++) {
+        console.log(i)
+        itemString =
+            experiences[i]['title'] +
+            ',' +
+            experiences[i]['date'] +
+            ',' +
+            experiences[i]['location']
+        allItemString = allItemString + itemString
+    }
+
+    o.innerHTML = '<ul>' + allItemString + '</ul>';
+    // console.log('it works')
+</script>

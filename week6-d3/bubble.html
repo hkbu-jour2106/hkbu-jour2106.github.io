@@ -1,0 +1,75 @@
+<script src="https://d3js.org/d3.v5.js"></script>
+
+<h1>Demo of Bubble chart in D3</h1>
+
+<svg>
+    <text x=10 y=10>Bubble</text>
+</svg>
+
+<script>
+    var svg = d3.select('svg');
+    // svg.remove();
+    var data = [{
+        'height': 170,
+        'weight': 70,
+    }, {
+        'height': 160,
+        'weight': 50,
+    }, {
+        'height': 180,
+        'weight': 70,
+    }, {
+        'height': 180,
+        'weight': 80,
+    }, {
+        'height': 100,
+        'weight': 40,
+    }, ];
+
+    var frameHeight = 150;
+
+    svg
+        .selectAll('circle')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr('cx', function(d) {
+            return d['height'];
+        })
+        .attr('cy', function(d) {
+            return frameHeight - d['weight'];
+        })
+        .attr('r', function(d) {
+            // return d['weight'] / 10;
+            return Math.sqrt(d['weight']);
+        })
+        .attr('fill', '#ff0000');
+</script>
+
+
+<!-- <script>
+        var svg = d3.select('svg');
+        // svg.remove();
+        var data = [{
+            'height': 170,
+            'weight': 70,
+        }, {
+            'height': 160,
+            'weight': 50,
+        }, {
+            'height': 180,
+            'weight': 70,
+        }, {
+            'height': 180,
+            'weight': 80,
+        }, ];
+        // svg.append('circle').attr('cx', 100).attr('cy', 10).attr('r', 10)
+        // svg.append('circle').attr('cx', 100).attr('cy', 20).attr('r', 10)
+        // svg.append('circle').attr('cx', 100).attr('cy', 30).attr('r', 10)
+        var frameHeight = 150;
+        for (i = 0; i < data.length; i++) {
+            var x = data[i]['height'];
+            var y = frameHeight - data[i]['weight'];
+            svg.append('circle').attr('cx', x).attr('cy', y).attr('r', 3);
+        }
+    </script> -->
