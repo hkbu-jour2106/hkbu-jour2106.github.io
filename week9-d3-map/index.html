@@ -12,7 +12,15 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="d3.v4.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://d3js.org/d3-request.v1.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -56,8 +64,11 @@
         var earthquake = null;
         var earthquakeByYear = null
 
+        console.log('here1')
         q.defer(function(callback) {
+            console.log('here2')
             d3.json('si_chuan_geo.json', function(data) {
+                console.log('here3')
                 sichuan = data
                 var centroid = d3.geoCentroid(sichuan)
                 projection = d3.geoMercator()
@@ -72,14 +83,18 @@
         })
 
         q.defer(function(callback) {
+            console.log('here4')
             d3.json('earthquake.geo.json', function(data) {
+                console.log('here4')
                 earthquake = data
                 callback(null)
             })
         })
 
         q.defer(function(callback) {
+            console.log('here4')
             d3.json('earthquake-by-year.json', function(data) {
+                console.log('here4')
                 earthquakeByYear = data
                 callback(null)
             })
