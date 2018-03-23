@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="d3.v4.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+
+    <style>
+        .chart {
+            margin-top: 1em;
+            border: 1px dashed lightgrey;
+        }
+        
+        .chart svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Sichuan Earthquake</h1>
+                    <div id="chart-group"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var width = 400;
+        var height = 320;
+
+        // === Load data ===
+        var q = d3.queue();
+
+        var sichuan = null;
+        var earthquake = null;
+        var earthquakeByYear = null
+
+        q.defer(function(callback) {
+            d3.json('si_chuan_geo.json', function(data) {
+                sichuan = data
+                var centroid = d3.geoCentroid(sichuan)
+                projection = d3.geoMercator()
+                    .scale(1500)
+                    .center(centroid) // Shoule be [103.43787044517553, 36.57208235863611]
+                    .translate([width / 2, height / 2])
+                geoPath = d3
+                    .geoPath()
+                    .projection(projection)
+                callback(null)
+            })
+        })
+
+        q.defer(function(callback) {
+            d3.json('earthquake.geo.json', function(data) {
+                earthquake = data
+                callback(null)
+            })
+        })
+
+        q.defer(function(callback) {
+            d3.json('earthquake-by-year.json', function(data) {
+                earthquakeByYear = data
+                callback(null)
+            })
+        })
+
+        // === Draw different graphics ===
+        function ready() {
+            var chartGroup = d3.select('#chart-group');
+
+            var createSVG = function() {
+                var chart = chartGroup
+                    .append('div')
+                chart
+                    .style('width', width + 'px')
+                    .style('height', height + 'px')
+                    .classed('chart', true)
+                var svg = chart.append('svg')
+                return svg
+            }
+
+            function idea1() {
+                var svg = createSVG();
+
+                var scaleMagnitude = function(m) {
+                    // https://en.wikipedia.org/wiki/Richter_magnitude_scale
+                    // normalise Ritcher 5 to unit 1
+                    return Math.sqrt(Math.pow((Math.sqrt(1000)), (m - 5)))
+                }
+
+                svg.selectAll('path')
+                    .data(sichuan.features)
+                    .enter()
+                    .append('path')
+                    .attr('stroke', '#000')
+                    .attr('fill', '#eeeeee')
+                    .attr('d', geoPath)
+
+                svg.selectAll('circle')
+                    .data(earthquake.features)
+                    .enter()
+                    .append('circle')
+                    .attr('r', function(d, i) {
+                        return scaleMagnitude(d.properties.mag) / 1
+                    })
+                    .attr('fill', 'rgba(200, 100, 150, 0.2)')
+                    .attr('cx', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[0]
+                    })
+                    .attr('cy', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[1]
+                    })
+            }
+
+
+            function idea2() {
+                var svg = createSVG();
+
+                svg.selectAll('path')
+                    .data(sichuan.features)
+                    .enter()
+                    .append('path')
+                    .attr('stroke', '#000')
+                    .attr('fill', '#eeeeee')
+                    .attr('d', geoPath)
+
+                svg.selectAll('circle')
+                    .data(earthquake.features)
+                    .enter()
+                    .append('circle')
+                    .attr('r', function(d, i) {
+                        return 10
+                    })
+                    .attr('fill', 'rgba(200, 100, 150, 0.1)')
+                    .attr('cx', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[0]
+                    })
+                    .attr('cy', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[1]
+                    })
+            }
+
+
+            function idea3() {
+                var svg = createSVG();
+
+                var scaleMagnitude = function(m) {
+                    // https://en.wikipedia.org/wiki/Richter_magnitude_scale
+                    // normalise Ritcher 5 to unit 1
+                    return Math.sqrt(Math.pow((Math.sqrt(1000)), (m - 5)))
+                }
+
+                svg.selectAll('path')
+                    .data(sichuan.features)
+                    .enter()
+                    .append('path')
+                    .attr('stroke', '#000')
+                    .attr('fill', '#eeeeee')
+                    .attr('d', geoPath)
+
+                svg.selectAll('circle')
+                    .data(earthquake.features)
+                    .enter()
+                    .append('circle')
+                    .attr('r', function(d, i) {
+                        return Math.pow((d.properties.mag - 4), 2.5)
+                    })
+                    .attr('fill', 'rgba(200, 100, 150, 0.2)')
+                    .attr('cx', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[0]
+                    })
+                    .attr('cy', function(d) {
+                        // console.log(d)
+                        return projection(d.geometry.coordinates)[1]
+                    })
+            }
+
+            function idea4() {
+                var svg = createSVG();
+
+                svg.selectAll('path')
+                    .data(sichuan.features)
+                    .enter()
+                    .append('path')
+                    .attr('stroke', '#000')
+                    .attr('fill', '#eeeeee')
+                    .attr('d', geoPath)
+                    .on('mouseover', function(d, i) {
+                        var cp = d.properties.cp
+                        var name = d.properties.name
+                        if (!this.tooltipText) {
+                            this.tooltipText = svg.append('text')
+                        }
+                        this.tooltipText
+                            .attr('x', function() {
+                                return projection(cp)[0]
+                            })
+                            .attr('y', function() {
+                                return projection(cp)[1]
+                            })
+                            .text(name)
+
+                        d3.select(this)
+                            .attr('fill', '#ffcc77')
+                    })
+                    .on('mouseout', function(d, i) {
+                        // console.log(d)
+                        // svg.selectAll('.tooltip').remove()
+                        this.tooltipText.remove()
+                        this.tooltipText = null
+                        d3.select(this)
+                            .attr('fill', '#eeeeee')
+                    })
+
+                var yearText = svg.append('text')
+                yearText
+                    .attr('x', '0.5em')
+                    .attr('y', '1em')
+                    .text('Year:')
+
+                var yearIndex = 0;
+                d3.interval(function() {
+                    // console.log(yearIndex)
+                    yearText.text('Year:' + earthquakeByYear[yearIndex]['year'])
+                    svg.selectAll('circle')
+                        .data(earthquakeByYear[yearIndex]['data'])
+                        .enter()
+                        .append('circle')
+                        .attr('cx', function(d) {
+                            // console.log(d)
+                            return projection(d.coordinates)[0]
+                        })
+                        .attr('cy', function(d) {
+                            // console.log(d)
+                            return projection(d.coordinates)[1]
+                        })
+                        .attr('fill', 'rgba(200, 100, 150, 0.3)')
+                        .attr('r', 5)
+                        .transition()
+                        .duration(2000)
+                        .attr('r', function(d, i) {
+                            return Math.pow((d.mag - 4), 2.5) * 5
+                        })
+                        .attr('fill', 'rgba(200, 100, 150, 0.05)')
+                        .on('end', function() {
+                            d3.select(this).remove()
+                        })
+
+                    yearIndex = (yearIndex + 1) % earthquakeByYear.length;
+                }, 200)
+            }
+
+            idea4()
+            idea1()
+            idea2()
+            idea3()
+        }
+
+        q.awaitAll(ready)
+    </script>
+
+</body>
