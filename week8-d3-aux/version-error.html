@@ -27,7 +27,7 @@
     <script src="https://d3js.org/d3-scale.v2.min.js"></script>
 
     <!-- NOTE: Uncomment following line to switch to d3.v4 -->
-    <!-- <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script> -->
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 
 </head>
 
@@ -101,7 +101,7 @@
         //NOTE: following line does not work with d3.v5
         var color = d3.scaleOrdinal(d3.schemeCategory20);
         //NOTE: following line works with d3.v5
-        // var color = d3.scaleOrdinal(d3.schemeAccent);
+        // var color = d3.scaleOrdinal(d3.schemeCategory10);
         var bubble = d3.pack(dataset)
             .size([diameter, diameter])
             .padding(1.5);

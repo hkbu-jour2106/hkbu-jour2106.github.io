@@ -33,14 +33,24 @@
     var xAxis = d3.axisBottom().scale(x);
     var yAxis = d3.axisLeft().scale(y);
 
-    var svg = d3.select('svg');
+    var outerSvg = d3.select('svg');
+    var svg = outerSvg.append('g')
+    svg.attr('transform', 'translate(20, 20) scale(0.8)')
+
+    svg
+        .append('rect')
+        .attr('width', 10)
+        .attr('height', 10)
+        .attr('x', x(30))
+        .attr('y', y(40))
+
 
     svg.append('g')
-        .attr('transform', 'translate(10, 180)')
+        .attr('transform', 'translate(0, 200)')
         .call(xAxis);
 
     svg.append('g')
-        .attr('transform', 'translate(20, 0)')
+        .attr('transform', 'translate(0, 0)')
         .call(yAxis);
 
     // svg.remove();

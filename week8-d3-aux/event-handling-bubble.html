@@ -154,6 +154,7 @@
     svg
         .selectAll('circle')
         .on('mouseover', function() {
+            // console.log('mouseover circle')
             //NOTE: "this" is a DOM element
             //      The function here is same as an event handler in plain JS
             d3.select(this)

@@ -103,7 +103,8 @@
     }
 
     var key = function(d) {
-        return d['name'];
+        console.log(d)
+        return d['name'] + 'for fun';
     };
 
     // setCircleStyle(points.append('circle'))
@@ -136,6 +137,12 @@
             .append('circle') //NOTE: usually handle enter() first by append(), meaning create
             .classed('dot', true)
             .merge(circles).call(setCircleStyle) //NOTE: Merge update() and enter() is a common strategy
+            // circles.enter()
+            //     .append('circle') //NOTE: usually handle enter() first by append(), meaning create
+            //     .classed('dot', true)
+            //     .call(setCircleStyle) //NOTE: Merge update() and enter() is a common strategy
+            // circles.call(setCircleStyle)
+
         circles.exit().remove(); //NOTE: handles exit(), usually by removing
 
         var circles = svg
@@ -146,7 +153,7 @@
             .classed('dot', true)
             .merge(circles).call(setTextStyle)
         circles.exit().remove();
-    }, 1000)
+    }, 500)
 </script>
 
 <!-- <script>
