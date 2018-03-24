@@ -1,0 +1,224 @@
+<script src="https://d3js.org/d3.v5.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale.v2.min.js"></script>
+
+
+<h1>Demo of Bubble chart in D3</h1>
+
+<svg>
+    <text x=10 y=10>Bubble</text>
+</svg>
+
+<style>
+    svg {
+        width: 300px;
+        height: 200px;
+    }
+</style>
+
+<script>
+    var x = d3.scaleLinear()
+        .domain([0, 230]) // range of your raw data
+        .range([10, 310]); // range of svg coordinates
+    var y = d3.scaleLinear()
+        .domain([0, 100]) // range of your raw data
+        .range([200, 0]); // range of svg coordinates
+
+    var xAxis = d3.axisBottom().scale(x);
+    var yAxis = d3.axisLeft().scale(y);
+
+    var svg = d3.select('svg');
+
+    svg.append('g')
+        .attr('transform', 'translate(10, 180)')
+        .call(xAxis);
+
+    svg.append('g')
+        .attr('transform', 'translate(20, 0)')
+        .call(yAxis);
+
+    // svg.remove();
+    var data = [{
+        'height': 170,
+        'weight': 70,
+    }, {
+        'height': 160,
+        'weight': 50,
+    }, {
+        'height': 180,
+        'weight': 70,
+    }, {
+        'height': 180,
+        'weight': 80,
+    }, {
+        'height': 100,
+        'weight': 40,
+    }, ];
+
+    var data2 = [{
+        'height': 170,
+        'weight': 70,
+    }, {
+        'height': 160,
+        'weight': 50,
+    }, {
+        'height': 180,
+        'weight': 70,
+    }, {
+        'height': 180,
+        'weight': 80,
+    }, {
+        'height': 150,
+        'weight': 80,
+    }, ];
+
+
+    var dataset = [
+        [2001, [{
+            'height': 170,
+            'weight': 70,
+        }, {
+            'height': 160,
+            'weight': 50,
+        }, {
+            'height': 180,
+            'weight': 70,
+        }, {
+            'height': 180,
+            'weight': 80,
+        }, {
+            'height': 100,
+            'weight': 40,
+        }, ]],
+        [2002, [{
+            'height': 170,
+            'weight': 70,
+        }, {
+            'height': 160,
+            'weight': 50,
+        }, {
+            'height': 180,
+            'weight': 70,
+        }, {
+            'height': 180,
+            'weight': 80,
+        }, {
+            'height': 120,
+            'weight': 80,
+        }, ]],
+        [2003, [{
+            'height': 180,
+            'weight': 70,
+        }, {
+            'height': 170,
+            'weight': 50,
+        }, {
+            'height': 190,
+            'weight': 70,
+        }, {
+            'height': 200,
+            'weight': 80,
+        }, {
+            'height': 130,
+            'weight': 80,
+        }, ]],
+    ]
+
+
+    var frameHeight = 150;
+
+    svg
+        .selectAll('circle')
+        .data(dataset[0][1])
+        .enter()
+        .append('circle')
+        .attr('cx', function(d) {
+            return x(d['height']);
+        })
+        .attr('cy', function(d) {
+            return y(d['weight']);
+            //return frameHeight - d['weight'];
+        })
+        .attr('r', function(d) {
+            return d['weight'] / 10;
+            // return Math.sqrt(d['weight']);
+        })
+        .attr('fill', '#ff0000');
+
+    svg
+        .selectAll('circle')
+        .on('mouseover', function() {
+            // console.log('mouseover circle')
+            //NOTE: "this" is a DOM element
+            //      The function here is same as an event handler in plain JS
+            d3.select(this)
+                .attr('r', function(d) {
+                    //NOTE: enlarge by 2x
+                    return d['weight'] / 5;
+                })
+                .attr('fill', 'darkgreen')
+        })
+        .on('mouseout', function() {
+            d3.select(this)
+                .attr('r', function(d) {
+                    return d['weight'] / 10;
+                })
+                .attr('fill', 'red')
+        })
+
+    // var keySnapshot = 0;
+    // d3.interval(function() {
+    //     keySnapshot = (keySnapshot + 1) % dataset.length;
+    //     svg
+    //         .selectAll('circle')
+    //         .data(dataset[keySnapshot][1])
+    //         .transition()
+    //         // .duration(2000)
+    //         .attr('cx', function(d) {
+    //             return x(d['height']);
+    //         })
+    //         .attr('cy', function(d) {
+    //             return y(d['weight']);
+    //             //return frameHeight - d['weight'];
+    //         })
+    //         .attr('r', function(d) {
+    //             return d['weight'] / 10;
+    //             // return Math.sqrt(d['weight']);
+    //         })
+    //         // .attr('fill', '#00ff00');
+    // }, 1000)
+</script>
+
+
+<!-- <script>
+        var svg = d3.select('svg');
+        // svg.remove();
+        var data = [{
+            'height': 170,
+            'weight': 70,
+        }, {
+            'height': 160,
+            'weight': 50,
+        }, {
+            'height': 180,
+            'weight': 70,
+        }, {
+            'height': 180,
+            'weight': 80,
+        }, ];
+        // svg.append('circle').attr('cx', 100).attr('cy', 10).attr('r', 10)
+        // svg.append('circle').attr('cx', 100).attr('cy', 20).attr('r', 10)
+        // svg.append('circle').attr('cx', 100).attr('cy', 30).attr('r', 10)
+        var frameHeight = 150;
+        for (i = 0; i < data.length; i++) {
+            var x = data[i]['height'];
+            var y = frameHeight - data[i]['weight'];
+            svg.append('circle').attr('cx', x).attr('cy', y).attr('r', 3);
+        }
+    </script> -->
