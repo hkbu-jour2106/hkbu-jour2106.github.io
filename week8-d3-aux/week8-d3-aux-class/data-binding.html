@@ -1,0 +1,193 @@
+<script src="https://d3js.org/d3.v5.js"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale.v2.min.js"></script>
+
+
+<h1>Demo of Bubble chart in D3</h1>
+
+<svg>
+    <text x=10 y=10>Bubble</text>
+</svg>
+
+<style>
+    svg {
+        width: 300px;
+        height: 200px;
+    }
+</style>
+
+<script>
+    var x = d3.scaleLinear()
+        .domain([0, 230]) // range of your raw data
+        .range([10, 310]); // range of svg coordinates
+    var y = d3.scaleLinear()
+        .domain([0, 100]) // range of your raw data
+        .range([200, 0]); // range of svg coordinates
+
+    var xAxis = d3.axisBottom().scale(x);
+    var yAxis = d3.axisLeft().scale(y);
+
+    var svg = d3.select('svg');
+
+    svg.append('g')
+        .attr('transform', 'translate(10, 180)')
+        .call(xAxis);
+
+    svg.append('g')
+        .attr('transform', 'translate(20, 0)')
+        .call(yAxis);
+
+    var data = [{
+        'name': 'Alice',
+        'height': 170,
+        'weight': 70,
+    }, {
+        'name': 'Bob',
+        'height': 160,
+        'weight': 50,
+    }, {
+        'name': 'Carol',
+        'height': 100,
+        'weight': 70,
+    }];
+
+    var data2 = [{
+        'name': 'Alice',
+        'height': 170,
+        'weight': 70,
+    }, {
+        'name': 'Carol',
+        'height': 140,
+        'weight': 70,
+    }, {
+        'name': 'Dan',
+        'height': 50,
+        'weight': 30,
+    }];
+
+    var frameHeight = 150;
+
+    function setCircleStyle(points) {
+        return points
+            .transition()
+            .attr('cx', function(d) {
+                return x(d['height']);
+            })
+            .attr('cy', function(d) {
+                return y(d['weight']);
+            })
+            .attr('r', function(d) {
+                return d['weight'] / 10;
+            })
+            .attr('fill', '#ff0000')
+    }
+
+    function setTextStyle(points) {
+        return points
+            .transition()
+            .text(function(d) {
+                return d['name']
+            })
+            .attr('x', function(d) {
+                return x(d['height']);
+            })
+            .attr('y', function(d) {
+                return y(d['weight']);
+            })
+    }
+
+    var key = function(d) {
+        console.log(d)
+        return d['name'] + 'for fun';
+    };
+
+    // setCircleStyle(points.append('circle'))
+    // setTextStyle(points.append('text'))
+    // Compare: Call notation is more concise
+    // points.append('circle').call(setCircleStyle)
+    // points.append('text').call(setTextStyle)
+
+    svg
+        .selectAll('circle.dot')
+        .data(data, key)
+        .enter()
+        .append('circle')
+        .classed('dot', true)
+        .call(setCircleStyle) //NOTE: syntax of call is more concise
+
+    svg
+        .selectAll('text.dot')
+        .data(data, key)
+        .enter()
+        .append('text')
+        .classed('dot', true) //NOTE: important to differentiate from other text element
+        .call(setTextStyle)
+
+    setTimeout(function() {
+        var circles = svg
+            .selectAll('circle.dot')
+            .data(data2, key);
+        circles.enter()
+            .append('circle') //NOTE: usually handle enter() first by append(), meaning create
+            .classed('dot', true)
+            .merge(circles).call(setCircleStyle) //NOTE: Merge update() and enter() is a common strategy
+            // circles.enter()
+            //     .append('circle') //NOTE: usually handle enter() first by append(), meaning create
+            //     .classed('dot', true)
+            //     .call(setCircleStyle) //NOTE: Merge update() and enter() is a common strategy
+            // circles.call(setCircleStyle)
+
+        circles.exit().remove(); //NOTE: handles exit(), usually by removing
+
+        var circles = svg
+            .selectAll('text.dot')
+            .data(data2, key);
+        circles.enter()
+            .append('text')
+            .classed('dot', true)
+            .merge(circles).call(setTextStyle)
+        circles.exit().remove();
+    }, 500)
+</script>
+
+<!-- <script>
+    // The plain version 
+    points
+        .append('circle')
+        .attr('cx', function(d) {
+            return x(d['height']);
+        })
+        .attr('cy', function(d) {
+            return y(d['weight']);
+        })
+        .attr('r', function(d) {
+            return d['weight'] / 10;
+        })
+        .attr('fill', '#ff0000')
+
+    points
+        .append('text')
+        .text(function(d) {
+            return d['name']
+        })
+        .attr('x', function(d) {
+            return x(d['height']);
+        })
+        .attr('y', function(d) {
+            return y(d['weight']);
+        })
+</script> -->
+
+<!-- <script>
+    function setGroupStyle(points) {
+        points.selectAll('circle').call(setCircleStyle);
+        points.selectAll('text').call(setTextStyle);
+        return points;
+    }
+</script> -->

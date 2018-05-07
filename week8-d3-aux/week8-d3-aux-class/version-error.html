@@ -1,0 +1,326 @@
+<!-- 
+    This example is from Lee Yan Kiu.
+    It shows the functions and variables can change across versions.
+    Be careful when you copy samples codes from the Internet.
+    Search for "NOTE" sections to find two alternative solutions for this problem.
+-->
+
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+    <script src="https://d3js.org/d3-array.v1.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v2.min.js"></script>
+
+    <!-- NOTE: Uncomment following line to switch to d3.v4 -->
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+
+<style>
+    #header {
+        background-color: #686868;
+        padding: 30px;
+    }
+</style>
+
+<div id='header'>
+    <div class="container">
+        <div class="row">
+            <h1 style="color:white; text-align:center; font-size:35"><b> Budget </b> </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="body">
+        </div>
+        <div class="col-md-4">
+            xxx
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            yyyyy
+        </div>
+        <div class="col-md-8" id=".main">
+        </div>
+    </div>
+</div>
+
+
+<body>
+    <svg width="800" height="0"></svg>
+
+    <script type="text/javascript">
+        dataset = {
+            "children": [{
+                "Area": "Education",
+                "Amount": 113.7
+            }, {
+                "Area": "Social welfare",
+                "Amount": 92.2
+            }, {
+                "Area": "Others",
+                "Amount": 87.1
+            }, {
+                "Area": "Infrastructure",
+                "Amount": 85.6
+            }, {
+                "Area": "Health",
+                "Amount": 78
+            }, {
+                "Area": "Security",
+                "Amount": 53.3
+            }, {
+                "Area": "Environment and food",
+                "Amount": 26.7
+            }, {
+                "Area": "Economic",
+                "Amount": 21.3
+            }]
+        };
+        var diameter = 600;
+        //NOTE: following line does not work with d3.v5
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        //NOTE: following line works with d3.v5
+        // var color = d3.scaleOrdinal(d3.schemeCategory10);
+        var bubble = d3.pack(dataset)
+            .size([diameter, diameter])
+            .padding(1.5);
+        var svg = d3.select("#body")
+            .append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .attr("class", "bubble");
+        var nodes = d3.hierarchy(dataset)
+            .sum(function(d) {
+                return d.Amount;
+            });
+        var node = svg.selectAll(".node")
+            .data(bubble(nodes).descendants())
+            .enter()
+            .filter(function(d) {
+                return !d.children
+            })
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
+        node.append("title")
+            .text(function(d) {
+                return d.Area + ": " + d.Amount;
+            });
+        node.append("circle")
+            .attr("r", function(d) {
+                return d.r;
+            })
+            .attr("fill", function(d, i) {
+                return color(i);
+            });
+        node.append("text")
+            .attr("dy", ".2em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Area.substring(0, d.r / 3);
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", function(d) {
+                return d.r / 5;
+            })
+            .attr("fill", "white");
+        node.append("text")
+            .attr("dy", "1.5em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Amount;
+            })
+            .attr("font-family", "Gill Sans", "Gill Sans MT")
+            .attr("font-size", function(d) {
+                return d.r / 5;
+            })
+            .attr("fill", "white");
+        d3.select(self.frameElement)
+            .style("height", diameter + "px");
+    </script>
+
+
+    <div class="main">
+        <p><span id="city"></span><span id="inches"></span></p>
+    </div>
+
+    <script type="text/javascript">
+        function render() {
+            var dataset = [{
+                "area": "Investment income",
+                "amount": 39.8
+            }, {
+                "area": "Land premium",
+                "amount": 121
+            }, {
+                "area": "Other revenue",
+                "amount": 133.8
+            }, {
+                "area": "Profits tax",
+                "amount": 155.1
+            }, {
+                "area": "Salaries tax",
+                "amount": 54.8
+            }, {
+                "area": "Stamp",
+                "amount": 100
+            }, ]
+
+
+            // Dimensions for the chart: height, width, and space b/t the bars
+            var margins = {
+                top: 30,
+                right: 50,
+                bottom: 30,
+                left: 50
+            }
+            var height = 450 - margins.left - margins.right,
+                width = 750 - margins.top - margins.bottom,
+                barPadding = 8
+
+            // Create a scale for the y-axis based on data
+            // >> Domain - min and max values in the dataset
+            // >> Range - physical range of the scale (reversed)
+            var yScale = d3.scale.linear()
+                .domain([0, d3.max(dataset, function(d) {
+                    return d.amount;
+                })])
+                .range([height, 0]);
+
+            // Implements the scale as an actual axis
+            // >> Orient - places the axis on the left of the graph
+            // >> Ticks - number of points on the axis, automated
+            var yAxis = d3.svg.axis()
+                .scale(yScale)
+                .orient('left')
+                .ticks(6);
+
+            // Creates a scale for the x-axis based on city names
+            var xScale = d3.scale.ordinal()
+                .domain(dataset.map(function(d) {
+                    return d.area;
+                }))
+                .rangeRoundBands([0, width], .1);
+
+            // Creates an axis based off the xScale properties
+            var xAxis = d3.svg.axis()
+                .scale(xScale)
+                .orient('bottom');
+
+            // Creates the initial space for the chart
+            // >> Select - grabs the empty <div> above this script
+            // >> Append - places an <svg> wrapper inside the div
+            // >> Attr - applies our height & width values from above
+            var chart = d3.select('#.main')
+                .append('svg')
+                .attr('width', width + margins.left + margins.right)
+                .attr('height', height + margins.top + margins.bottom)
+                .append('g')
+                .attr('transform', 'translate(' + margins.left + ',' + margins.top + ')');
+
+            // For each value in our dataset, places and styles a bar on the chart
+
+            // Step 1: selectAll.data.enter.append
+            // >> Loops through the dataset and appends a rectangle for each value
+            chart.selectAll('rect')
+                .data(dataset)
+                .enter()
+                .append('rect')
+
+            // Step 2: X & Y
+            // >> X - Places the bars in horizontal order, based on number of
+            //        points & the width of the chart
+            // >> Y - Places vertically based on scale
+            .attr('x', function(d, i) {
+                    return xScale(d.area);
+                })
+                .attr('y', function(d) {
+                    return yScale(d.amount);
+                })
+
+            // Step 3: Height & Width
+            // >> Width - Based on barpadding and number of points in dataset
+            // >> Height - Scale and height of the chart area
+            .attr('width', (width / dataset.length) - barPadding)
+                .attr('height', function(d) {
+                    return height - yScale(d.amount);
+                })
+                .attr('fill', 'steelblue')
+
+            // Step 4: Info for hover interaction
+            //   .attr('class', function(d){
+            //     return d.area;
+            //   })
+            //   .attr('id', function(d){
+            //     return d.amount;
+            //   });
+
+            // Renders the yAxis once the chart is finished
+            // >> Moves it to the left 10 pixels so it doesn't overlap
+            chart.append('g')
+                .attr('class', 'axis')
+                .attr('transform', 'translate(-10, 0)')
+                .call(yAxis);
+
+            // Appends the yAxis
+            chart.append('g')
+                .attr('class', 'axis')
+                .attr('transform', 'translate(0,' + (height + 10) + ')')
+                .call(xAxis);
+
+            // Adds yAxis title
+            chart.append('text')
+                .text('Revenue in billion')
+                .attr('transform', 'translate(-60, -20)');
+        }
+
+        //   chart.selectAll("text")
+        //         .data(dataset)
+        //         .enter()
+        //         .append("text")
+        //         .text(function (d) { return d.amount; })
+        //         .attr("x", function (d) { return xScale(d.area) + xScale.range() / 2; })
+        //         .attr("y", function (d) { return yScale(d.amount) + 12; })
+        //         .style("fill", "white");
+
+
+        $(function() {
+            // On document load, call the render() function to load the graph
+            render();
+
+            $('rect').mouseenter(function() {
+                $('#city').html(this.className.animVal);
+                $('#inches').html($(this).attr('id'));
+            });
+        });
+    </script>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+    <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://d3js.org/d3-request.v1.min.js"></script>
+
+</head>
+
+<body>
+    <svg id="map" style="height:300px; width:300px">
+
+    </svg>
+    <script>
+        var myMap = d3.select('#map');
+        // myMap.remove();
+        d3.json('si_chuan_geo.json', function(data) {
+            console.log(data);
+
+            var centroid = d3.geoCentroid(data)
+
+            console.log(centroid)
+
+            var width = 300;
+            var height = 300;
+
+            projection = d3.geoMercator()
+                .scale(1500)
+                .center(centroid) // Shoule be [103.43787044517553, 36.57208235863611]
+                .translate([width / 2, height / 2])
+
+            geoPath = d3
+                .geoPath()
+                .projection(projection)
+
+            myMap.selectAll('path')
+                .data(data.features)
+                .enter()
+                .append('path')
+                .attr('stroke', '#000')
+                .attr('fill', function(county) {
+                    console.log(county)
+                    if (county['properties']['name'] == "广安市") {
+
+                        var svgCoord = projection(county['properties']['cp'])
+                        myMap.append('text')
+                            .attr('x', svgCoord[0])
+                            .attr('y', svgCoord[1])
+                            .attr('width', 100)
+                            .attr('height', 10)
+                            .text(county['properties']['name'])
+
+                        return 'red';
+                    } else {
+                        return '#eee';
+                    }
+                })
+                .attr('d', geoPath)
+
+            d3.json('earthquake.geo.json', function(earthquake) {
+                console.log(earthquake);
+                myMap.selectAll('circle')
+                    .data(earthquake.features)
+                    .enter()
+                    .append('circle')
+                    .attr('cx', function(d) {
+                        var svgCoord = projection(d['geometry']['coordinates']);
+                        return svgCoord[0]
+                    })
+                    .attr('cy', function(d) {
+                        var svgCoord = projection(d['geometry']['coordinates']);
+                        return svgCoord[1]
+                    })
+                    .attr('fill', 'rgb(255, 0, 0, 0.1)')
+                    .attr('r', 5)
+                    .transition()
+                    .attr('r', function(d) {
+                        return Math.pow(d['properties']['mag'], 2)
+                    })
+
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>
