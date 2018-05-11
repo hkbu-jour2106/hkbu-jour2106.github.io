@@ -1999,7 +1999,6 @@
 		position: relative;
 		margin: 0;
 		background-image: url("images/overlay.png"), url("../../images/header1.jpg");
-		opacity: 0.3;
 		background-size: auto, cover;
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;

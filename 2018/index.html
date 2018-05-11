@@ -13,7 +13,49 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<style>
+.container_hover {
+    position: relative;
+    width: 100%;
+}
+
+.image_hover {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle_hover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container_hover:hover .image_hover {
+  opacity: 0.3;
+}
+
+.container_hover:hover .middle_hover {
+  opacity: 1;
+}
+
+.text_hover {
+  background-color: #eac2ce;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
 	</head>
+
 	<body>
 
 		<!-- Header -->
@@ -27,49 +69,82 @@
 		<!-- First -->
 			<section id="first" class="main">
 				<header>
-					<div class="container">
+					<!-- <div class="container">
 						<h2>Tessellate is a free responsive site template</h2>
 						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
 						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-					</div>
+					</div> -->
 				</header>
 				<div class="content featured"> <!--class="content dark style1 featured"-->
 					<div class="container">
 						<div class="row">
 							<div class="6u 12u(narrow)">
 								<section>
-									<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+									<a href="https://hychow.github.io/TheHowlingOfShark/" target="_blank">
+									<div class="container_hover">
+										<img class="image_hover" src="images/yoyo.jpg" width="100%" style="padding-top: 0">
+										<div class="middle_hover">
+    										<div class="text_hover">View</div>
+  										</div>
+  									</div>
+  									</a>
 									<header>
-										<h3>Gravida</h3>
+										<h3>The Howling of Sharks</h3>
 									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
+									<p>Existing for almost 450 million years, sharks survive through the natural disaster which wiped out dinosaurs. Yet, they cannot escape from man-made disaster - overfishing.</p>
+									<p>Reported by Erin Chan, Yoyo Chow, Celia Lai, Zinnia Lee</p>
 								</section>
 							</div>
 							<div class="6u 12u(narrow)">
 								<section>
-									<span class="feature-icon"><span class="icon fa-bolt"></span></span>
+									<a href="https://alecpapa.github.io/rhino/" target="_blank">
+									<div class="container_hover">
+										<img class="image_hover" src="images/alec.jpg" width="100%" style="padding-top: 0">
+										<div class="middle_hover">
+    										<div class="text_hover">View</div>
+  										</div>
+  									</div>
+  									</a>
 									<header>
-										<h3>Vivamus</h3>
+										<h3>消失的犀牛</h3>
 									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
+									<p>因為人類活動造成的影響，物種滅絕速度比自然滅絕速度快了1000倍，平均每小時就有壹個物種滅絕。“我們正在經歷的生物滅絕比地球生命史上其它滅絕事件更為惡劣。”</p>
+									<p>作者：鄧小航 谷霖 朱芳瑤</p>
 								</section>
 							</div>
-							<div class="12u 12u(narrow)">
+							<div class="6u 12u(narrow)">
 								<section>
-									<span class="feature-icon"><span class="icon fa-cloud"></span></span>
+									<a href="https://annieqq.github.io/hkcm/" target="_blank">
+									<div class="container_hover">
+										<img class="image_hover" src="images/annie.png" width="100%" style="padding-top: 0">
+										<div class="middle_hover">
+    										<div class="text_hover">View</div>
+  										</div>
+  									</div>
+  									</a>
 									<header>
-										<h3>Accumsan</h3>
+										<h3>香港首間中醫院備受關注<br> 中醫推廣任重道遠</h3>
 									</header>
-									<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
-									Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
-									ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
-									accumsan vivamus.</p>
+									<p>香港中醫發展 —— 投入資源是否足夠？港人對中醫的需求能否得到滿足？現行的服務是否切合使用者需要？以及相關立法條例如何完善？</p>
+									<p>作者：邱紫薇 王嘉琛 王婧雯 聶遠格</p>
+								</section>
+							</div>
+							<div class="6u 12u(narrow)">
+								<section>
+									<a href="https://jour2106-group1.github.io/" target="_blank">
+									<div class="container_hover">
+										<img class="image_hover" src="images/bonnie.jpg" width="100%" style="padding-top: 0">
+										<div class="middle_hover">
+    										<div class="text_hover">View</div>
+  										</div>
+  									</div>
+  									</a>
+									<header>
+										<br>
+										<h3>香港器官捐贈制度的現狀與未來</h3>
+									</header>
+									<p>香港器官捐贈制度的現狀與未來 —— 1:13的供應與需求比例下，香港要如何才能解決器官短缺問題？</p><br>
+									<p>作者: 于邦寧 丁暢 陳萃屏</p>
 								</section>
 							</div>
 						</div>
@@ -80,9 +155,17 @@
 								</footer>
 							</div>
 						</div>
+						<!-- add image-->
+						<hr>
+						<div class="row">
+							<div class="12u">
+								<h2>People</h2>
+								<img src="images/header.jpg" width="100%" style="padding-top: 0">
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- add image-->
+				
 			</section>
 
 
