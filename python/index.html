@@ -2,26 +2,45 @@
 
 <head>
 
+    <title>
+        Big Data for Media and Communication
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0">
+
     <style>
         /* Style the video: 100% width and height to cover the entire window */
         
-        #myVideo {
+        #myOverlay {
             position: fixed;
-            right: 0;
-            bottom: 0;
+            left: 0;
+            top: 0;
+            margin: 0;
             min-width: 100%;
             min-height: 100%;
         }
-        /* Add some content at the bottom of the video/page */
         
-        .content {
-            position: fixed;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: #f1f1f1;
-            width: 100%;
-            padding: 20px;
+        #myVideoWrapper {
+            position: relative;
             left: 0;
+            top: 0;
+            min-width: 100%;
+            padding-top: 80%;
+            z-index: -100;
+            margin: 0;
+        }
+        
+        #myVideo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+        
+        p {
+            width: 100%;
+            /* padding: 0; */
+            margin-bottom: 2em;
         }
         /* Style the button used to pause/play the video */
         
@@ -41,29 +60,59 @@
             color: black;
         }
         
-        p {
-            width: 100%;
-            /* padding: 0; */
-            /* margin: 0 */
+        .content div {
+            margin: 2em;
+        }
+        
+        @media (min-device-width:400px) and (min-width:400px) {
+            /* Style the video: 100% width and height to cover the entire window */
+            #myVideoWrapper {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+                padding: inherit;
+            }
+            #myVideo {
+                height: auto;
+                min-height: 100%;
+                min-width: 100%;
+            }
+            /* Add some content at the bottom of the video/page */
+            .content {
+                position: fixed;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                color: #f1f1f1;
+                width: 100%;
+                padding: 20px;
+                left: 0;
+            }
         }
     </style>
 
 </head>
 
 <body>
-    <!-- The video -->
-    <video autoplay muted loop id="myVideo">
-        <source src="backdrop.mp4" type="video/mp4">
-    </video>
+    <div id="myOverlay">
 
-    <div class="content">
-        <div>
-            <h1> Big Data for Media and Communication </h1>
-            <p> A collection of projects from JOUR7280/COMM7780 course @ HKBU</p>
-            <a id="myBtn" href="https://github.com/hupili/python-for-data-and-media-communication-gitbook/blob/master/session-F2018.md#projects"> CHECKOUT </a>
+        <!-- The video -->
+        <div id="myVideoWrapper">
+            <video autoplay muted loop id="myVideo">
+            <source src="backdrop.mp4" type="video/mp4">
+        </video>
         </div>
 
+        <div class="content">
+            <div>
+                <h1> Big Data for Media and Communication </h1>
+                <p> A collection of projects from JOUR7280/COMM7780 course @ HKBU</p>
+                <a id="myBtn" href="https://github.com/hupili/python-for-data-and-media-communication-gitbook/blob/master/session-F2018.md#projects"> CHECKOUT </a>
+            </div>
+        </div>
     </div>
+
 
 </body>
 
