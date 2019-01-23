@@ -32,9 +32,10 @@
         
         #myVideo {
             position: absolute;
-            left: 0;
-            top: 0;
             height: 100%;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
         }
         
         p {
@@ -99,9 +100,9 @@
 
         <!-- The video -->
         <div id="myVideoWrapper">
-            <video autoplay muted loop id="myVideo">
-            <source src="backdrop.mp4" type="video/mp4">
-        </video>
+            <video autoplay muted loop id="myVideo" poster="cover-trimmed.png">
+                <source src="backdrop.mp4" type="video/mp4">
+            </video>
         </div>
 
         <div class="content">
