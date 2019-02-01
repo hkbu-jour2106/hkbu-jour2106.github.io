@@ -2,8 +2,8 @@
 
 ## Schedule of spring 2019
 
-- Jan 19: W1, introduction
-- Jan 26: W2, HTML
+- Jan 19: W1, Introduction
+- Jan 26: W2, DJ workflow and frontend
 - Feb 2: W3, HTML, [story ideation/ background/ survey]
 - ~~Feb 9: suspended for Chinese New Year~~
 - Feb 16: W4, HTML
