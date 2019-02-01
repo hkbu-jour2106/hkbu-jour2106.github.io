@@ -29,7 +29,7 @@
 * DONG Xinyue - [@Felicity2724](https://github.com/Felicity2724) - [Intro](https://github.com/Felicity2724/JOUR2106/) - Enrolled
 * GE XINRAN - [@Midorillusion](https://github.com/Midorillusion) - [Intro](https://github.com/Midorillusion/JOUR2106) - Enrolled
 * Yichen Guo - [@yichenguo07](https://github.com/yichenguo07) - [Intro](https://github.com/yichenguo07/404notfound/) - Enrolled
-* Gursimran Hans - [@tbd](https://github.com/tbd) - [Intro]() - Enrolled
+* Gursimran Hans - [@ghans19](https://github.com/ghans19) - [Intro](https://github.com/ghans19/README.md/blob/master/Intro%20pitch) - Enrolled
 * Li Sin Yung - [@sinyungli](https://github.com/sinyungli) - [Intro](https://github.com/sinyungli/jour2106/) - Enrolled
 * LI Yun - [@Ly-Iris](https://github.com/Ly-Iris) - [Intro](https://github.com/Ly-Iris/JOUR2106) - Enrolled
 * Li Yuquan - [@WindyLI75](https://github.com/WindyLI75) - [Intro](https://github.com/WindyLI75/jour2106) - Enrolled
