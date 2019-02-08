@@ -37,7 +37,7 @@
 * Ray Liu - [@rayliurui](https://github.com/rayliurui) - [Intro](https://github.com/rayliurui/jour2106) - Enrolled
 * Akane Nakasuji - [@anakasuji](https://github.com/anakasuji) - [Intro](https://github.com/anakasuji/jour2106) - Enrolled
 * NG Yee Sin - [@tiffanynys](https://github.com/tiffanynys) - [Intro](https://github.com/tiffanynys/JOUR2106) - Enrolled
-* Nguyen Thi Minh Anh - [@tiffanynys](https://github.com/tiffanynys) - [Intro](https://github.com/minhanhngg/jour2106/) - Enrolled
+* Nguyen Thi Minh Anh - [@minhanhngg](https://github.com/minhanhngg) - [Intro](https://github.com/minhanhngg/jour2106/) - Enrolled
 * SUN Han Yue - [@SUN08042HanYue](https://github.com/SUN08042HanYue) - [Intro](https://github.com/SUN08042HanYue/jour2106/) - Enrolled
 * ZHAO Minzhu - [@MindyZHAOMinzhu](https://github.com/MindyZHAOMinzhu) - [Intro](https://github.com/MindyZHAOMinzhu/jour2106Mindy) - Enrolled
 * MO Kexin - [@majormoke](https://github.com/majormoke) - [Intro](https://github.com/majormoke/jour2016) - Audit
