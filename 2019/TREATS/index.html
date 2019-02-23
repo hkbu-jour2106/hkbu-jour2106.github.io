@@ -13,6 +13,9 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="shortcut icon" href="images/logo.png" />
 
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 </head>
 
 <body class="homepage is-preload">
@@ -105,13 +108,14 @@
 
 						<header id='target'>
 							<h3>目的及方法 </h3>
+							<p>目的：- 探討和揭示自閉症人士遭受排斥和歧視的原因 <br> -了解社區人士對自閉症學童參與社區的看法和接納程度
+							</p>
 						</header>
 						<br>
 						<div class="row">
 							<div class="col-4 col-12-medium col-12-small">
 								<p style="text-align:center">
-									目的：<br>- 探討和揭示自閉症人士遭受排斥和歧視的原因 <br> -了解社區人士對自閉症學童參與社區的看法和接納程度
-									<br><br><br>
+									<br>
 									方法：<br>
 									<strong>第一部份：問卷調查</strong><br>
 									日期: 由2018年11月至2019年1月<br>
@@ -125,12 +129,12 @@
 								</p>                             
 							</div>
 
-							<span class="col-4 col-12-medium col-12-small">
+							<span class="col-4 col-6-medium col-12-small">
 								<script src="https://code.highcharts.com/highcharts.js"></script>
 								<script src="https://code.highcharts.com/modules/exporting.js"></script>
 								<script src="https://code.highcharts.com/modules/export-data.js"></script>
-								<div id="container4" style="min-width: 240px; height: 240px; "></div>
-								<div id="container6" style="min-width: 240px; height: 240px; "></div>
+								<div id="container4" style="min-width: 220px; height: 220px; "></div>
+								<div id="container6" style="min-width: 220px; height: 220px; "></div>
 								<script>
 
 
@@ -251,10 +255,10 @@
 							</span>
 
 
-							<span class="col-4 col-12-medium col-12-small">
+							<span class="col-4 col-6-medium col-12-small">
 
-								<div id="container5" style="min-width: 240px; height: 240px; "></div>
-								<div id="container7" style="min-width: 240px; height: 240px; "></div>
+								<div id="container5" style="min-width: 220px; height: 220px; "></div>
+								<div id="container7" style="min-width: 220px; height: 220px; "></div>
 								<script>
 
 
@@ -476,10 +480,6 @@
 												約1成社區人士和自閉症人士家長覺得社會現時幫助自閉症人士融入社區的資源和支援十分足夠。
 											</p>
 										</div>
-										<script src="https://code.highcharts.com/highcharts.js"></script>
-										<script src="https://code.highcharts.com/modules/exporting.js"></script>
-										<script src="https://code.highcharts.com/modules/export-data.js"></script>
-
 
 										<script>
 
@@ -720,24 +720,26 @@
 
 								</div>
 								<!-- chart4 -->
-								<div class="col-12 col-12-medium col-12-small">
-									<br>
 
-									<p>雖然受訪者認同自閉症人士參與社區的迫切性，但是目前自閉症人士參與社區現況並不理想。他們缺乏社交支援和朋友，同時很多社區活動不合適自閉症人士參與。
+
+
+								<!-- <p>雖然受訪者認同自閉症人士參與社區的迫切性，但是目前自閉症人士參與社區現況並不理想。他們缺乏社交支援和朋友，同時很多社區活動不合適自閉症人士參與。
 									</p>
 									<p>自閉症人士家長說到：“即使他們嘗試與子女參與社區，但合適的活動也不多，
 										多數都只是參與親友或相熟朋友的聚會，或相約「同路人」外出活動，如：參與學校安排的課外活動。”</p><br>
 
-									<div class="col-6 col-12-medium col-12-small">
+									<div class="grid-container">
 
-										<div id="container10" align='center' style="height: 300px; min-width: 100px;">
+										<div id="container10" >
 										</div>
 										<script>
 
 
 											Highcharts.chart('container10', {
 												chart: {
-													type: 'bar'
+													type: 'bar',
+													height: '300px',
+												
 												},
 												title: {
 													text: '缺乏社交支援和朋友'
@@ -776,24 +778,23 @@
 											});
 										</script>
 
-									</div>
 
-									<div class="col-6 col-12-medium col-12-small">
 
-										<div id="container11" align='center' style="height: 300px; min-width: 100px;">
+										<div id="container11" >
 										</div>
 										<script>
 
 											Highcharts.chart('container11', {
 												chart: {
-													type: 'bar'
+													type: 'bar',
+													height: '300px'
 												},
 												title: {
 													text: '社區活動不合適自閉症人士參與'
 												},
 
 												xAxis: {
-													categories: ['社區上能夠提供給子女的活動種類太少和單一', '現時區內的社區中心，沒有合適子女參與的活動', '社區所提供給子女的活動，能切合他/她的能力和興趣'],
+													categories: ['社區上提供給子女的活動種類單一', '社區中心沒有合適子女參與的活動', '社區供給的活動切合他的能力/興趣'],
 													title: {
 														text: null
 													}
@@ -829,8 +830,8 @@
 											});
 										</script>
 
-									</div>
-								</div>
+									</div> -->
+
 
 							</section>
 
@@ -989,7 +990,7 @@
 														<h2>建立自閉症人士社區網絡
 														</h2>
 													</header>
-													<p style="text-align:left">
+													<p style="text-align:left"><br>
 														- 好鄰舍配對計劃 (社區、學校及職場)<br>
 														- 成為社區組織的成員
 													</p>
@@ -1038,8 +1039,7 @@
 												<footer>
 													<ul class="actions">
 														<li><a href="https://www.seewhatgrows.org/community-gardens-can-help-special-needs-children/"
-																class="button icon fa-file-text">Continue
-																Reading</a>
+																class="button icon fa-file-text">繼續閱讀</a>
 														</li>
 														<!-- <li><a href="#" class="button alt icon fa-comment">33 comments</a>
 													</li> -->
@@ -1066,8 +1066,7 @@
 												<footer>
 													<ul class="actions">
 														<li><a href="http://autism-light.blogspot.com/2018/11/trey-kruse.html"
-																class="button icon fa-file-text">Continue
-																Reading</a>
+																class="button icon fa-file-text">繼續閱讀</a>
 														</li>
 														<!-- <li><a href="#" class="button alt icon fa-comment">33 comments</a>
 													</li> -->
