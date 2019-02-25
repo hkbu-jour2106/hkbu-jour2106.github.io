@@ -1,6 +1,6 @@
 # Data in media education @HK
 
-This is a growing list of data courses in media education @HK. It is currently sorted in alphabetic order of course code. News courses, revision of course details and suggeting formating/ styling are all welcome via Pull Request or email: [e@hupili.net](mailto:e@hupili.net).
+This is a growing list of data courses in media education @HK. It is currently sorted in alphabetic order of course code. News courses, revision of course details and suggeting formating/ styling are all welcome via [Pull Request](https://github.com/hupili/datavis.studio/pulls) or email: [e@hupili.net](mailto:e@hupili.net).
 
 TOC:
 
