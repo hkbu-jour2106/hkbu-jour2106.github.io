@@ -24,6 +24,16 @@ TOC:
 
 <!-- /TOC -->
 
+To add a new entry, please collect the following information:
+
+- 1. Course instructor
+- 2. Offering institution, course code and course title
+- 3. A brief introduction of the course (< 3 sentences)
+- 4. [optional] Course website
+- 5. [optional] Links of selected student projects
+- 6. [optional] Related learning resources you want to share
+
+
 ## CDM3080 - Information Design Basics (@HKDI)
 
 * Instructor: Sannia HO / Terrance Chang
