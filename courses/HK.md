@@ -7,20 +7,21 @@ TOC:
 <!-- TOC -->
 
 - [Data in media education @HK](#data-in-media-education-hk)
-  - [CDM3080 - Information Design Basics (@HKDI)](#cdm3080---information-design-basics-hkdi)
-  - [CDM4157 - Motion Graphic Studio (@HKDI)](#cdm4157---motion-graphic-studio-hkdi)
-  - [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
-  - [COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)](#comm3681---social-media-analytics-for-communication-professionals-cuhk)
-  - [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
-  - [COMM6320 - Digital Humanities: Methods and Tools (@CUHK)](#comm6320---digital-humanities-methods-and-tools-cuhk)
-  - [COMM7620 - Social Media and Online Social Networks (@HKBU)](#comm7620---social-media-and-online-social-networks-hkbu)
-  - [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
-  - [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
-  - [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
-  - [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
-  - [JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)](#jour7280---big-data-analytics-for-media-and-communication-hkbu)
-  - [VAS4056 - Expanded Studies (Data Journalism) (@HKDI)](#vas4056---expanded-studies-data-journalism-hkdi)
-  - [VAS4062 - Media Computer Graphic in Journalism (@HKDI)](#vas4062---media-computer-graphic-in-journalism-hkdi)
+    - [CDM3080 - Information Design Basics (@HKDI)](#cdm3080---information-design-basics-hkdi)
+    - [CDM4157 - Motion Graphic Studio (@HKDI)](#cdm4157---motion-graphic-studio-hkdi)
+    - [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
+    - [COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)](#comm3681---social-media-analytics-for-communication-professionals-cuhk)
+    - [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
+    - [COMM6320 - Digital Humanities: Methods and Tools (@CUHK)](#comm6320---digital-humanities-methods-and-tools-cuhk)
+    - [COMM7620 - Social Media and Online Social Networks (@HKBU)](#comm7620---social-media-and-online-social-networks-hkbu)
+    - [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+    - [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
+    - [JMSC6116 - Social media analytics for journalists (@HKU)](#jmsc6116---social-media-analytics-for-journalists-hku)
+    - [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
+    - [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
+    - [JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)](#jour7280---big-data-analytics-for-media-and-communication-hkbu)
+    - [VAS4056 - Expanded Studies (Data Journalism) (@HKDI)](#vas4056---expanded-studies-data-journalism-hkdi)
+    - [VAS4062 - Media Computer Graphic in Journalism (@HKDI)](#vas4062---media-computer-graphic-in-journalism-hkdi)
 
 <!-- /TOC -->
 
@@ -113,6 +114,13 @@ This course aims to equip our students with essential knowledge on web developme
 
 Student projects of F2018: [1](https://ivywang958.github.io/DataBreachsRe/) [2](https://vanilla-opl2-yhgr6xc8h.now.sh/) [3](https://alecpapa.github.io/fake_news/) [4](https://bonnie-yu.github.io/ITEC_proj_GAME/index.html) [5](https://final-2-9gbk07exe.now.sh/) [6](https://phonefailurerate-hqpbt2gb8.now.sh/) [7](https://groupi-30rm7fwtg.now.sh/)
 
+## JMSC6116 - Social media analytics for journalists (@HKU)
+
+* Instructor: Prof. KW Fu
+
+A brief introduction of the course (< 3 sentences) - This course is designed to provide training for master-level journalism or communication major students about the basic techniques of media data and social media analytics. It covers a variety of tools that help them conduct a range of applications including web scraping, API programming, text mining, sentiment analysis, network analysis, as well as data visualization. The course is designed and taught in problem-based or project-driven mode which aims to facilitate real life application of the techniques in a variety of media and communication settings.
+
+Lecture notes: [@fukingwa](https://rpubs.com/fukingwa)
 
 ## JOUR2076 - Data Journalism (@HKBU)
  
