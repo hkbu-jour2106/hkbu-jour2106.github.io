@@ -7,21 +7,45 @@ TOC:
 <!-- TOC -->
 
 - [Data in media education @HK](#data-in-media-education-hk)
-    - [CDM3080 - Information Design Basics (@HKDI)](#cdm3080---information-design-basics-hkdi)
-    - [CDM4157 - Motion Graphic Studio (@HKDI)](#cdm4157---motion-graphic-studio-hkdi)
-    - [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
-    - [COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)](#comm3681---social-media-analytics-for-communication-professionals-cuhk)
-    - [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
-    - [COMM6320 - Digital Humanities: Methods and Tools (@CUHK)](#comm6320---digital-humanities-methods-and-tools-cuhk)
-    - [COMM7620 - Social Media and Online Social Networks (@HKBU)](#comm7620---social-media-and-online-social-networks-hkbu)
-    - [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
-    - [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
-    - [JMSC6116 - Social media analytics for journalists (@HKU)](#jmsc6116---social-media-analytics-for-journalists-hku)
-    - [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
-    - [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
-    - [JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)](#jour7280---big-data-analytics-for-media-and-communication-hkbu)
-    - [VAS4056 - Expanded Studies (Data Journalism) (@HKDI)](#vas4056---expanded-studies-data-journalism-hkdi)
-    - [VAS4062 - Media Computer Graphic in Journalism (@HKDI)](#vas4062---media-computer-graphic-in-journalism-hkdi)
+    - [Catalogue](#catalogue)
+        - [Introduction](#introduction)
+            - [Data Literacy](#data-literacy)
+            - [Data Journalism](#data-journalism)
+        - [Workflow](#workflow)
+            - [Research Design](#research-design)
+            - [Web Scraping](#web-scraping)
+            - [Data Mining](#data-mining)
+            - [Data Visualization](#data-visualization)
+            - [Information Design](#information-design)
+        - [Language & Software](#language--software)
+            - [Python language](#python-language)
+            - [R language](#r-language)
+            - [Tableau](#tableau)
+            - [KNIME](#knime)
+            - [Excel](#excel)
+        - [Data type](#data-type)
+            - [Social Networks and Social Media](#social-networks-and-social-media)
+            - [Text mining](#text-mining)
+        - [Geographical data](#geographical-data)
+        - [Web Design/ Web Development](#web-design-web-development)
+            - [Frontend](#frontend)
+            - [Backend (data service)](#backend-data-service)
+    - [Full list](#full-list)
+        - [CDM3080 - Information Design Basics (@HKDI)](#cdm3080---information-design-basics-hkdi)
+        - [CDM4157 - Motion Graphic Studio (@HKDI)](#cdm4157---motion-graphic-studio-hkdi)
+        - [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
+        - [COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)](#comm3681---social-media-analytics-for-communication-professionals-cuhk)
+        - [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
+        - [COMM6320 - Digital Research (@CUHK)](#comm6320---digital-research-cuhk)
+        - [COMM7620 - Social Media and Online Social Networks (@HKBU)](#comm7620---social-media-and-online-social-networks-hkbu)
+        - [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+        - [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
+        - [JMSC6116 - Social media analytics for journalists (@HKU)](#jmsc6116---social-media-analytics-for-journalists-hku)
+        - [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
+        - [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
+        - [JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)](#jour7280---big-data-analytics-for-media-and-communication-hkbu)
+        - [VAS4056 - Expanded Studies (Data Journalism) (@HKDI)](#vas4056---expanded-studies-data-journalism-hkdi)
+        - [VAS4062 - Media Computer Graphic in Journalism (@HKDI)](#vas4062---media-computer-graphic-in-journalism-hkdi)
 
 <!-- /TOC -->
 
@@ -34,8 +58,99 @@ To add a new entry, please collect the following information:
 5. [optional] Links of selected student projects
 6. [optional] Related learning resources you want to share
 
+## Catalogue
 
-## CDM3080 - Information Design Basics (@HKDI)
+The catalogue is not an exclusive categorisation. It behaves more like "tag system". i.e. one course may appear in multiple list if one of its features matches the catalogue title. This section is also under development so please feel free to suggest/ comment/ fix things.
+
+### Introduction
+
+#### Data Literacy
+
+#### Data Journalism
+
+- [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
+
+### Workflow
+
+#### Research Design
+
+Including conceptualization, modeling, coding, questionaire, sampling, ...
+
+- [COMM6320 - Digital Research (@CUHK)](#comm6320---digital-research-cuhk)
+
+#### Web Scraping
+
+- [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
+- [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+
+#### Data Mining
+
+- [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+
+#### Data Visualization
+
+- [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+- [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
+- [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
+
+#### Information Design
+
+- [CDM3080 - Information Design Basics (@HKDI)](#cdm3080---information-design-basics-hkdi)
+- [CDM4157 - Motion Graphic Studio (@HKDI)](#cdm4157---motion-graphic-studio-hkdi)
+
+### Language & Software
+
+#### Python language
+
+- [COM5507 - Social Media Data Acquisition and Processing (@CityU)](#com5507---social-media-data-acquisition-and-processing-cityu)
+- [COMM7780 - Big Data Analytics for Media and Communication (@HKBU)](#comm7780---big-data-analytics-for-media-and-communication-hkbu)
+
+#### R language
+
+- [JMSC6116 - Social media analytics for journalists (@HKU)](#jmsc6116---social-media-analytics-for-journalists-hku)
+- [JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)](#jour7280---big-data-analytics-for-media-and-communication-hkbu)
+- [COMM6320 - Digital Research (@CUHK)](#comm6320---digital-research-cuhk)
+
+#### Tableau
+
+- [JOUR2076 - Data Journalism (@HKBU)](#jour2076---data-journalism-hkbu)
+
+#### KNIME
+
+- [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
+- [COMM6320 - Digital Research (@CUHK)](#comm6320---digital-research-cuhk)
+
+#### Excel
+
+### Data type
+
+#### Social Networks and Social Media
+
+- [COMM7620 - Social Media and Online Social Networks (@HKBU)](#comm7620---social-media-and-online-social-networks-hkbu)
+- [JMSC6116 - Social media analytics for journalists (@HKU)](#jmsc6116---social-media-analytics-for-journalists-hku)
+- [COMM6320 - Digital Research (@CUHK)](#comm6320---digital-research-cuhk)
+
+#### Text mining
+
+- [COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)](#comm3681---social-media-analytics-for-communication-professionals-cuhk)
+- [COMM5631 - Digital Humanities: Methods and Tools (@CUHK)](#comm5631---digital-humanities-methods-and-tools-cuhk)
+
+### Geographical data
+
+### Web Design/ Web Development
+
+#### Frontend
+
+- [JOUR2106 - Data Visualization for News (@HKBU)](#jour2106---data-visualization-for-news-hkbu)
+- [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
+
+#### Backend (data service)
+
+- [ITEC2016 - Data-Driven Visualization for the Web (@HKBU)](#itec2016---data-driven-visualization-for-the-web-hkbu)
+
+## Full list
+
+### CDM3080 - Information Design Basics (@HKDI)
 
 * Instructor: Sannia HO / Terrance Chang
 
@@ -43,7 +158,7 @@ The aim of this module is to apply appropriate taxonomy to analyze, organize and
 
 [Program website](http://www.hkdi.edu.hk/en/programmes/programme.php?programmes_id=24)
 
-## CDM4157 - Motion Graphic Studio (@HKDI)
+### CDM4157 - Motion Graphic Studio (@HKDI)
 
 * Instructor: Yip Pak To / Terrance Chang
 
@@ -53,7 +168,7 @@ The aim of this module is to analyze the evolution & trends of motion graphics f
 
 Student projects: on [Behance](https://www.behance.net/gallery/55735237/Motion-Graphic-Studio-1617)
 
-## COM5507 - Social Media Data Acquisition and Processing (@CityU)
+### COM5507 - Social Media Data Acquisition and Processing (@CityU)
 
 * (Guest) Instructor: Dr. Xinzhi ZHANG (Department of Journalism, Hong Kong Baptist University)
 
@@ -63,7 +178,7 @@ Learning materials: [@xzzhang2](https://github.com/xzzhang2/201819A_cityu_com550
 
 Student projects: [@xzzhang2](https://github.com/xzzhang2/201819A_cityu_com5507/blob/master/std_proj/std3_group_final.md)
 
-## COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)
+### COMM3681 - Social Media Analytics for Communication Professionals (@CUHK)
 
 * Instructor: Dr. LIANG Hai
 
@@ -71,7 +186,7 @@ Web data collection (API + Scraping) and text mining basics with KNIME
 
 [Lecture notes](http://www.drhailiang.com/comm3681.html)
 
-## COMM5631 - Digital Humanities: Methods and Tools (@CUHK)
+### COMM5631 - Digital Humanities: Methods and Tools (@CUHK)
 
 * Instructor: Dr. LIANG Hai
 
@@ -79,7 +194,7 @@ Web data collection (API + Scraping), data management, data visualization, and t
 
 [Lecture notes](http://www.drhailiang.com/comm5631.html)
 
-## COMM6320 - Digital Humanities: Methods and Tools (@CUHK)
+### COMM6320 - Digital Research (@CUHK)
 
 * Instructor: Dr. LIANG Hai
 
@@ -87,7 +202,7 @@ Computational communication research, design, data collection, text mining, and 
 
 [Lecture notes](http://www.drhailiang.com/comm6320.html)
 
-## COMM7620 - Social Media and Online Social Networks (@HKBU)
+### COMM7620 - Social Media and Online Social Networks (@HKBU)
  
 * Instructor: Tsang, Stephanie Jean
  
@@ -96,7 +211,7 @@ This course aims to familiarize students with both the practical and theoretical
 Student projects and teaching materials: [UXLab](https://hkbuuxlab.com/course/)
 
 
-## COMM7780 - Big Data Analytics for Media and Communication (@HKBU)
+### COMM7780 - Big Data Analytics for Media and Communication (@HKBU)
 
 * Instructor: Pili Hu
  
@@ -106,7 +221,7 @@ Open source [Python book](https://github.com/hupili/python-for-data-and-media-co
 
 Student projects: [F2018](http://datavis.studio/python/)
 
-## ITEC2016 - Data-Driven Visualization for the Web (@HKBU)
+### ITEC2016 - Data-Driven Visualization for the Web (@HKBU)
 
 * Instructor: Martin Choy
 
@@ -114,7 +229,7 @@ This course aims to equip our students with essential knowledge on web developme
 
 Student projects of F2018: [1](https://ivywang958.github.io/DataBreachsRe/) [2](https://vanilla-opl2-yhgr6xc8h.now.sh/) [3](https://alecpapa.github.io/fake_news/) [4](https://bonnie-yu.github.io/ITEC_proj_GAME/index.html) [5](https://final-2-9gbk07exe.now.sh/) [6](https://phonefailurerate-hqpbt2gb8.now.sh/) [7](https://groupi-30rm7fwtg.now.sh/)
 
-## JMSC6116 - Social media analytics for journalists (@HKU)
+### JMSC6116 - Social media analytics for journalists (@HKU)
 
 * Instructor: Prof. KW Fu
 
@@ -122,7 +237,7 @@ A brief introduction of the course (< 3 sentences) - This course is designed to 
 
 Lecture notes: [@fukingwa](https://rpubs.com/fukingwa)
 
-## JOUR2076 - Data Journalism (@HKBU)
+### JOUR2076 - Data Journalism (@HKBU)
  
 * Instructor: Roselyn Du
  
@@ -131,7 +246,7 @@ This entry level data journalism course is not just about dull statistics or dre
 Student projects: [1](https://dnnsociety.org/2018/12/07/tournament-needed-for-future-development-of-hong-kongs-esports-industry/) [2](https://dnnsociety.org/2018/12/07/new-towns-fail-to-be-self-contained-as-planned-government-data-shows/) [3](https://dnnsociety.org/2015/11/30/who-are-the-nobel-prize-winners/) [4](https://dnnsociety.org/2016/12/04/hello-its-me/) [5](https://dnnsociety.org/2016/12/05/surge-in-chinas-maternal-mortality-rate-spurs-questions-2/)
 
 
-## JOUR2106 - Data Visualization for News (@HKBU)
+### JOUR2106 - Data Visualization for News (@HKBU)
 
 * Instructor: Pili Hu
 
@@ -141,7 +256,7 @@ Student projects: [S2017](http://datavis.studio/2017/), [S2018](http://datavis.s
 
 
 
-## JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)
+### JOUR7280 - Big Data Analytics for Media and Communication (@HKBU)
  
 * Instructor: Wang Xiaohui Vincent
  
@@ -150,7 +265,7 @@ This course aims to introduce the fundamental knowledge and hands-on skills of b
 Teaching materials: [@vincentwx](https://rpubs.com/vincentwx)
 
 
-## VAS4056 - Expanded Studies (Data Journalism) (@HKDI)
+### VAS4056 - Expanded Studies (Data Journalism) (@HKDI)
 
 * Instructor: Brian Lo
  
@@ -158,7 +273,7 @@ This module is focuses on studying the data explosion in the society as well as 
 
 Recommended readings: https://datajournalism.tools
 
-## VAS4062 - Media Computer Graphic in Journalism (@HKDI)
+### VAS4062 - Media Computer Graphic in Journalism (@HKDI)
 
 * Instructor: Raymond Yau
 
