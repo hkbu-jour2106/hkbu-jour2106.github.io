@@ -78,7 +78,20 @@
             display: grid;
             grid-template-rows: 50px auto 100px 100px 100px 100px 50px;
             grid-template-columns: 1fr 1fr 100px;
-            grid-template-areas: "header header header" "introduction introduction introduction" "photo1 photo2 ad1" "photo1 photo2 ad2" "photo3 photo4 ad2" "photo3 photo4 ad2" "footer footer footer";
+            grid-template-areas: /* prettier-ignore */
+            "header header header"
+            /* prettier-ignore */
+            "introduction introduction introduction"
+            /* prettier-ignore */
+            "photo1 photo2 ad1"
+            /* prettier-ignore */
+            "photo1 photo2 ad2"
+            /* prettier-ignore */
+            "photo3 photo4 ad2"
+            /* prettier-ignore */
+            "photo3 photo4 ad2"
+            /* prettier-ignore */
+            "footer footer footer";
         }
         
         @media (max-width: 400px) {
@@ -87,7 +100,24 @@
                 width: 100vw;
                 grid-template-rows: auto;
                 grid-template-columns: 1fr;
-                grid-template-areas: "header" "introduction" "ad1" "photo1" "photo2" "photo3" "photo4" "ad2" "footer";
+                grid-template-areas: /* prettier-ignore */
+                "header"
+                /* prettier-ignore */
+                "introduction"
+                /* prettier-ignore */
+                "ad1"
+                /* prettier-ignore */
+                "photo1"
+                /* prettier-ignore */
+                "photo2"
+                /* prettier-ignore */
+                "photo3"
+                /* prettier-ignore */
+                "photo4"
+                /* prettier-ignore */
+                "ad2"
+                /* prettier-ignore */
+                "footer";
             }
         }
     </style>
