@@ -20,7 +20,7 @@
 
     <div class="container">
 
-        <h1>Calculator example: Semantic UI</h1>
+        <h1>Calculator example: for and if</h1>
 
         <div class="ui form">
             <div class="field">
@@ -77,25 +77,36 @@
                 var today = new Date();
                 var loanDay = new Date(year, month - 1, day);
                 var dateDiff = (today - loanDay) / 1000 / 3600 / 24;
-                document.getElementById('result').value = principal * Math.pow((1 + r), dateDiff);
+                var result;
+                if (loanDay > today) {
+                    result = 'Wrong date'
+                } else {
+                    result = principal * Math.pow((1 + r), dateDiff);
+                }
+                document.getElementById('result').value = result;
             }
 
             calculate();
 
+            document.getElementById('calculate').addEventListener('click', calculate);
+
+            // document.getElementById('principal').addEventListener('keyup', calculate);
+            // document.getElementById('year').addEventListener('keyup', calculate);
+            // document.getElementById('month').addEventListener('keyup', calculate);
+            // document.getElementById('day').addEventListener('keyup', calculate);
             // document.getElementById('principal').addEventListener('change', calculate);
             // document.getElementById('year').addEventListener('change', calculate);
             // document.getElementById('month').addEventListener('change', calculate);
             // document.getElementById('day').addEventListener('change', calculate);
 
-            document.getElementById('calculate').addEventListener('click', calculate);
-            document.getElementById('principal').addEventListener('keyup', calculate);
-            document.getElementById('year').addEventListener('keyup', calculate);
-            document.getElementById('month').addEventListener('keyup', calculate);
-            document.getElementById('day').addEventListener('keyup', calculate);
-            document.getElementById('principal').addEventListener('change', calculate);
-            document.getElementById('year').addEventListener('change', calculate);
-            document.getElementById('month').addEventListener('change', calculate);
-            document.getElementById('day').addEventListener('change', calculate);
+            var events = ['change', 'keyup'];
+            var elements = ['principal', 'year', 'month', 'day'];
+
+            for (var i = 0; i < events.length; i++) {
+                for (var j = 0; j < elements.length; j++) {
+                    document.getElementById(elements[j]).addEventListener(events[i], calculate);
+                }
+            }
         </script>
 
 
