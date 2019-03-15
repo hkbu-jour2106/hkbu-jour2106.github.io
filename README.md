@@ -10,7 +10,8 @@
 - Feb 23: W5, CSS, RWD, Useful lib
 - Mar 2: W6, CSS, [data collection]
 - Mar 9: W7, Javascript
-- Mar 16: W8, charting lib
+  - Guest: Guy Freeman, dataguru.hk
+- Mar 16: W8, JS Cont'd
 - Mar 23: W9, charting lib, [basic analysis and visualization]
 - Mar 30: W10, text
 - Apr 6: W11, map
