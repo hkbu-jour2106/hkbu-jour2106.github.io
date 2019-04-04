@@ -13,18 +13,18 @@
 
 <body>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="../../code/highmaps.js"></script>
-    <script src="../../code/modules/data.js"></script>
-    <script src="../../code/modules/exporting.js"></script>
-    <script src="../../code/modules/offline-exporting.js"></script>
-    <script src="../../code/mapdata/custom/world.js"></script>
+    <script src="Highmaps-7.0.3/code/highmaps.js"></script>
+    <script src="Highmaps-7.0.3/code/modules/data.js"></script>
+    <script src="Highmaps-7.0.3/code/modules/exporting.js"></script>
+    <script src="Highmaps-7.0.3/code/modules/offline-exporting.js"></script>
+    <script src="http://code.highcharts.com/mapdata/custom/world.js"></script>
 
     <div id="container" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
 
 
 
     <script type="text/javascript">
-        $.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/world-population.json', function(data) {
+        $.getJSON('world-population.json', function(data) {
 
             Highcharts.mapChart('container', {
                 chart: {
