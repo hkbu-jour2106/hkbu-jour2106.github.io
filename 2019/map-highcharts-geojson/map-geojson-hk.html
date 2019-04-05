@@ -32,11 +32,27 @@
     <script>
         // Prepare random data
         var data = [
-            ['NT', 50],
-            ['island', 100]
+            ['Central & Western', 139534],
+            ['Wan Chai', 106009],
+            ['Eastern', 296373],
+            ['Southern', 143331],
+            ['Yau Tsim Mong', 183084],
+            ['Sham Shui Po', 205565],
+            ['Kowloon City', 217224],
+            ['Wong Tai Sin', 209277],
+            ['Kwun Tong', 315577],
+            ['Kwai Tsing', 259427],
+            ['Tsuen Wan', 168786],
+            ['Tuen Mun', 245334],
+            ['Yuen Long', 301676],
+            ['North', 150586],
+            ['Tai Po', 153824],
+            ['Sha Tin', 335202],
+            ['Sai Kung', 245332],
+            ['Islands', 79815]
         ];
 
-        $.getJSON('map.geojson', function(geojson) {
+        $.getJSON('dc_land.lowres.geo.json', function(geojson) {
 
             // Initiate the chart
             Highcharts.mapChart('container', {
@@ -45,7 +61,7 @@
                 },
 
                 title: {
-                    text: 'GeoJSON in Highmaps'
+                    text: 'Hong Kong working population by 18 districts'
                 },
 
                 mapNavigation: {
@@ -61,9 +77,9 @@
 
                 series: [{
                     data: data,
-                    keys: ['name', 'value'],
-                    joinBy: 'name',
-                    name: 'Random data',
+                    keys: ['DC_ENG', 'value'],
+                    joinBy: 'DC_ENG',
+                    name: 'Workinng population',
                     states: {
                         hover: {
                             color: '#a4edba'
@@ -71,7 +87,7 @@
                     },
                     dataLabels: {
                         enabled: true,
-                        format: '{point.properties.postal}'
+                        format: '{point.properties.DC_ENG}'
                     }
                 }]
             });
