@@ -34,7 +34,7 @@ body {
 }
 
 .blocks {
-    padding: 24px 40px 12px 40px;
+    padding: 24px 30px 12px 40px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(27, 95, 160, .1);
 }
@@ -68,7 +68,6 @@ body {
     display: table;
     font-size: 14px;
     font-weight: 400;
-    padding: .2em .5em;
     color: #5c5e60;
     position: fixed;
     background-color: white;
