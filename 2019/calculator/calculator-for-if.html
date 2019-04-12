@@ -1,0 +1,117 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+
+</head>
+
+<body>
+
+    <style>
+        .container {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <div class="container">
+
+        <h1>Calculator example: for and if</h1>
+
+        <div class="ui form">
+            <div class="field">
+                <div class="ui right labeled input">
+                    <label for="amount" class="ui label">$</label>
+                    <input type="number" id="principal" value=100>
+                    <div class="ui basic label">.00</div>
+                </div>
+            </div>
+            <div class="three fields">
+                <div class="field">
+                    <div class="ui labeled input">
+                        <div class="ui label">
+                            Year:
+                        </div>
+                        <input type="number" id="year" value=2019>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui labeled input">
+                        <div class="ui label">
+                            Month:
+                        </div>
+                        <input type="number" id="month" value=1>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui labeled input">
+                        <div class="ui label">
+                            Day:
+                        </div>
+                        <input type="number" id="day" value=25>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <button id="calculate" class="ui button"> Calculate </button>
+            </div>
+            <div class="field">
+                <div>
+                    <input id="result"></input>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function calculate() {
+                console.log('calculate');
+                var r = 4 / 10000; // interest rate
+                var principal = document.getElementById('principal').value;
+                var year = document.getElementById('year').value;
+                var month = document.getElementById('month').value;
+                var day = document.getElementById('day').value;
+                var today = new Date();
+                var loanDay = new Date(year, month - 1, day);
+                var dateDiff = (today - loanDay) / 1000 / 3600 / 24;
+                var result;
+                if (loanDay > today) {
+                    result = 'Wrong date'
+                } else {
+                    result = principal * Math.pow((1 + r), dateDiff);
+                }
+                document.getElementById('result').value = result;
+            }
+
+            calculate();
+
+            document.getElementById('calculate').addEventListener('click', calculate);
+
+            // document.getElementById('principal').addEventListener('keyup', calculate);
+            // document.getElementById('year').addEventListener('keyup', calculate);
+            // document.getElementById('month').addEventListener('keyup', calculate);
+            // document.getElementById('day').addEventListener('keyup', calculate);
+            // document.getElementById('principal').addEventListener('change', calculate);
+            // document.getElementById('year').addEventListener('change', calculate);
+            // document.getElementById('month').addEventListener('change', calculate);
+            // document.getElementById('day').addEventListener('change', calculate);
+
+            var events = ['change', 'keyup'];
+            var elements = ['principal', 'year', 'month', 'day'];
+
+            for (var i = 0; i < events.length; i++) {
+                for (var j = 0; j < elements.length; j++) {
+                    document.getElementById(elements[j]).addEventListener(events[i], calculate);
+                }
+            }
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>

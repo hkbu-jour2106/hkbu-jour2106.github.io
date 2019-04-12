@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <style>
+        .container {
+            display: grid;
+        }
+        
+        .item {
+            min-width: 200px;
+            min-height: 200px;
+            background-color: bisque;
+            border: cadetblue 2px dashed;
+            margin: 2em;
+        }
+        
+        @media (min-width: 450px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (min-width: 650px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Grid example: responsive by columns</h1>
+
+    <div class="container">
+        <div class=item>
+        </div>
+        <div class=item>
+        </div>
+        <div class=item>
+        </div>
+        <div class=item>
+        </div>
+        <div class=item>
+        </div>
+        <div class=item>
+        </div>
+    </div>
+
+</body>
+
+</html>
