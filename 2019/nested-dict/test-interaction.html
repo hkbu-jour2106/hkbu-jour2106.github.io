@@ -1,0 +1,191 @@
+﻿<html>
+
+
+<body>
+
+    Cancer:
+    <select id='Cancer'>
+        <option value="甲状腺癌">甲状腺癌</option>
+        <option value="CancerA">CancerA</option>
+    </select>
+
+
+    <br>Chemical name of the medicine:
+    <select id='Chemical'>
+    <option value="索拉非尼">索拉非尼</option>
+    <option value="左甲状腺素钠">左甲状腺素钠</option>
+    
+        </select>
+    <br> Drug name:
+    <select id='Drug'>
+                <option value='拜耳医药多吉美/0.2g'>拜耳医药多吉美/0.2g</option>"
+                <option value='德国默克公司优甲乐/100μg'>德国默克公司优甲乐/100μg</option>"
+                <option value='德国默克公司优甲乐/50μg'>德国默克公司优甲乐/50μg</option>"
+                <option value='美纳里尼雷替斯/100μg'>美纳里尼雷替斯/100μg</option>"
+                <option value='美纳里尼雷替斯/50μg'>美纳里尼雷替斯/50μg</option>"
+                <option value='深圳市中联制药加衡/25μg'>深圳市中联制药加衡/25μg</option>"
+               
+              </select>
+    <br>
+    <button id="cal">Calculate</button>
+
+    <input id="result" type="text">
+
+
+    <script src="../highcharts/Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../highcharts/Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../highcharts/Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    <script type="text/javascript">
+        dic = {
+            'CancerA': {
+                'ChemicalA': {
+                    'DrugA': [12180, 12180, 23280, 12180, 12180, 12180, 11437.2, 12180, 12180, 12180]
+                }
+            },
+            '甲状腺癌': {
+
+                '索拉非尼': {
+                    '拜耳医药多吉美/0.2g': [12180, 12180, 23280, 12180, 12180, 12180, 11437.2, 12180, 12180, 12180]
+                },
+                '左甲状腺素钠': {
+                    '德国默克公司优甲乐/100μg': [43.62, 57.56, 43.62, '-', '-', 43.62, '-', 48.3, '-', '-'],
+                    '德国默克公司优甲乐/50μg': [25.65, 33.82, 25.65, '-', 33.83, 25.65, 27.82, 27, '-', '-'],
+                    '美纳里尼雷替斯/100μg': [18.22, 24.3, 0.23, '-', '-', 21.12, '-', 22.3, '-', 24.16],
+
+                },
+
+            }
+
+        };
+
+        function onSelectCancer() {
+            console.log(Cancer.value);
+            console.log(Chemical.value);
+            console.log(Drug.value);
+            console.log('onSelectCancer')
+
+            console.log(dic[Cancer.value]);
+
+            Chemical.length = 0;
+
+            for (k in dic[Cancer.value]) {
+                console.log('key:')
+                console.log(k)
+                Chemical.appendChild(new Option(k, k))
+            }
+
+            onSelectChemical()
+        }
+
+        document.getElementById("Cancer").addEventListener('change', onSelectCancer)
+
+
+        function onSelectChemical() {
+            console.log(Cancer.value);
+            console.log(Chemical.value);
+            console.log(Drug.value);
+            console.log('onSelectChemical')
+
+            console.log(dic[Cancer.value][Chemical.value]);
+
+            Drug.length = 0;
+
+            for (k in dic[Cancer.value][Chemical.value]) {
+                console.log('key:')
+                console.log(k)
+                Drug.appendChild(new Option(k, k))
+            }
+
+            onSelectDrug()
+
+        }
+
+        document.getElementById("Chemical").addEventListener('change', onSelectChemical)
+
+
+        function onSelectDrug() {
+            console.log(Cancer.value);
+            console.log(Chemical.value);
+            console.log(Drug.value);
+
+            result = dic[Cancer.value][Chemical.value][Drug.value]
+            document.getElementById("result").value = result
+            plot(result);
+
+            console.log('here');
+        }
+
+        // document.getElementById("Cancer").addEventListener('change', onSelect)
+        // document.getElementById("Chemical").addEventListener('change', onSelect)
+        document.getElementById("Drug").addEventListener('change', onSelectDrug)
+            // document.getElementById("Cancer").addEventListener('click', onSelect)
+            // document.getElementById("Chemical").addEventListener('click', onSelect)
+            // document.getElementById("Drug").addEventListener('click', onSelect)
+
+
+        function calculate() {
+
+            var a = document.getElementById("Cancer").value
+                // alert(Cancer)
+            console.log(a)
+            var b = document.getElementById("Chemical").value
+                // alert(Chemical)
+            console.log(b)
+            var c = document.getElementById("drug").value
+                // alert(drug)
+            console.log(c)
+
+            result = dic[a][b][c]
+            console.log(result);
+            document.getElementById("result").value = result
+            plot(result);
+        }
+
+        function plot(data) {
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: ''
+                },
+                subtitle: {
+                    text: '来源：腾讯医典'
+                },
+                xAxis: {
+                    categories: ['北京', '沈阳', '福州', '广州', '哈尔滨', '杭州', '上海', '西安', '郑州', '重庆']
+                },
+                yAxis: {
+                    title: {
+                        text: '价格 (元)'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: '拜耳医药多吉美/0.2g',
+                    data: data
+                }]
+            });
+        }
+
+        // plot([121800, 12180, 23280, 12180, 12180, 12180, 11437.2, 12180, 12180, 12180])
+
+
+        document.getElementById("cal").addEventListener('click', calculate)
+
+        onSelectCancer();
+    </script>
+
+</body>
+
+</html>
