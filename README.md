@@ -2,21 +2,29 @@
 
 ## Schedule of spring 2019
 
-- Jan 19: W1, Introduction
-- Jan 26: W2, DJ workflow and frontend
-- Feb 2: W3, HTML, [story ideation/ background/ survey]
+- Jan 19: W1, Course Introduction & Data Journalism
+- Jan 26: W2, DJ workflow and frontend 101
+  - Appendix 1: Lab manual - first site via [big-road](https://github.com/hupili/big-road/)
+  - Appendix 2: Guideline: Data collection
+- Feb 2: W3, HTML
 - ~~Feb 9: suspended for Chinese New Year~~
 - Feb 16: W4, HTML/ CSS
-- Feb 23: W5, CSS, RWD, Useful lib
-- Mar 2: W6, CSS, [data collection]
+- Feb 23: W5, CSS
+- Mar 2: W6, CSS & RWD
 - Mar 9: W7, Javascript
-- Mar 16: W8, charting lib
-- Mar 23: W9, charting lib, [basic analysis and visualization]
-- Mar 30: W10, text
-- Apr 6: W11, map
-- Apr 13: W12, network, [iteration and refinement]
+  - Project milestone #0: story ideation/ background/ survey
+- Mar 16: W8, Javascript Cont'd
+  - Project milestone #1: data collection
+- Mar 23: W9, Basic Charting Library
+- Mar 30: W10, Charting Cont'd
+- Apr 6: W11, Mapping
+  - Project milestone #2: basic analysis and visualization
+- Apr 13: W12, Special Types Visualisation
+  - Appendix 1: jQuery
 - ~~Apr 20: Easter holidays~~
-- Apr 27: W13, [final presentation]
+  - Project: polishing and refinement
+- Apr 27: W13, Final presentation
+
 
 ## List of students of spring 2019
 
