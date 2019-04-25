@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+
+    <style>
+        #container {
+            height: 500px;
+            min-width: 310px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .loading {
+            margin-top: 10em;
+            text-align: center;
+            color: gray;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        // Prepare random data
+        var data = [
+            ['Central & Western', 139534],
+            ['Wan Chai', 106009],
+            ['Eastern', 296373],
+            ['Southern', 143331],
+            ['Yau Tsim Mong', 183084],
+            ['Sham Shui Po', 205565],
+            ['Kowloon City', 217224],
+            ['Wong Tai Sin', 209277],
+            ['Kwun Tong', 315577],
+            ['Kwai Tsing', 259427],
+            ['Tsuen Wan', 168786],
+            ['Tuen Mun', 245334],
+            ['Yuen Long', 301676],
+            ['North', 150586],
+            ['Tai Po', 153824],
+            ['Sha Tin', 335202],
+            ['Sai Kung', 245332],
+            ['Islands', 79815]
+        ];
+
+        $.getJSON('dc_land.lowres.geo.json', function(geojson) {
+
+            // Initiate the chart
+            Highcharts.mapChart('container', {
+                chart: {
+                    map: geojson
+                },
+
+                title: {
+                    text: 'Hong Kong working population by 18 districts'
+                },
+
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+
+                colorAxis: {
+                    tickPixelInterval: 100
+                },
+
+                series: [{
+                    data: data,
+                    keys: ['DC_ENG', 'value'],
+                    joinBy: 'DC_ENG',
+                    name: 'Workinng population',
+                    states: {
+                        hover: {
+                            color: '#a4edba'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.properties.DC_ENG}'
+                    }
+                }]
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

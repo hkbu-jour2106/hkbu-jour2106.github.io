@@ -1,0 +1,1 @@
+Here are the highcharts libs downloaded under license. Please obtain yours via: https://shop.highsoft.com/noncomform
