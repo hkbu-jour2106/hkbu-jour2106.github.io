@@ -5,12 +5,18 @@
 - [JOUR2106 - Data Visualization](#jour2106---data-visualization)
     - [Schedule of spring 2019](#schedule-of-spring-2019)
     - [List of students of spring 2019](#list-of-students-of-spring-2019)
+    - [List of projects of spring 2019](#list-of-projects-of-spring-2019)
     - [Homeworks](#homeworks)
         - [Homework4 -- Visual Critical Thinking](#homework4----visual-critical-thinking)
         - [Homework3 -- Javascript Powered Calculator](#homework3----javascript-powered-calculator)
         - [Homework2 -- Personal Homepage & Portfolio](#homework2----personal-homepage--portfolio)
         - [Homework1 -- Your first static website](#homework1----your-first-static-website)
         - [Homework0 -- Hello open source world](#homework0----hello-open-source-world)
+    - [Grading](#grading)
+    - [T&L Review](#tl-review)
+        - [Future wishlist](#future-wishlist)
+        - [Open source learning](#open-source-learning)
+        - [Service learning components](#service-learning-components)
 
 <!-- /TOC -->
 
@@ -64,6 +70,10 @@
 * Nguyen Thi Minh Anh - [@minhanhngg](https://github.com/minhanhngg) - [Intro](https://github.com/minhanhngg/jour2106/) - Enrolled - [HW1](https://minhanhngg.github.io/hw1/),  [HW2](https://minhanhngg.github.io),  [HW3](https://minhanhngg.github.io/hw3/), [HW4](https://minhanhngg.github.io/hw4/)
 * MO Kexin - [@majormoke](https://github.com/majormoke) - [Intro](https://github.com/majormoke/jour2016) - Audit - [HW1](https://majormoke.github.io/hw1/),  [HW2](https://majormoke.github.io),  [HW3](https://majormoke.github.io/hw3/), [HW4](https://majormoke.github.io/hw4/)
 * ZoyaZhao - [@zoyazhao1996](https://github.com/zoyazhao1996) - [Intro](https://github.com/zoyazhao1996/2106/) - Audit - [HW1](https://zoyazhao1996.github.io/hw1/),  [HW2](https://zoyazhao1996.github.io),  [HW3](https://zoyazhao1996.github.io/hw3/), [HW4](https://zoyazhao1996.github.io/hw4/)
+
+## List of projects of spring 2019
+
+**TODO**
 
 ## Homeworks
 
@@ -143,4 +153,33 @@ Submit path: `xxx.github.io` (note: this is the root path under your personalise
 
 Submit path: `jour2106/README.md`
 
+## Grading
+
+Grade distribution:
+
+* Homeworks:
+  * HW1: 10%
+  * HW2: 10%
+  * HW3: 10%
+  * HW4: 10% (termed as "case study" in syllabus)
+* Term project presentation: 20% (due April 27)
+* Term project: 40% (due May 4)
+
+## T&L Review
+
+### Future wishlist
+
+Those items were not covered due to average pacing but good to incorporate in the future:
+
+* D3 - data driven visualisation -- operate DOM object in a batch
+* G2 - grammar of graphics -- learn how to abstract a complex problem
+* Google Analytics - User behaviour tracking & analysis
+
+### Open source learning
+
+CILO2 and part of CILO1 are shifted to online platforms like GitHub, Slack, and DNN Newsletter. We encourage the students to adapt to this open source/ objective-driven learning model. This initiative is sponsored by HKBU/CHTL/TDG-1.
+
+### Service learning components
+
+The theme of this semester is "reporting and visualising for the underprivileged". The "mentorship" resource in CILO4 is addressed partly by this component (some students found their own collaborating parties). This initiative is sponsored by HKBU/CISL mini-grant.
 
