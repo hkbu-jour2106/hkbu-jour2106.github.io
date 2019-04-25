@@ -1,5 +1,20 @@
 # JOUR2106 - Data Visualization
 
+<!-- TOC -->
+
+- [JOUR2106 - Data Visualization](#jour2106---data-visualization)
+    - [Schedule of spring 2019](#schedule-of-spring-2019)
+    - [List of students of spring 2019](#list-of-students-of-spring-2019)
+    - [Homeworks](#homeworks)
+        - [Homework4 -- Visual Critical Thinking](#homework4----visual-critical-thinking)
+        - [Homework3 -- Javascript Powered Calculator](#homework3----javascript-powered-calculator)
+        - [Homework2 -- Personal Homepage & Portfolio](#homework2----personal-homepage--portfolio)
+        - [Homework1 -- Your first static website](#homework1----your-first-static-website)
+        - [Homework0 -- Hello open source world](#homework0----hello-open-source-world)
+
+<!-- /TOC -->
+
+
 ## Schedule of spring 2019
 
 - Jan 19: W1, Course Introduction & Data Journalism
@@ -25,7 +40,6 @@
   - Project: polishing and refinement
 - Apr 27: W13, Final presentation
 
-
 ## List of students of spring 2019
 
 * Angie Chan - [@angiecwl ](https://github.com/angiecwl ) - [Intro](https://github.com/angiecwl/JOUR2106/ ) - Enrolled
@@ -50,3 +64,81 @@
 * ZHAO Minzhu - [@MindyZHAOMinzhu](https://github.com/MindyZHAOMinzhu) - [Intro](https://github.com/MindyZHAOMinzhu/jour2106Mindy) - Enrolled
 * MO Kexin - [@majormoke](https://github.com/majormoke) - [Intro](https://github.com/majormoke/jour2016) - Audit
 * ZoyaZhao - [@zoyazhao1996](https://github.com/zoyazhao1996) - [Intro](https://github.com/zoyazhao1996/2106/) - Audit
+
+## Homeworks
+
+### Homework4 -- Visual Critical Thinking
+
+A short essay "criticise the visuals".
+
+* Find one problematic/ flawed visualisation online.
+* Discuss how it should look like.
+* Based on the same set of data, give your own version/ sample visualisation.
+* Use one of the charting libraries learned in this chapter.
+Page needs to be responsive (minimum mobile friendly)
+
+Reference for content: [sample1](https://juliannawqy.github.io/homework1/) , [sample2](https://roselol.github.io/homework1/) , [sample3](https://gloriasong.github.io/homework1/) (note those are content reference; tech requirement is higher)
+
+Submit path: `xxx.github.io/hw4`
+
+### Homework3 -- Javascript Powered Calculator 
+
+Make a meaningful calculator type of data journalism work.
+
+Reference examples:
+
+* Gaokao Enrolment
+* Hukou Scoring Calculator
+* Life Expectancy
+* Rent or Buy (NYT)
+* Chinese converter
+* Travel Expense
+* Student Loan ( sample )
+* HK budget calculator (code4hk; SCMP)
+* [Your idea]
+
+Tech requirements:
+
+* Responsive layout
+* Give some texts to introduce the background, i.e. make the page self-contained.
+
+Submit path: `xxx.github.io/hw3`
+
+### Homework2 -- Personal Homepage & Portfolio
+
+Build and online CV for yourself. 
+
+Tech requirements:
+
+* Fresh start with HTML/ CSS; no template
+* Use div to perform "block design"
+* Link to your first web story (HW1)
+* Responsive to mobile and desktop (the one-column trick)
+  * [Bonus] CSS-Grid for responsive layout
+* Add some effects using CSS lib
+
+Submit path: `xxx.github.io` (note: this is the root path under your personalised GitHub Pages domain name)
+
+### Homework1 -- Your first static website
+
+* Finish publishing your story on the web using big-road template.
+* Basic requirement:
+  *  Paragraph
+  * Heading
+  * Bullet point
+  * Image
+  * URL
+* Link to course website in the footer
+* [Bonus] add interactive (and responsive) chart
+* [Bonus] add video
+
+### Homework0 -- Hello open source world
+
+* Register a GitHub account, play around and get familiar with the environment.
+* Create a repository called `jour2106`
+* Create a file called `README.md` in that repositery
+* Introduce yourself in the `README.md`, e.g. your major, interest, topics, members looking for, skillset, expectation from the course
+
+(not graded but will help you attract the team members)
+
+Submit path: `jour2106/README.md`
