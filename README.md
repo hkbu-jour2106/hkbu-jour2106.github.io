@@ -73,7 +73,30 @@
 
 ## List of projects of spring 2019
 
-**TODO**
+
+- **What’s the future of children with ASD?**. Story about Autism Spectrum Disorder (ASD) children status quo in Hong Kong. By Chen Fang Yi, Cheung Yan Yi, Zhao Min Zhu, Angie Chan.
+
+    [[Story]](https://mindyzhaominzhu.github.io/twts_192_glint/#works) | [[Codes]](https://github.com/MindyZHAOMinzhu/MindyZHAOMinzhu.github.io/tree/master/twts_192_glint)
+
+- **Drug Prices in 10 Mainland Chinese Cities**. To find out the drug prices for different cancer treatments in different cities with crossfliter. By Ray Liu, Holly Chik, DONG Xinyue, Gursimran Hans.
+
+    [[Story]](https://felicity2724.github.io/JOUR2106-homework/) | [[Codes]](https://github.com/Felicity2724/JOUR2106-homework)
+    
+    
+- **The Muffled Voice**. The plight of sexual violence victims in Hong Kong. By Chin Ho Nam Erica, Ge Xin Ran, NG Yee Sin, SUN Han Yue.
+
+    [[Story]](https://tiffanynys.github.io/final/) | [[Codes]](https://github.com/tiffanynys/tiffanynys.github.io/tree/master/final)
+    
+    
+- **Elderly in Hong Kong**. Elderly aged 65 or above in Hong Kong hit 1.26 million high for 2018, up 4.25% year to year. This is why we should care. By Ding Yiming, LI Yun, Li Yuquan, Akane Nakasuji.
+
+    [[Story]](https://ly-iris.github.io/Elderly%20in%20HK/) | [[Codes]](https://github.com/Ly-Iris/Ly-Iris.github.io/tree/master/Elderly%20in%20HK)
+    
+    
+- **GENDER EQUALITY IN HONG KONG**. How is Hong Kong progressing on gender equality? By Li Sin Yung, Liu Pei Lin, Nguyen Thi Minh Anh..
+
+    [[Story]](https://minhanhngg.github.io/gender-equality/) | [[Codes]](https://github.com/minhanhngg/minhanhngg.github.io/tree/master/gender-equality)
+    
 
 ## Homeworks
 
