@@ -3,20 +3,20 @@
 <!-- TOC -->
 
 - [JOUR2106 - Data Visualization](#jour2106---data-visualization)
-    - [Schedule of spring 2019](#schedule-of-spring-2019)
-    - [List of students of spring 2019](#list-of-students-of-spring-2019)
-    - [List of projects of spring 2019](#list-of-projects-of-spring-2019)
-    - [Homeworks](#homeworks)
-        - [Homework4 -- Visual Critical Thinking](#homework4----visual-critical-thinking)
-        - [Homework3 -- Javascript Powered Calculator](#homework3----javascript-powered-calculator)
-        - [Homework2 -- Personal Homepage & Portfolio](#homework2----personal-homepage--portfolio)
-        - [Homework1 -- Your first static website](#homework1----your-first-static-website)
-        - [Homework0 -- Hello open source world](#homework0----hello-open-source-world)
-    - [Grading](#grading)
-    - [T&L Review](#tl-review)
-        - [Future wishlist](#future-wishlist)
-        - [Open source learning](#open-source-learning)
-        - [Service learning components](#service-learning-components)
+  - [Schedule of spring 2019](#schedule-of-spring-2019)
+  - [List of students of spring 2019](#list-of-students-of-spring-2019)
+  - [List of projects of spring 2019](#list-of-projects-of-spring-2019)
+  - [Homeworks](#homeworks)
+    - [Homework4 -- Visual Critical Thinking](#homework4----visual-critical-thinking)
+    - [Homework3 -- Javascript Powered Calculator](#homework3----javascript-powered-calculator)
+    - [Homework2 -- Personal Homepage & Portfolio](#homework2----personal-homepage--portfolio)
+    - [Homework1 -- Your first static website](#homework1----your-first-static-website)
+    - [Homework0 -- Hello open source world](#homework0----hello-open-source-world)
+  - [Grading](#grading)
+  - [T&L Review](#tl-review)
+    - [Future wishlist](#future-wishlist)
+    - [Open source learning](#open-source-learning)
+    - [Service learning components](#service-learning-components)
 
 <!-- /TOC -->
 
@@ -76,7 +76,7 @@
 
 - **What’s the future of children with ASD?** Story about Autism Spectrum Disorder (ASD) children status quo in Hong Kong. By Chen Fang Yi, Cheung Yan Yi, Zhao Min Zhu, Angie Chan.
 
-    [[Story]](https://mindyzhaominzhu.github.io/twts_192_glint/#works) | [[Codes]](https://github.com/MindyZHAOMinzhu/MindyZHAOMinzhu.github.io/tree/master/Final%20project/finalwebsite)
+    [[Story]](https://mindyzhaominzhu.github.io/Final%20project/finalwebsite/) | [[Codes]](https://github.com/MindyZHAOMinzhu/MindyZHAOMinzhu.github.io/tree/master/Final%20project/finalwebsite)
 
 - **Drug Prices in 10 Mainland Chinese Cities** To find out the drug prices for different cancer treatments in different cities with crossfliter. By Ray Liu, Holly Chik, DONG Xinyue, Gursimran Hans.
 
