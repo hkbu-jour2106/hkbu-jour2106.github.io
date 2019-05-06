@@ -80,8 +80,7 @@
 
 - **Drug Prices in 10 Mainland Chinese Cities** To find out the drug prices for different cancer treatments in different cities with crossfliter. By Ray Liu, Holly Chik, DONG Xinyue, Gursimran Hans.
 
-    [[Story]](https://felicity2724.github.io/JOUR2106-homework/) | [[Codes]](https://github.com/Felicity2724/JOUR2106-homework)
-    
+    [[Story]](https://felicity2724.github.io/JOUR2106-homework/) | [[Codes]](https://github.com/Felicity2724/JOUR2106-homework/tree/gh-pages)
     
 - **The Muffled Voice** The plight of sexual violence victims in Hong Kong. By Chin Ho Nam Erica, Ge Xin Ran, NG Yee Sin, SUN Han Yue.
 
