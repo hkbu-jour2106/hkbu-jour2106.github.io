@@ -1,14 +1,649 @@
-<h1>
-    Data Visualisation Studio
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Data Vis Studio</title>
+
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+
+<body id="layout">
+    <header class="ng-scope">
+        <div class="header-top">
+            <a href="" class="header-small">
+                <div class="header-small-nav"></div>
+            </a>
+
+            <a class="header-lockup">
+                <div class="header-logo">
+                    <img src="images/icon.png" width="35px" ; height="35px" />
+                </div>
+                <div class="header-product">Data Viz</div>
+            </a>
+
+            <nav class="header-nav" id="header-nav" aria-label="Navigation">
+                <a class="header-lockup">
+
+                    <div class="header-product">Data Vis</div>
+                </a>
+
+                <div class="header-item" aria-level="1">
+                    <a href="#sec-intro" class="header-link">
+                        About
+                    </a>
+
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="#sec-announce" class="header-link">
+                        Announce
+                    </a>
+
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="#sec-slides" class="header-link">
+                        Slides
+                    </a>
+
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="#sec-resources" class="header-link">
+                        Resources
+                    </a>
+
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="#sec-projects" class="header-link">
+                        Projects
+                    </a>
+
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="https://github.com/hupili/datavis.studio" target="_blank" class="header-link">
+                        Github
+                    </a>
+                </div>
+                <div class="header-item" aria-level="1">
+                    <a href="https://drive.google.com/drive/folders/1h5g8z7yrR7Ab0d-Zs1yVVKsJnvdrcNiI" target="_blank"
+                        class="header-link">Recording</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- END nav -->
     <br>
-    <small> A collection of teaching materials for JOUR2106/ HKBU</small>
-</h1>
+    <br>
 
-<p>Useful resources</p>
+    <div id="pop-up" class="closable">
+        <div class="pop-content-wrapper">
+            <div class="pop-text-wrapper">
+                <div class="pop-headline-text">
+                    <p>
+                        <strong>Homework 4</strong> -- <em> A short essay "criticise the visuals" </em> due on
+                        <strong> April 5</strong>.
+                    </p>
 
-<ul>
-    <li><a href="https://github.com/hkbu-jour2106/hkbu-jour2106.github.io"> GitHub repo <a></a></li>
-    <li><a href="http://datavis.studio/2017/projects/"> 2017 student works <a></a></li>
-    <li><a href="http://datavis.studio/2018/"> 2018 student works <a></a></li>
-    <li><a href="https://dnnsociety.org/"> Data and News Society<a></a></li>
-</ul>
+                </div>
+            </div>
+            <a href="#sec-announce" class="pop-cta pop-cta-button">
+
+                <div class="pop-text-holder">
+                    <p>details</p>
+                </div>
+            </a>
+        </div>
+        <div class="pop-close-wrapper">
+            <!-- <a href="javascript:void(0);" class="icon-close">&#10006;</a> -->
+            <a href="javascript:void(0);" class="icon-close" onclick="$('#pop-up').fadeOut()">&#10006;</a>
+        </div>
+    </div>
+
+    <!-- END section -->
+    <div class="container">
+        <div class="info">
+            <div class="main">
+                <h3> Select Readings</h3>
+                <div class="newspieces">
+                    <div class="topnews1 image">
+                        <img src="https://cdn-images-1.medium.com/max/2400/1*V7M6pgacOgFgLpE_MmPf4g.jpeg">
+                    </div>
+                    <div class="topnews2">
+                        <a href="https://open.nytimes.com/css-grid-for-designers-f74a883b98f5" target="_blank"
+                            class="link-effect">CSS
+                            Grid for
+                            Designers</a>
+                        <p>How a new technology is changing layout on the web</p>
+                        <p>
+                            Author:
+                            Johna Paolino
+                            <span class="placeholder"></span>
+                            Date:
+                            Jan 3
+                        </p>
+                    </div>
+                    <div class="news1 image">
+                        <img
+                            src="https://static001.infoq.cn/resource/image/1c/88/1cea48743d2155049c7ad0bdc1536788.jpeg"><br>
+                        <a href="https://towardsdatascience.com/finding-the-real-top-stack-overflow-questions-aebf35b095f1"
+                            target="_blank" class="link-effect">
+                            The real top Stack Overflow questions</a>
+                        <p>
+                            Author:
+                            Felipe Hoffa
+                            <span class="placeholder"></span>
+                            Date:
+                            Feb 20
+                        </p>
+                    </div>
+                    <div class="news2 image">
+                        <img src="http://bu-dmc.hkbu.edu.hk/dmh/img/DMH_content-03.jpg"><br>
+                        <a href="http://datavis.studio/courses/HK.html" target="_blank" class="link-effect">
+                            Data in media education @HK</a>
+                        <p>
+                            Author:
+                            Pili Hu
+                        </p>
+                    </div>
+                    <div class="news3 image">
+                        <img src="https://news.cgtn.com/event/2019/whorunschina/img/lianjie2.png"><br>
+                        <a href="https://news.cgtn.com/event/2019/whorunschina/index.html" target="_blank"
+                            class="link-effect">
+                            Who Runs China</a>
+                        <p>
+                            Author:
+                            CGTN
+                            <span class="placeholder"></span>
+                            Date:
+                            March 4
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side">
+                <h3> Q & A</h3>
+                <div class="questions">
+
+                    <div class="list">
+                        <p>Frequent Asked </p>
+                        <ul>
+                            <li> <a href="https://github.com/hupili/datavis.studio/issues/16" target="_blank"
+                                    class="link-effect">Using
+                                    @media &
+                                    Responsive</a>
+                            </li>
+                            <li> <a href="https://github.com/hupili/datavis.studio/issues/14" target="_blank"
+                                    class="link-effect">
+                                    Concept of Block &
+                                    DOM
+                                    Tree</a>
+                            </li>
+                            <li><a href="https://github.com/hupili/datavis.studio/issues/15" target="_blank"
+                                    class="link-effect">
+                                    CSS Grid</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recommended">
+                    <div class="list">
+                        <p>Teacher Recommended </p>
+                        <ul>
+                            <li> <a href="https://github.com/hupili/datavis.studio/issues/12" target="_blank"
+                                    class="link-effect">
+                                    GitHub desktop
+                                    prompts
+                                    "try
+                                    pulling
+                                    before pushing" </a> </li>
+                            <li> <a href="https://github.com/hupili/datavis.studio/issues/9" target="_blank"
+                                    class="link-effect">
+                                    Simple HTTP request
+                                    handler
+                                </a>
+                            </li>
+                            <li><a href="https://github.com/hupili/datavis.studio/issues/3" target="_blank"
+                                    class="link-effect">
+                                    Embed TED video</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End section -->
+
+
+
+    <section class="blocks" id="sec-intro">
+
+        <div class="" id="sec-intro">
+            <h2 style="text-align:center"> Course Introduction </h2>
+
+            <p>
+                As data becomes increasingly important in news reporting, this course helps students learn the
+                fundamental principles, tools and workflow to visualise data. Each class is composed of half lecture
+                session and half lab session so that students can get adequate guided exercises. The course mainly
+                focuses on data visualisation although it covers basic data analytics and data journalism workflow
+                just
+                to be self-contained. Among many visualisation techniques and tools, this course focuses on the web
+                stack, because most content are distributed via (mobile) web-based technology at present. Students
+                will
+                learn the end-to-end production and deployment of a web-based story, foundations of
+                HTML/CSS/Javascript
+                and visualisation libraries like <a href="https://github.com/ecomfe/echarts" target="_blank"
+                    class="link-effect">eCharts</a>, <a href="https://github.com/d3/d3" target="_blank"
+                    class="link-effect">D3</a>,
+                <a href="https://github.com/Leaflet/Leaflet" target="_blank" class="link-effect">Leaflet</a>, ...
+                By finishing this course, students are
+                expected to build one web-based data visualisation news story and distribute the project via their
+                own
+                websites.
+            </p>
+
+
+            <h2 style="text-align:center"> Course Instructor </h2>
+
+            <p>
+
+                Mr. Pili Hu teaches data journalism and media technology in HKBU. Before joining HKBU, he served as the
+                Chief Technology Officer of <a href="https://theinitium.com/" target="_blank"
+                    class="link-effect">Initium Media</a>,
+                responsible for
+                developing technologies to power the
+                fast-growing digital media outlet. He founded Initium Lab whose data-driven news report on <a
+                    href="http://legco.initiumlab.com/" target="_blank" class="link-effect">Hong
+                    Kong Legislative Council voting pattern</a>
+                won <a href="https://theinitium.com/article/20160615-sopa-awards-2016/" target="_blank"
+                    class="link-effect">SOPA
+                    "Excellence in
+                    Information
+                    Graphics" award</a> in 2016. He was
+                co-founder and CEO of HyperLab which produced a cross social network search engine. He holds an
+                MPhil
+                in Information Engineering from CUHK. Before moving to Hong Kong, he worked for Baidu in Beijing as
+                core algorithm R/D engineer, responsible for user behaviour and link analysis.
+            </p>
+        </div>
+    </section>
+    <!-- END section -->
+    <br>
+    <br>
+
+    <section class="blocks" id="sec-announce">
+        <div>
+            <h2 style="text-align:center">What's New</h2>
+            <div>
+                <h4>
+                    <strong>Homework 2</strong> -- <em> Online CV </em> due on
+                    <strong> Mar 8</strong>.
+                </h4>
+                <ul>
+                    Requirements:
+                    <li>Fresh start with HTML/ CSS; no template.</li>
+                    <li>Use div to perform "block design".</li>
+                    <li>Link to your first web story.</li>
+                    <li>Responsive to mobile and desktop (the one-column trick).</li>
+                    <li> Add some effects using CSS lib.</li>
+                    <li>Submission path: "xxx.github.io".</li>
+                </ul>
+            </div>
+            <div>
+                <h4>
+                    <strong>Homework 3</strong> -- <em> calculator of data journalism work </em> due on
+                    <strong> Mar 22</strong>.
+                </h4>
+                <ul>
+                    Requirements:
+                    <li>Responsive layout</li>
+                    <li>Give some texts to introduce the background, i.e. make the page self-contained. </li>
+                    <li>Submit path: xxx.github.io/hw2 </li>
+                </ul>
+                <ul>
+                    Reference examples:
+                    <li>Gaokao Enrolment </li>
+                    <li> Hukou Scoring Calculator</li>
+                    <li><a href="https://www.myabaris.com/tools/life-expectancy-calculator-how-long-will-i-live/"
+                            target="_blank" class="link-effect">Life
+                            Expectancy</a></li>
+                    <li><a href="https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html"
+                            target="_blank" class="link-effect">Rent or Buy
+                            (NYT) </a></li>
+                    <li><a href="https://chequeconvert.hkcoding.com/" target="_blank" class="link-effect">Chinese
+                            converter </a></li>
+                    <li><a href="http://www.budgetyourtrip.com/france" target="_blank" class="link-effect">Travel
+                            Expense </a></li>
+                    <li><a href="http://archive.jsonline.com/business/whats-the-real-cost-of-your-student-loans-379971231.html/"
+                            target="_blank" class="link-effect">Student
+                            Loan </a> <a href="https://alanzchen.github.io/mortgage-demo/index.html" target="_blank"
+                            class="link-effect">(sample) </a> </li>
+                    <li><a href="http://multimedia.scmp.com/budget-calculator/" target="_blank" class="link-effect">HK
+                            budget calculator
+                        </a>(code4hk; SCMP)
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <h4>
+                    <strong>Homework 4</strong> -- <em> A short essay "criticise the visuals" </em> due on
+                    <strong> April 5</strong>.
+                </h4>
+                <ul>
+                    Requirements:
+                    <li>Find one problematic/ flawed visualisation online. </li>
+                    <li>Discuss how it should look like.</li>
+                    <li>Based on the same set of data, give your own version/ sample visualisation.</li>
+                    <li>Use one of the charting libraries learned in this chapter.</li>
+                    <li>Page needs to be responsive.</li>
+
+                </ul>
+                <ul>
+                    Reference:
+                    <li><a href="https://juliannawqy.github.io/homework1/" target="_blank" class="link-effect">sample
+                            1</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- END section -->
+    <br>
+    <br>
+
+    <section class="blocks" id="sec-slides">
+        <div class="">
+            <h2 style="text-align:center"> Lecture Slides </h2>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1ksEe7d99-msQUDUm-kTWcpWk2cobhGK6yRaWJ9bjVdo/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+
+                <div class="pointers">
+                    <h3>Week 1</h3>
+
+                    <ul>
+                        <li>Introduction</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1-jSJn6y74JPzjr2FarFLIxFho-dvBu3Ermbu7rvomzQ/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 2 </h3>
+                    <ul>
+                        <li>State of Art</li>
+                        <li>What is Data Journalism</li>
+                        <li>Workflow of Data-driven Journalism</li>
+                        <li>What is Data</li>
+                        <li>How to find Data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1XMQwm79Ac9-SClOIiKDsKZaHNZ0qtO8khyg9Ct0Qf54/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 3 </h3>
+                    <ul>
+                        <li>Frontend overview</li>
+                        <li>Tips to learn Frontend </li>
+                        <li>Further into HTML</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1pO8qSzYNLveI1XkBGJoelw3p-_KFUc02I124uvX14FU/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 4 </h3>
+                    <ul>
+                        <li>Web Foundation (optional)</li>
+                        <li>Bind your own domain to gh-pages</li>
+                        <li>VSCode</li>
+                        <li>HTML/ CSS</li>
+                        <li>Paths</li>
+                        <li>Layout in HTML/ CSS</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1A4E8exThH-WMtYdcSQtxjFxQi7TTQoOZmf7zJT-klQY/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 5 </h3>
+                    <ul>
+                        <li>Get familiar working in VSCode</li>
+                        <li>Sync smoothly with GitHub gh-pages using GitHub Desktop</li>
+                        <li>Introduction to CSS</li>
+                        <li>Some useful CSS libs</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1ZhgEvgwMZy9qhFyqqabqPIbq4c2NHxooM0ECfeBQvnA/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 6 </h3>
+                    <ul>
+                        <li>Responsiveness</li>
+                        <li>Useful CSS Libraries </li>
+                        <li>CSS Grid </li>
+                        <li>Design Resources</li>
+                        <li>More compatibility considerations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1u3aPdxZqovs6sXB1HUZW_bSvMdAY4hb9a-mjfttQk0E/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 7 </h3>
+                    <ul>
+                        <li>Learning programming languages</li>
+                        <li>Javascript Basics</li>
+                        <li>Integrated Exercise for Javascript</li>
+                        <li>Useful Javascript Libraries</li>
+                        <li>Common Questions</li>
+                        <li>Interaction: DOM, Event</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1u7W6Zr2j_NsRcHwa1A8R4YuGAHfYMLzm2vdJr2DV_Kg/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 8 </h3>
+                    <ul>
+                        <li>Project briefing </li>
+                        <li>Data type, data structure, object, function </li>
+                        <li>DOM Object and Event</li>
+                        <li>Operate UI: a calculator</li>
+                        <li>Control flow</li>
+                        <li>[introduction] Other JS libs</li>
+                        <li>[introduction] Semantic UI</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="weekslides">
+                <responsive-block>
+                    <div class="slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/1YYnYmXxOmog2jZeJVzjGG8Ggyx7BwFbPrn-F0gCB2R0/embed?start=false&loop=false&delayms=3000"
+                            frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </responsive-block>
+                <div class="pointers">
+                    <h3> Week 9 </h3>
+                    <ul>
+                        <li>Javascript data structure </li>
+                        <li>JSON </li>
+                        <li>Charting</li>
+                        <li>HighCharts</li>
+                        <li>Data conversion </li>
+                        <li>Integrated exercise</li>
+                        <li>Visualisation resources</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- END section -->
+
+    <br>
+    <br>
+
+    <section class="blocks" id="sec-resources">
+        <h2 style="text-align:center"> Learning Resources </h2>
+        <div class="wapper">
+            <div class="resource">
+                <h1>news and reference</h1>
+                <ul>
+                    <li><a href="https://dnnsociety.org/" target="_blank" class="link-effect"> Data and News
+                            Society </a></li>
+                    <li><a href="http://interactive.jour.hkbu.edu.hk/" target="_blank" class="link-effect">Web-based
+                            Interactive Stories
+                            from HKBU JLab</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="use">
+                <h1>use and modify</h1>
+                <ul>
+                    <li><a href="https://datavizproject.com/" target="_blank" class="link-effect">charts with
+                            given data structure </a></li>
+                    <li><a href="https://datavizcatalogue.com/" target="_blank" class="link-effect">charts with
+                            introduction and tools to build </a></li>
+                    <li><a href="https://flourish.studio/" target="_blank" class="link-effect">flourish -- Data
+                            visualization</a></li>
+                    <li><a href="https://color.adobe.com/create/color-wheel/" target="_blank" class="link-effect">adobe
+                            color-wheel</a>
+                    </li>
+                    <li><a href="https://fontawesome.com/ " target="_blank" class="link-effect">icons </a></li>
+                    <li><a href="https://fonts.google.com/" target="_blank" class="link-effect">fonts </a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- END section -->
+    <br>
+    <br>
+
+    <section class="blocks" id="sec-projects">
+
+        <h2 style="text-align:center">Past Students Projects</h2>
+        <div class="wapper">
+            <div class="2017">
+                <div class="image">
+                    <img src="images/class2017.png">
+                </div>
+                <br>
+                <div>
+                    <a href="http://datavis.studio/2017/projects/" target="_blank" class="link-effect">
+                        2017 student works</a>
+                </div>
+            </div>
+            <div class="2018">
+                <div class="image">
+                    <img src="images/class2018.png">
+                </div>
+                <br>
+                <div>
+                    <a href="http://datavis.studio/2018/" target="_blank" class="link-effect">
+                        2018 student works</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- END section -->
+
+    <footer>
+        <p style="text-align:center; font-size: 16px">JOUR 2106 Data Visualisation <br>
+            All Rights Reserved. Last update: March 22, 2019 </p>
+
+    </footer>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37311363-18"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-37311363-18');
+    </script>
+
+
+</body>
+
+</html>

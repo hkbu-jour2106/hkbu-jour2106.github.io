@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1>Calculator example with event on button</h1>
+    Principal:
+    <input type="number" id="principal" value=100>
+    <br> Year:
+    <input type="number" id="year" value=2019>
+    <br> Month:
+    <input type="number" id="month" value=1>
+    <br> Day:
+    <input type="number" id="day" value=25>
+
+    <br>
+    <button id="calculate"> Calculate </button>
+
+    <br>
+    <br>
+    <div>
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function calculate() {
+            var r = 4 / 10000; // interest rate
+            var principal = document.getElementById('principal').value;
+            var year = document.getElementById('year').value;
+            var month = document.getElementById('month').value;
+            var day = document.getElementById('day').value;
+            var today = new Date();
+            var loanDay = new Date(year, month - 1, day);
+            var dateDiff = (today - loanDay) / 1000 / 3600 / 24;
+            document.getElementById('result').innerText = principal * Math.pow((1 + r), dateDiff);
+        }
+
+        document.getElementById('calculate').addEventListener('click', calculate)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1044 @@
+$font-primary: 'Source Sans Pro', Arial, sans-serif;
+
+// Overrides
+$grid-gutter-width: 40px !default; 
+$border-radius-base:  4px !default;
+$padding-base-vertical: 14px !default;
+
+// $brand-primary: #52d3aa !default;
+// $brand-secondary: #3f95ea !default; 
+
+$brand-primary: 			#f9ad81 !default;
+$brand-secondary: 		#41454f !default;
+$brand-success:         #58ca7e !default;
+$brand-info:            #1784fb !default;
+$brand-warning:         #fed330 !default;
+$brand-danger:          #fb4f59 !default;
+
+$brand-white: #fff !default;
+$brand-black: #000 !default;
+
+
+$input-border-focus:  $brand-primary !default;
+$form-group-margin-bottom:       30px !default;
+
+$font-primary: 'Roboto Slab', sans-serif;
+$font-secondary: 'Roboto', sans-serif;;
+
+// Mixin
+@mixin transition($transition, $ease: ease) {
+    -moz-transition:    all $transition $ease;
+    -o-transition:      all $transition $ease;
+    -webkit-transition: all $transition $ease;
+    -ms-transition: 		all $transition $ease;
+    transition:         all $transition $ease;
+}
+@mixin fh5co-translateX($translatex) {
+	-moz-transform: translateX($translatex);
+	-webkit-transform: translateX($translatex);
+	-ms-transform: translateX($translatex);
+	-o-transform: translateX($translatex);
+	transform: translateX($translatex);
+}
+@mixin inline-block() {
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin flex() {
+	display: -webkit-box;      
+  	display: -moz-box;         
+  	display: -ms-flexbox;      
+  	display: -webkit-flex;     
+  	display: flex;             
+}
+@mixin flexwrap() {
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap; 
+	-moz-flex-wrap: wrap; 
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?srf3rx');
+	src:url('../fonts/icomoon/icomoon.eot?srf3rx#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.ttf?srf3rx') format('truetype'),
+		url('../fonts/icomoon/icomoon.woff?srf3rx') format('woff'),
+		url('../fonts/icomoon/icomoon.svg?srf3rx#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin icomoon() {
+	
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+}
+
+// Import 
+@import 'bootstrap/mixins';
+@import 'bootstrap/variables';
+
+
+
+html {
+	background: #f7f7f7;
+}
+body {
+	font-family: $font-secondary;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.5;
+	color: #7a7e89;
+	background: #f7f7f7;
+	&.fh5co-overflow {
+		overflow-x: auto;	
+	}
+}
+
+::-webkit-selection {
+  color: $brand-white;
+  background: $brand-primary;
+}
+
+::-moz-selection {
+  color: $brand-white;
+  background: $brand-primary;
+}
+
+::selection {
+  color: $brand-white;
+  background: $brand-primary;
+}
+
+
+a {
+	color: $brand-primary;
+	@include transition(.5s);
+	&:hover, &:focus, &:active {
+		color: darken($brand-primary, 15%);
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-primary;
+	color: $brand-black;
+}
+p {
+	margin-bottom: 30px;
+}
+
+// Buttons
+.btn {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	font-family: $font-primary;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 700;
+	@include border-radius(4px);
+	@include transition(.5s);
+	&.btn-md {
+		padding: 10px 20px!important;
+	}
+	&.btn-lg {
+		padding: 18px 36px!important;
+	}
+	&:hover, &:active, &:focus {
+		box-shadow: none!important;
+		outline: none!important;
+	}
+}
+.btn-primary {
+	background: $brand-primary;
+	color: $brand-white;
+	border: 2px solid $brand-primary;
+	&:hover, &:focus, &:active {
+		background: darken($brand-primary, 5%)!important;
+		border-color: darken($brand-primary, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-primary;
+		border: 2px solid $brand-primary;
+		&:hover, &:focus, &:active {
+			background: $brand-primary;
+			color: $brand-white;
+		}
+	}
+}
+.btn-success {
+	background: $brand-success;
+	color: $brand-white;
+	border: 2px solid $brand-success;
+	&:hover, &:focus, &:active {
+		background: darken($brand-success, 5%)!important;
+		border-color: darken($brand-success, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-success;
+		border: 2px solid $brand-success;
+		&:hover, &:focus, &:active {
+			background: $brand-success;
+			color: $brand-white;
+		}
+	}
+}
+.btn-info {
+	background: $brand-info;
+	color: $brand-white;
+	border: 2px solid $brand-info;
+	&:hover, &:focus, &:active {
+		background: darken($brand-info, 5%)!important;
+		border-color: darken($brand-info, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-info;
+		border: 2px solid $brand-info;
+		&:hover, &:focus, &:active {
+			background: $brand-info;
+			color: $brand-white;
+		}
+	}
+}
+.btn-warning {
+	background: $brand-warning;
+	color: $brand-white;
+	border: 2px solid $brand-warning;
+	&:hover, &:focus, &:active {
+		background: darken($brand-warning, 5%)!important;
+		border-color: darken($brand-warning, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-warning;
+		border: 2px solid $brand-warning;
+		&:hover, &:focus, &:active {
+			background: $brand-warning;
+			color: $brand-white;
+		}
+	}
+}
+.btn-danger {
+	background: $brand-danger;
+	color: $brand-white;
+	border: 2px solid $brand-danger;
+	&:hover, &:focus, &:active {
+		background: darken($brand-danger, 5%)!important;
+		border-color: darken($brand-danger, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-danger;
+		border: 2px solid $brand-danger;
+		&:hover, &:focus, &:active {
+			background: $brand-danger;
+			color: $brand-white;
+		}
+	}
+}
+
+.btn-outline {
+	background: none;
+	border: 2px solid lighten($brand-black, 50%);
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	@include transition(.3s);
+	&:hover, &:focus, &:active {
+		box-shadow: none;
+	}
+}
+
+// Form Input Field
+.form-control {
+	box-shadow: none;
+	background: transparent;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	height: 54px;
+	font-size: 18px;
+	font-weight: 300;
+  	&:active, &:focus {
+  		outline: none;
+		box-shadow: none;
+		border-color: $brand-primary;
+  }
+}
+
+#fh5co-header {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	z-index: 999;
+	background: transparent;
+	padding: 15px 0;
+	width: 100%;
+	@media screen and (max-width :$screen-sm) {
+		background: $brand-white;
+		top: 0;
+	}
+	#fh5co-logo {
+		float: left;
+		line-height: 1.2;
+		position: relative;
+		@media screen and (max-width :$screen-sm) {
+			top: -2px;
+		}
+		a {
+			font-family: $font-primary;
+			font-size: 30px;
+			color: $brand-white;
+			@media screen and (max-width :$screen-sm) {
+				color: $brand-black;
+			}
+			span {
+				color: $brand-primary;
+			}
+		}
+	}
+	#fh5co-main-nav {
+		float: right;
+		@media screen and (max-width :$screen-sm) {
+			display: none;
+		}
+		ul {
+			padding: 0;
+			margin: 4px 0 0 0;
+			li {
+				padding: 0;
+				margin: 0;
+				display: inline;
+				a {
+					font-family: $font-primary;
+					color: rgba(255,255,255,.8);
+					text-decoration: none;
+					margin-left: 30px;
+					border-bottom: 2px solid transparent;
+					&:hover {
+						text-decoration: none;
+						color: $brand-primary;
+					}
+
+				}
+				&.active {
+					a {
+						color: $brand-white;
+						border-bottom: 2px solid $brand-primary;
+					}
+				}
+			}
+		}
+	}
+	&.navbar-fixed-top {
+		position: fixed!important;
+		background: $brand-white;
+		-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+		top: 0;
+		left: 0px;
+		#fh5co-logo {
+			float: left;
+			line-height: 1.2;
+			a {
+				font-family: $font-primary;
+				font-size: 30px;
+				color: $brand-black;
+			}
+		}
+
+		#fh5co-main-nav {
+			ul {
+				li {
+					a {
+						font-family: $font-primary;
+						color: rgba(0,0,0,.8);
+						text-decoration: none;
+						margin-left: 30px;
+						border-bottom: 2px solid transparent;
+						&:hover {
+							text-decoration: none;
+							color: $brand-primary;
+						}
+					}
+					&.active {
+						a {
+							color: $brand-primary;
+							border-bottom: 2px solid transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+ * Flexslider
+ */
+#fh5co-home { 
+	min-height: 700px;
+	background: $brand-white url(../images/loader.gif) no-repeat center center;
+
+	.flexslider {
+		border: none;
+		position: relative;
+		z-index: 1;
+		margin-bottom: 0;
+
+		.fh5co-text {
+			position: absolute;
+			z-index: 3;
+			width: 100%;
+			top: 50%;
+			margin-top: -129px;
+			text-align: center;
+			
+
+			@media screen and (max-width: $screen-sm) {
+				// margin-top: -66px;
+			}
+			h1 {
+				margin: 0 0 30px 0;
+				padding: 0;
+				font-family: $font-primary;
+				font-size: 50px;
+				font-weight: 400;
+				color: $brand-white;
+				@include inline-block;
+				border: 7px solid $brand-white;
+				padding: 30px 50px;
+				@include transition(.3s);
+				@media screen and (max-width: $screen-md) {
+					font-size: 30px;
+				}
+			}
+			.fh5co-go {
+				margin-top: 30px;
+				a {
+					font-family: $font-secondary;
+					font-size: 13px;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					color: $brand-white;
+					font-weight: 400;
+					display: block;
+					position: relative;
+					padding-bottom: 50px;
+					span {
+						font-size: 20px;
+						display: block;
+						position: absolute;
+						// display: block;
+						bototm: 0;
+						// top: 29%;
+						left: 50%;
+						margin-left: -10px;
+						// width: 2px;
+						// height: 6px;
+						// margin: -2px 0 0 -1px;
+						// background: white;
+						-webkit-animation: ani-mouse 2.5s linear infinite;
+						-moz-animation: ani-mouse 2.5s linear infinite;
+						animation: ani-mouse 2.5s linear infinite;
+					}
+					&:hover {
+						text-decoration: none;
+						span {
+							text-decoration: none;
+							i {
+								// font-size: 30px;
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		.slides {
+			li {
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		}
+		.fh5co-overlay {
+			position: absolute;
+			z-index: 3;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: .3;
+			background: #444853;
+		}
+		.flex-control-nav,
+		.flex-direction-nav {
+			display: none;
+		}
+	}
+}
+
+#fh5co-main,
+#fh5co-offcanvas {
+	@include transition(.8s);
+}
+
+#fh5co-offcanvas {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	width: 275px;
+	background: #444853;
+	overflow-y: auto;
+	padding: 50px 30px 30px 30px;
+	.fh5co-offcanvas-close {
+		position: absolute;
+		top: 20px;
+		right: 30px;
+		&:before {
+			@include icomoon;
+			content: "\e117";
+			font-size: 30px;
+			color: rgba(255,255,255,.5);
+			@include transition(.5s);
+		}
+		&:hover {
+			&:before {
+				color: rgba(255,255,255,1);		
+			}
+		}
+	}
+	@include fh5co-translateX(275px);
+	nav {
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				a {
+					display: block;
+					color: rgba(255,255,255,.5);
+					padding: 7px 0;
+					&:hover {
+						color: $brand-primary;	
+					}
+				}
+				&.active {
+					a {
+						color: $brand-primary;
+					}
+				}
+			}
+		}
+	}
+	.offcanvas-visible & {
+		@include fh5co-translateX(0px);
+	}
+}
+#fh5co-main {
+	// @media screen and(max-width: $screen-sm) {
+	// 	@include transition(.8s);
+	// 	@include fh5co-translateX(0px);	
+	// }
+	// .offcanvas-visible & {
+		// @include fh5co-translateX(-275px);	
+	// }
+}
+
+#fh5co-portfolio,
+#fh5co-about,
+#fh5co-contact,
+#fh5co-testimony,
+#fh5co-content {
+	padding: 7em 0;
+	@media screen and (max-width: $screen-sm) {
+		padding: 4em 0;
+	}
+}
+#fh5co-content {
+	figure {
+		margin-bottom: 30px;
+	}
+}
+#fh5co-about {
+	background: #444853;
+	h2 {
+		color: $brand-white;
+	}
+	.fh5co-text {
+		padding-left: 4em;
+		@media screen and (max-width: $screen-md) {
+			padding: 0 0 20px 0;
+		}
+		.fh5co-meta {
+			color: rgba(255,255,255,.2);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: 12px;
+			display: block;
+			margin-bottom: 20px;
+			font-weight: 700;
+		}
+		&.with-plus {
+			padding-right: 4em;
+			padding-left: 0;
+			position: relative;
+			@media screen and (max-width: $screen-md) {
+				padding-right: 0;
+			}
+			&:after {
+				position: absolute;
+				right: 0;
+				margin-right: -30px;
+				top: 50%;
+				margin-top: -25px;
+				@include icomoon;
+				content: "\e114";
+				font-size: 50px;
+				color: $brand-primary;
+				@media screen and (max-width: $screen-md) {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}
+
+#fh5co-testimony {
+	background-color: transparent;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	width: 100%;
+	> .container {
+		position: relative;
+		z-index: 5;
+	}
+	> .fh5co-overlay {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 3;
+		opacity: .7;
+		background: #444853;
+	}
+	.flexslider {
+		border: transparent!important;
+		background: transparent!important;
+		.slides {
+			li {
+				font-size: 40px;
+				line-height: 1.5;
+				blockquote {
+					padding-left: 0;
+					border-left: none;
+					@media screen and (max-width: $screen-sm) {
+						padding: 0 20px;	
+					}
+					p {
+						font-size: 40px;
+						line-height: 1.5;
+						font-family: $font-primary;
+						color: rgba(255,255,255,1)!important;
+						@media screen and (max-width: $screen-sm) {
+							font-size: 20px;
+							line-height: 1.5;
+						}
+						
+						cite {
+							display: block;
+							padding-top: 20px;
+							font-size: 20px;
+							font-family: $font-secondary;
+							font-style: normal;
+							color: rgba(255,255,255,.7);
+						}
+					}
+				}
+			}
+		}
+		.flex-control-paging {
+			position: relative;
+			&.flex-control-nav {
+				bottom: -70px;
+				@media screen and (max-width: $screen-sm) {
+					bottom: -60px;
+				}
+			}
+			li {
+				a {
+			
+					width: 14px;
+					height: 14px;
+					background: rgba(255,255,255,.2);
+					box-shadow: none;
+					border: 2px solid transparent;
+					&:active, &:focus {
+						outline: none;
+					}
+					&.flex-active {
+						// top: 2px;
+						position: relative;
+						background: transparent;
+						box-shadow: none;
+						border: 2px solid $brand-primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+#fh5co-contact {
+
+}
+
+
+#fh5co-footer {
+	background: #ececec;
+	padding: 4em 0;
+	font-size: 16px;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+	a {
+		color: darken($brand-primary, 15%);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	p{
+		margin-bottom: 10px;
+	}
+	.fh5co-footer-widget {
+		margin-bottom: 30px;
+		float: left;
+		width: 100%;
+	}
+}
+.fh5co-social {
+	padding: 0;
+	margin: 0;
+	@media screen and (max-width: $screen-sm) {
+		float: none!important;
+	}
+	li {
+		padding: 0;
+		margin: 0;
+		display: inline;
+		a {
+			// padding: 0 10px;
+			margin-left: 10px;
+			@media screen and (max-width: $screen-sm) {
+				margin-right: 10px;
+			}
+			i {
+				font-size: 20px;
+			}
+			&:hover {
+				text-decoration: none!important;
+				i {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.img-grid {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 30px;
+	@media screen and (max-width: 480px) {
+		margin-bottom: 15px;
+	}
+	img {
+		position: relative;
+		z-index: 10;
+	}
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		z-index: 12;
+		background: rgba(68,72,83,.9);
+		text-align: center;
+		@include transition(.5s);
+		> div {
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			text-align: center;
+			width: 100%;
+			@include transition(.8s, ease-out);
+		}
+		.fh5co-title {
+			font-size: 18px;
+			color: $brand-white;
+			padding: 0;
+			position: relative;
+		}
+		.fh5co-meta {
+			color: rgba(255,255,255,.4);
+			font-size: 10px;
+			font-weight: 400;
+			letter-spacing: 2px;
+			display: block;
+			position: relative;
+			padding-bottom: 7px;
+			text-transform: uppercase;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				width: 20px;
+				margin-left: -10px;
+				height: 2px;
+				left: 50%;
+				// background: rgba(255,255,255,.8);
+				background: $brand-primary;
+			}
+		}
+	}
+	&:hover {
+		
+		> a {
+			opacity: 1;
+			> div {
+				bottom: 20px;
+			}
+		}
+
+	}
+}
+
+.section-heading {
+	.fh5co-section-title {
+		font-size: 11px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: $brand-secondary;
+		font-family: $font-secondary;
+		font-weight: 700;
+		opacity: .4;
+		margin-bottom: 20px;
+	}
+}
+
+.fh5co-lead {
+	font-size: 26px;
+	@media screen and (max-width: $screen-sm) {
+		font-size: 20px;
+	}
+}
+
+.to-animate,
+.to-animate-2,
+.animate-box {
+	.js & {
+		opacity: 0;	
+	}
+}
+
+// Burger Menu
+.fh5co-nav-toggle {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  &.active i {
+		&::before, &::after {
+			background: $brand-primary;
+		}
+  }
+  &:hover, &:focus, &:active {
+  	outline: none;
+  	border-bottom: none!important;
+  }
+  i {
+  	position: relative;
+	  @include inline-block;
+	  width: 25px;
+	  height: 3px;
+	  color: #535659;
+	  font:bold 14px/.4 Helvetica;
+	  text-transform: uppercase;
+	  text-indent:-55px;
+	  background: #535659;
+	  transition: all .2s ease-out;
+		 &::before, &::after {
+	  	  content:'';
+		  width: 25px;
+		  height: 3px;
+		  background: #535659;
+		  position: absolute;
+		  left:0;
+		  @include transition(.2s);
+	  }
+  }
+}
+
+.fh5co-nav-toggle i::before {
+  top: -7px;
+}
+.fh5co-nav-toggle i::after {
+  bottom: -7px;
+}
+.fh5co-nav-toggle:hover i::before {
+  top: -10px;
+}
+.fh5co-nav-toggle:hover i::after {
+  bottom: -10px;
+}
+.fh5co-nav-toggle.active i {
+	background: transparent;
+}
+.fh5co-nav-toggle.active i::before {
+  top:0;
+  -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+      -ms-transform: rotateZ(45deg);
+       -o-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+.fh5co-nav-toggle.active i::after {
+  bottom:0;
+  -webkit-transform: rotateZ(-45deg);
+     -moz-transform: rotateZ(-45deg);
+      -ms-transform: rotateZ(-45deg);
+       -o-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+.fh5co-nav-toggle {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  z-index: 21;
+  padding: 6px 0 0 0;
+  display: block;
+  margin: 0 auto;
+  display: none;
+  height: 44px;
+  width: 25px;
+  border-bottom: none!important;
+  @media screen and (max-width: $screen-sm) {
+  		display: block;
+  		.offcanvas-visible & {
+  			z-index: 999999!important;
+  		}
+  }
+}
+
+
+// Menu bar Animate
+.fh5co-animated {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.r-pb {
+	padding-bottom: 40px;
+}
+
+@media screen and (max-width: 480px) {
+	.col-xxs-12 {
+		width: 100%;
+		float: none;
+	}
+}
+
+
+/* Arrow Animations */
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+
+
